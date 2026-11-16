@@ -1,0 +1,16 @@
+{
+ "id": "20261116-154954-standard-cible-partiel",
+ "date": "2026-11-16T15:51:47.239Z",
+ "niveau": "standard",
+ "pages": "/,/404,/reserver,/services,/trajets",
+ "etapes": [
+  "fichiers",
+  "mesures"
+ ],
+ "version": "1",
+ "echecs": 1,
+ "aRegarder": 63,
+ "nonLances": 0,
+ "manquants": 0,
+ "statut": "échecs"
+}

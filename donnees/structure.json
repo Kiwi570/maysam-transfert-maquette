@@ -1,0 +1,13 @@
+{
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "Maysam Transfert",
+ "url": "https://maysam-transfert-maquette.vercel.app/",
+ "telephone": "+33662158363",
+ "email": "maysam.transfert@gmail.com",
+ "description": "Chauffeur privé à Paris et en Île‑de‑France. Transferts aéroports, gares et Disneyland Paris, 24h/24 et 7j/7.",
+ "areaServed": "Paris et Île‑de‑France",
+ "openingHours": "Mo-Su 00:00-24:00",
+ "image": "https://maysam-transfert-maquette.vercel.app/assets/images/logo-grand.webp",
+ "paymentAccepted": "Espèces, carte, virement"
+}

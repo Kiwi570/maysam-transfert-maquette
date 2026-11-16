@@ -1,0 +1,541 @@
+{
+  "dossier": "/Users/paul/Downloads/maysam-transfert-recu",
+  "date": "2026-11-16T14:22:33.387Z",
+  "detection": "Vision (macOS) + mesures sharp",
+  "planches": [
+    "planche.jpg"
+  ],
+  "legende_planche": "cadre jaune : sujet ; croix rouge : cadrage ; fond rose : à vérifier",
+  "doublons": [],
+  "images": [
+    {
+      "fichier": "logo-sombre.webp",
+      "nom": "logo-sombre",
+      "drapeau": "logo",
+      "largeur": 100,
+      "hauteur": 100,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "webp",
+      "poids": 5160,
+      "transparence": true,
+      "sujet": {
+        "x": 16.2,
+        "y": 11.3,
+        "l": 67.2,
+        "h": 76.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        50,
+        54
+      ],
+      "cadrage_css": "50% 54%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.71,
+          "ton": "clair",
+          "recouvre_sujet": 0.46
+        },
+        {
+          "cote": "gauche",
+          "score": 0.49,
+          "ton": "clair",
+          "recouvre_sujet": 0.45
+        },
+        {
+          "cote": "droite",
+          "score": 0.46,
+          "ton": "clair",
+          "recouvre_sujet": 0.45
+        },
+        {
+          "cote": "bas",
+          "score": 0.21,
+          "ton": "clair",
+          "recouvre_sujet": 0.44
+        }
+      ],
+      "qualite": {
+        "nettete": 42.6,
+        "bruit": 0.7,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "08080e2b4d07071b",
+      "drapeaux": [
+        "logo",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "chauffeur-prive-ouvrant-portiere.webp",
+      "nom": "chauffeur-prive-ouvrant-portiere",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1116,
+      "ratio": "16:9",
+      "ratio_valeur": 1.792,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 288548,
+      "transparence": false,
+      "sujet": {
+        "x": 17.5,
+        "y": 2.5,
+        "l": 40.3,
+        "h": 97.5,
+        "source": "corps"
+      },
+      "visages": 1,
+      "cadrage": [
+        46,
+        29
+      ],
+      "cadrage_css": "46% 29%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.22,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.13,
+          "ton": "sombre",
+          "recouvre_sujet": 0.4
+        },
+        {
+          "cote": "haut",
+          "score": 0.07,
+          "ton": "moyen",
+          "recouvre_sujet": 0.37
+        },
+        {
+          "cote": "gauche",
+          "score": 0.01,
+          "ton": "moyen",
+          "recouvre_sujet": 0.55
+        }
+      ],
+      "qualite": {
+        "nettete": 34.8,
+        "bruit": 0.7,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "429292bbb3010424",
+      "drapeaux": [
+        "autre",
+        "visage"
+      ]
+    },
+    {
+      "fichier": "normal-69604b16243f3.webp",
+      "nom": "normal-69604b16243f3",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1116,
+      "ratio": "16:9",
+      "ratio_valeur": 1.792,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 317110,
+      "transparence": false,
+      "sujet": {
+        "x": 77.5,
+        "y": 31.4,
+        "l": 9.1,
+        "h": 53.4,
+        "source": "corps"
+      },
+      "visages": 0,
+      "cadrage": [
+        82,
+        47
+      ],
+      "cadrage_css": "82% 47%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.45,
+          "ton": "sombre",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "haut",
+          "score": 0.33,
+          "ton": "sombre",
+          "recouvre_sujet": 0.01
+        },
+        {
+          "cote": "droite",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "gauche",
+          "score": 0.28,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        }
+      ],
+      "qualite": {
+        "nettete": 25.1,
+        "bruit": 0.84,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "5ccc544d4347373f",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "vue-nocturne-paris-monuments.jpg",
+      "nom": "vue-nocturne-paris-monuments",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1334,
+      "ratio": "3:2",
+      "ratio_valeur": 1.499,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 414492,
+      "transparence": false,
+      "sujet": {
+        "x": 44.1,
+        "y": 33.8,
+        "l": 16.2,
+        "h": 36.8,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        52
+      ],
+      "cadrage_css": "52% 52%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.7,
+          "ton": "moyen",
+          "recouvre_sujet": 0.01
+        },
+        {
+          "cote": "gauche",
+          "score": 0.36,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.33,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.3,
+          "ton": "sombre",
+          "recouvre_sujet": 0.03
+        }
+      ],
+      "qualite": {
+        "nettete": 73.4,
+        "bruit": 1.23,
+        "compression": 1.21,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "7078faf0d2446170",
+      "drapeaux": [
+        "lieu",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "tour-eiffel-illuminee-paris.jpg",
+      "nom": "tour-eiffel-illuminee-paris",
+      "drapeau": "autre",
+      "largeur": 800,
+      "hauteur": 1200,
+      "ratio": "2:3",
+      "ratio_valeur": 0.667,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 95409,
+      "transparence": false,
+      "sujet": {
+        "x": 30.6,
+        "y": 17.5,
+        "l": 43.4,
+        "h": 62,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        48
+      ],
+      "cadrage_css": "53% 48%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.72,
+          "ton": "clair",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "gauche",
+          "score": 0.55,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "droite",
+          "score": 0.48,
+          "ton": "clair",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        }
+      ],
+      "qualite": {
+        "nettete": 41.4,
+        "bruit": 0.7,
+        "compression": 1.35,
+        "faible": true,
+        "raisons": [
+          "800 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "ffef6fafefcf1fcf",
+      "drapeaux": [
+        "autre",
+        "petite",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "tesla-model-y-suv.webp",
+      "nom": "tesla-model-y-suv",
+      "drapeau": "autre",
+      "largeur": 1200,
+      "hauteur": 617,
+      "ratio": "1.94",
+      "ratio_valeur": 1.945,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 54746,
+      "transparence": false,
+      "sujet": {
+        "x": 0.1,
+        "y": 25.8,
+        "l": 97.6,
+        "h": 64.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        55,
+        42
+      ],
+      "cadrage_css": "55% 42%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0.26
+        },
+        {
+          "cote": "droite",
+          "score": 0.23,
+          "ton": "sombre",
+          "recouvre_sujet": 0.61
+        },
+        {
+          "cote": "bas",
+          "score": 0.06,
+          "ton": "sombre",
+          "recouvre_sujet": 0.7
+        },
+        {
+          "cote": "gauche",
+          "score": 0.03,
+          "ton": "sombre",
+          "recouvre_sujet": 0.64
+        }
+      ],
+      "qualite": {
+        "nettete": 24.1,
+        "bruit": 0.54,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "1200 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "4049474925954701",
+      "drapeaux": [
+        "autre",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "mercedes-classe-v-van.webp",
+      "nom": "mercedes-classe-v-van",
+      "drapeau": "lieu",
+      "largeur": 800,
+      "hauteur": 533,
+      "ratio": "3:2",
+      "ratio_valeur": 1.501,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 12738,
+      "transparence": false,
+      "sujet": {
+        "x": 10.9,
+        "y": 2.6,
+        "l": 72.4,
+        "h": 71.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        41
+      ],
+      "cadrage_css": "49% 41%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.89,
+          "ton": "sombre",
+          "recouvre_sujet": 0.19
+        },
+        {
+          "cote": "droite",
+          "score": 0.57,
+          "ton": "sombre",
+          "recouvre_sujet": 0.42
+        },
+        {
+          "cote": "gauche",
+          "score": 0.49,
+          "ton": "sombre",
+          "recouvre_sujet": 0.52
+        },
+        {
+          "cote": "haut",
+          "score": 0.46,
+          "ton": "sombre",
+          "recouvre_sujet": 0.67
+        }
+      ],
+      "qualite": {
+        "nettete": 13.3,
+        "bruit": 0.23,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "800 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "9c0c189694061313",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "calme bas"
+      ]
+    },
+    {
+      "fichier": "mercedes-classe-e-berline.webp",
+      "nom": "mercedes-classe-e-berline",
+      "drapeau": "lieu",
+      "largeur": 800,
+      "hauteur": 447,
+      "ratio": "16:9",
+      "ratio_valeur": 1.79,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 24306,
+      "transparence": false,
+      "sujet": {
+        "x": 8,
+        "y": 25.7,
+        "l": 84.9,
+        "h": 51.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        51,
+        43
+      ],
+      "cadrage_css": "51% 43%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.59,
+          "ton": "clair",
+          "recouvre_sujet": 0.23
+        },
+        {
+          "cote": "droite",
+          "score": 0.27,
+          "ton": "clair",
+          "recouvre_sujet": 0.42
+        },
+        {
+          "cote": "bas",
+          "score": 0.26,
+          "ton": "clair",
+          "recouvre_sujet": 0.3
+        },
+        {
+          "cote": "gauche",
+          "score": 0.17,
+          "ton": "clair",
+          "recouvre_sujet": 0.41
+        }
+      ],
+      "qualite": {
+        "nettete": 48.1,
+        "bruit": 0.5,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "800 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "d4d4c60711173f53",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    }
+  ]
+}

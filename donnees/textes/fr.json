@@ -1,0 +1,297 @@
+{
+ "commun": {
+  "navigation": "Navigation principale",
+  "menu": "Menu",
+  "fermer": "Fermer",
+  "langueAutre": "English version",
+  "actionEntete": "Réserver",
+  "appeler": "Appeler",
+  "sommaire": "Le site",
+  "joindre": "Nous joindre",
+  "retourHaut": "Retour en haut",
+  "maquette": "Maquette de présentation",
+  "evitement": "Aller au contenu",
+  "mentionIa": "Illustration générée",
+  "pause": "Pause",
+  "lecture": "Lecture",
+  "introLigne": "Chauffeur privé · Paris",
+  "confort": "Confort",
+  "dispo": "24 h/24, 7 j/7, jours fériés inclus",
+  "whatsapp": "Écrire sur WhatsApp",
+  "piedTexte": "Chauffeur privé à Paris et en Île‑de‑France. Transferts aéroports, gares et Disneyland Paris, 24 h/24 et 7 j/7.",
+  "mentions": "Mentions légales : à compléter",
+  "confidentialite": "Politique de confidentialité : à compléter",
+  "surtitre": "Chauffeur privé · Paris & Île‑de‑France"
+ },
+ "pages": {
+  "accueil": {
+   "titre": "Chauffeur privé à Paris | Maysam Transfert",
+   "description": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet : Orly, Roissy CDG, Beauvais, gares et Disneyland Paris, à prix fixe, réservation 24 h/24.",
+   "nav": "Accueil",
+   "partageAlt": "Maysam Transfert, chauffeur privé à Paris, la nuit",
+   "accroche": "À l'heure, à chaque trajet."
+  },
+  "trajets": {
+   "titre": "Trajets et tarifs | Maysam Transfert",
+   "description": "Tarifs fixes : Orly 60 €, Roissy CDG 70 €, gares 45 €, Disneyland Paris 85 €, Beauvais 140 €. Estimez votre trajet.",
+   "nav": "Trajets & tarifs",
+   "partageAlt": "Les tarifs fixes de Maysam Transfert",
+   "accroche": "Des prix fixes, trajet par trajet."
+  },
+  "services": {
+   "titre": "Services | Maysam Transfert",
+   "description": "Transferts aéroport, gares et hôtels, Disneyland, mise à disposition, événements et mariages, longs trajets.",
+   "nav": "Services",
+   "partageAlt": "Les services de Maysam Transfert",
+   "accroche": "Bien plus qu'un simple trajet."
+  },
+  "flotte": {
+   "titre": "La flotte | Maysam Transfert",
+   "description": "Tesla Model Y, Mercedes Classe E et Mercedes Classe V : jusqu'à 7 passagers et 7 valises.",
+   "nav": "Flotte",
+   "partageAlt": "Les véhicules de Maysam Transfert",
+   "accroche": "Trois véhicules, un même soin."
+  },
+  "reserver": {
+   "titre": "Réserver un trajet | Maysam Transfert",
+   "description": "Réservez votre chauffeur en quelques minutes : prix fixe confirmé à l'avance, pancarte nominative, paiement à bord.",
+   "nav": "Réserver",
+   "partageAlt": "Réserver un chauffeur Maysam Transfert",
+   "accroche": "Réservez en quelques minutes."
+  },
+  "contact": {
+   "titre": "Contact | Maysam Transfert",
+   "description": "Joignable 24 h/24 et 7 j/7 : téléphone, WhatsApp et e-mail. Paris et Île‑de‑France.",
+   "nav": "Contact",
+   "partageAlt": "Contacter Maysam Transfert",
+   "accroche": "Joignables à tout moment."
+  },
+  "404": {
+   "titre": "Page introuvable | Maysam Transfert",
+   "description": "Cette page n'existe pas.",
+   "nav": "Page introuvable",
+   "partageAlt": "Page introuvable",
+   "accroche": "Page introuvable"
+  }
+ },
+ "accueil": {
+  "hero": {
+   "titre": "À l'heure, <em>à chaque</em> trajet.",
+   "texte": "Transferts vers les aéroports d'Orly et de Roissy, les gares parisiennes et Disneyland Paris. Véhicules premium, chauffeurs professionnels et tarifs fixes.",
+   "action": "Réserver un trajet",
+   "info": "Réservation 24 h/24 · Paris ↔ Orly 60 €",
+   "alt": "Avenue parisienne la nuit après la pluie, traînées de phares"
+  },
+  "tableau": {
+   "surtitre": "Départs depuis Paris",
+   "titre": "Des prix clairs, <em>sans surprise.</em>",
+   "texte": "Un prix fixe par trajet, dans un sens ou dans l'autre, confirmé à la réservation. Sans compteur ni supplément à l'arrivée.",
+   "tous": "Voir les trajets et la carte"
+  },
+  "services": {
+   "surtitre": "Nos services",
+   "titre": "Bien plus qu'un <em>simple trajet.</em>",
+   "texte": "Des transferts aéroport à la mise à disposition, dans toute l'Île‑de‑France.",
+   "region": "Services, défilement horizontal",
+   "tous": "Tous les services"
+  },
+  "flotte": {
+   "surtitre": "Nos véhicules",
+   "titre": "Des véhicules premium <em>pour chaque trajet.</em>",
+   "texte": "Une flotte récente et entretenue, du transfert seul au voyage en famille.",
+   "voir": "Voir la flotte"
+  },
+  "pancarte": {
+   "surtitre": "À l'aéroport",
+   "titre": "Votre nom <em>vous attend.</em>",
+   "texte": "À la sortie du terminal, votre chauffeur vous accueille avec une pancarte à votre nom. Le vol est suivi en temps réel : en cas de retard, il attend sans frais.",
+   "essai": "Essayez avec votre nom",
+   "defaut": "Votre nom",
+   "alt": "Hall d'arrivée d'aéroport la nuit, lumières floues",
+   "exemple": "Aperçu de la pancarte"
+  },
+  "temoignages": {
+   "surtitre": "Témoignages",
+   "titre": "Ils nous confient <em>leurs trajets.</em>",
+   "texte": "Des clients pour les aéroports, les gares et les sorties en Île‑de‑France."
+  },
+  "faq": {
+   "surtitre": "FAQ",
+   "titre": "Vos questions, <em>nos réponses.</em>",
+   "toutes": "Toutes les infos pratiques"
+  }
+ },
+ "estim": {
+  "surtitre": "Estimation",
+  "titre": "Estimez votre tarif <em>en quelques secondes.</em>",
+  "texte": "Choisissez le trajet et le nombre de passagers : le véhicule et le prix s'affichent.",
+  "trajet": "Votre trajet",
+  "passagers": "Passagers",
+  "valises": "Valises",
+  "moins": "Un de moins",
+  "plus": "Un de plus",
+  "vehicule": "Votre véhicule",
+  "petit": "Tesla Model Y ou Mercedes Classe E",
+  "grand": "Mercedes Classe V",
+  "noteFixe": "Prix fixe pour ce trajet, dans un sens ou dans l'autre. Paiement à bord.",
+  "noteVan": "Pour 4 passagers ou plus de 3 valises, la Classe V : tarif confirmé à la réservation.",
+  "surDemande": "Tarif confirmé à la réservation",
+  "reserver": "Réserver ce trajet",
+  "max": "Au-delà de 7 passagers, appelez-nous."
+ },
+ "appel": {
+  "titre": "Prêt à réserver <em>votre chauffeur ?</em>",
+  "texte": "Réservation en ligne ou par téléphone, 24 h/24 et 7 j/7, jours fériés inclus. Confirmation par téléphone ou e-mail.",
+  "reserver": "Réserver en ligne"
+ },
+ "trajets": {
+  "titre": "Des prix fixes, <em>trajet par trajet.</em>",
+  "texte": "Cinq trajets à prix fixe, dans un sens ou dans l'autre. Le prix est confirmé à la réservation et se règle à bord.",
+  "alt": "Voie rapide la nuit, traînées de lumière vers la ville",
+  "action": "Réserver un trajet",
+  "info": "Paiement à bord · espèces, carte ou virement",
+  "prixLegende": "Prix du trajet",
+  "carte": {
+   "surtitre": "La carte",
+   "titre": "Paris au centre, <em>cinq départs.</em>",
+   "texte": "Touchez une destination pour voir le prix et la durée du trajet.",
+   "aide": "Durées indicatives selon la circulation.",
+   "paris": "Paris",
+   "schema": "Schéma des trajets depuis Paris (pas à l'échelle)"
+  },
+  "liste": {
+   "surtitre": "Les tarifs",
+   "titre": "Cinq trajets, <em>cinq prix.</em>",
+   "sens": "Le trajet, dans un sens ou dans l'autre"
+  },
+  "inclus": {
+   "surtitre": "Compris dans le prix",
+   "titre": "Tout est <em>compris.</em>"
+  },
+  "demande": {
+   "surtitre": "Sur demande",
+   "titre": "Mise à disposition <em>et longs trajets.</em>",
+   "disposition": "Un chauffeur à l'heure ou à la journée, à votre rythme.",
+   "longs": "Province et Europe, au départ ou à destination de l'Île‑de‑France, au forfait.",
+   "tarif": "Tarif donné à la demande"
+  }
+ },
+ "services": {
+  "titre": "Bien plus qu'un <em>simple trajet.</em>",
+  "texte": "Des transferts aéroport à la mise à disposition, dans toute l'Île‑de‑France, avec le même soin du premier au dernier kilomètre.",
+  "alt": "Entrée d'un grand hôtel la nuit, berline noire qui attend",
+  "action": "Réserver un trajet",
+  "info": "6 services · 24 h/24",
+  "liste": {
+   "surtitre": "Six services",
+   "titre": "Choisissez <em>votre trajet.</em>",
+   "inclus": "Compris"
+  },
+  "aeroport": {
+   "surtitre": "À l'aéroport",
+   "titre": "Trois gestes <em>qui rassurent.</em>"
+  }
+ },
+ "flotte": {
+  "titre": "Trois véhicules, <em>un même soin.</em>",
+  "texte": "Une flotte récente et entretenue, du transfert seul au voyage en famille ou en groupe.",
+  "alt": "Capot d'une voiture noire, reflet doré dans la pénombre",
+  "action": "Réserver un véhicule",
+  "info": "Jusqu'à 7 passagers et 7 valises",
+  "liste": {
+   "surtitre": "La flotte",
+   "titre": "Le bon véhicule <em>pour chaque trajet.</em>",
+   "passagers": "passagers",
+   "valises": "valises",
+   "photo": "Photo du modèle"
+  },
+  "choix": {
+   "surtitre": "Le bon choix",
+   "titre": "Combien <em>êtes-vous ?</em>",
+   "texte": "Indiquez les passagers et les valises : le véhicule qui convient s'allume.",
+   "conseil": "Conseillé"
+  },
+  "confort": {
+   "surtitre": "Confort",
+   "titre": "Le confort, <em>jusqu'aux détails.</em>",
+   "alt": "Siège en cuir noir surpiqué, lumière chaude"
+  }
+ },
+ "reserver": {
+  "titre": "Réservez votre trajet <em>en quelques minutes.</em>",
+  "texte": "Formulaire en ligne ou appel direct. La réservation est confirmée par téléphone ou e-mail.",
+  "alt": "Gouttes de pluie sur une vitre, lumières de la ville floues",
+  "info": "Prix fixe confirmé à l'avance",
+  "appeler": "Ou appelez le",
+  "form": {
+   "etapeTrajet": "Trajet",
+   "qTrajet": "Quel trajet souhaitez-vous ?",
+   "etapeQuand": "Date et lieux",
+   "qQuand": "Quand et où ?",
+   "date": "Date",
+   "heure": "Heure",
+   "depart": "Lieu de prise en charge",
+   "arrivee": "Destination",
+   "etapePassagers": "Passagers",
+   "qPassagers": "Combien de passagers et de bagages ?",
+   "passagers": "Passagers",
+   "bagages": "Bagages",
+   "precisions": "Précisions (vol, train, numéro de réservation, âge des enfants…)",
+   "etapeCoord": "Coordonnées",
+   "qCoord": "Vos coordonnées",
+   "nom": "Nom complet",
+   "tel": "Téléphone",
+   "email": "E-mail",
+   "donnees": "Vos données servent seulement à traiter votre réservation. Politique de confidentialité : à compléter.",
+   "etapeRecap": "Récapitulatif",
+   "qRecap": "Tout est juste ?",
+   "retour": "Retour",
+   "continuer": "Continuer",
+   "envoyer": "Envoyer ma demande",
+   "fin": "Demande prête",
+   "finTexte": "Réservation simulée : rien n'a été envoyé. Sur le site final, Maysam Transfert la recevra et vous confirmera le trajet par téléphone ou e-mail.",
+   "recommencer": "Nouvelle demande",
+   "disposition": "Mise à disposition",
+   "dispositionTexte": "À l'heure ou à la journée",
+   "evenement": "Événement ou mariage",
+   "evenementTexte": "Tarif à la demande",
+   "longs": "Long trajet",
+   "longsTexte": "Province, Europe",
+   "autre": "Autre destination",
+   "autreTexte": "Précisez-la à l'étape suivante"
+  },
+  "recap": {
+   "titre": "Votre trajet",
+   "vide": "Choisissez un trajet",
+   "prix": "Prix",
+   "vehicule": "Véhicule",
+   "pancarte": "Votre pancarte"
+  },
+  "bon": {
+   "surtitre": "Bon à savoir",
+   "titre": "Avant <em>de partir.</em>"
+  }
+ },
+ "contact": {
+  "titre": "Une question ? <em>Joignables à tout moment.</em>",
+  "texte": "Par téléphone, WhatsApp ou e-mail, pour une réservation, un devis ou une question pratique.",
+  "alt": "Rue pavée la nuit, un réverbère doré",
+  "info": "Assistance 24 h/24, 7 j/7",
+  "zone": {
+   "surtitre": "Zone desservie",
+   "titre": "Paris <em>et toute l'Île‑de‑France.</em>",
+   "texte": "Aéroports d'Orly, de Roissy CDG et de Beauvais, gares parisiennes, Disneyland Paris, hôtels et domiciles. Longs trajets vers la province et l'Europe sur demande.",
+   "alt": "Paris la nuit, vu d'en haut"
+  },
+  "faq": {
+   "surtitre": "FAQ",
+   "titre": "Les réponses <em>aux questions fréquentes.</em>"
+  }
+ },
+ "introuvable": {
+  "titre": "Ce trajet <em>n'existe pas.</em>",
+  "texte": "La page demandée n'existe pas ou plus. Votre chauffeur, lui, est toujours là.",
+  "retour": "Revenir à l'accueil",
+  "alt": "Une valise seule au milieu d'une rue mouillée la nuit"
+ }
+}

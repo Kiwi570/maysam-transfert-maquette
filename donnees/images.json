@@ -1,0 +1,1446 @@
+{
+  "logo": {
+    "nom": "logo",
+    "source": "recu/logo/maysam-logo.png",
+    "role": "logo",
+    "alt": "Maysam Transfert",
+    "grok": false,
+    "mention": null,
+    "beaute": null,
+    "empreinte": "9ec6679fd894d8da",
+    "ratio": null,
+    "largeurs": [
+      240,
+      480
+    ],
+    "mobile": null,
+    "cadrage": null,
+    "sujet": null,
+    "zones_calmes": null,
+    "zone_texte": null,
+    "recadrage": null,
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "logo-240.webp",
+      "logo-480.webp"
+    ],
+    "poids": {
+      "logo-240.webp": 16238,
+      "logo-480.webp": 43216
+    },
+    "media": "c.media({ nom: 'logo', alt: \"Maysam Transfert\", sizes: '240px' })"
+  },
+  "paris-nuit": {
+    "nom": "paris-nuit",
+    "source": "recu/site/maysam-transfert-recu/vue-nocturne-paris-monuments.jpg",
+    "role": "galerie",
+    "alt": "Paris la nuit, vu d'en haut",
+    "grok": false,
+    "mention": null,
+    "beaute": 4,
+    "empreinte": "f13c052ff29ef31e",
+    "ratio": "3:2",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "52% 52%",
+    "sujet": {
+      "x": 44.1,
+      "y": 33.8,
+      "l": 16.2,
+      "h": 36.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.7,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.36,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.33,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.3,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 1,
+      "width": 2000,
+      "height": 1333,
+      "source": [
+        2000,
+        1334
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "paris-nuit-480.webp",
+      "paris-nuit-640.webp",
+      "paris-nuit-960.webp"
+    ],
+    "poids": {
+      "paris-nuit-480.webp": 30292,
+      "paris-nuit-640.webp": 52148,
+      "paris-nuit-960.webp": 107116
+    },
+    "media": "c.media({ nom: 'paris-nuit', alt: \"Paris la nuit, vu d'en haut\", cadrage: '52% 52%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 2' })"
+  },
+  "modele-tesla": {
+    "nom": "modele-tesla",
+    "source": "recu/site/maysam-transfert-recu/tesla-model-y-suv.webp",
+    "role": "vignette",
+    "alt": "Tesla Model Y",
+    "grok": false,
+    "mention": null,
+    "beaute": 2,
+    "empreinte": "db073b1a3c6306a3",
+    "ratio": "3:2",
+    "largeurs": [
+      480,
+      640,
+      800
+    ],
+    "mobile": null,
+    "cadrage": "50% 42%",
+    "sujet": {
+      "x": 0,
+      "y": 25.8,
+      "l": 100,
+      "h": 64.2
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.37,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.23,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.06,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.03,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 197,
+      "top": 0,
+      "width": 926,
+      "height": 617,
+      "source": [
+        1200,
+        617
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1200 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "modele-tesla-480.webp",
+      "modele-tesla-640.webp",
+      "modele-tesla-800.webp"
+    ],
+    "poids": {
+      "modele-tesla-480.webp": 10242,
+      "modele-tesla-640.webp": 16156,
+      "modele-tesla-800.webp": 21892
+    },
+    "media": "c.media({ nom: 'modele-tesla', alt: \"Tesla Model Y\", cadrage: '50% 42%', sizes: '(max-width: 760px) 50vw, 25vw', ratio: '3 / 2' })"
+  },
+  "modele-classe-v": {
+    "nom": "modele-classe-v",
+    "source": "recu/site/maysam-transfert-recu/mercedes-classe-v-van.webp",
+    "role": "vignette",
+    "alt": "Mercedes Classe V, phares allumés",
+    "grok": false,
+    "mention": null,
+    "beaute": 3,
+    "empreinte": "2b76f0858b709787",
+    "ratio": "3:2",
+    "largeurs": [
+      480,
+      640,
+      800
+    ],
+    "mobile": null,
+    "cadrage": "49% 41%",
+    "sujet": {
+      "x": 10.9,
+      "y": 2.6,
+      "l": 72.4,
+      "h": 71.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.89,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.57,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.49,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.46,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 800,
+      "height": 533,
+      "source": [
+        800,
+        533
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "800 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "modele-classe-v-480.webp",
+      "modele-classe-v-640.webp",
+      "modele-classe-v-800.webp"
+    ],
+    "poids": {
+      "modele-classe-v-480.webp": 4906,
+      "modele-classe-v-640.webp": 7142,
+      "modele-classe-v-800.webp": 10162
+    },
+    "media": "c.media({ nom: 'modele-classe-v', alt: \"Mercedes Classe V, phares allumés\", cadrage: '49% 41%', sizes: '(max-width: 760px) 50vw, 25vw', ratio: '3 / 2' })"
+  },
+  "grok/accueil-ouverture": {
+    "nom": "grok/accueil-ouverture",
+    "source": "recu/grok/accueil-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Avenue parisienne la nuit après la pluie, traînées de phares",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 5,
+    "empreinte": "f23cd1fc29666c94",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "56% 78%"
+    },
+    "cadrage": "70% 60%",
+    "sujet": {
+      "x": 40.6,
+      "y": 16.7,
+      "l": 59.4,
+      "h": 83.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.95,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.43,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.1,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/accueil-ouverture-640.webp",
+      "grok/accueil-ouverture-1280.webp",
+      "grok/accueil-ouverture-1920.webp",
+      "grok/accueil-ouverture-mobile-640.webp",
+      "grok/accueil-ouverture-mobile-1080.webp"
+    ],
+    "poids": {
+      "grok/accueil-ouverture-640.webp": 38114,
+      "grok/accueil-ouverture-1280.webp": 124204,
+      "grok/accueil-ouverture-1920.webp": 216768,
+      "grok/accueil-ouverture-mobile-640.webp": 41450,
+      "grok/accueil-ouverture-mobile-1080.webp": 78616
+    },
+    "media": "c.media({ nom: 'grok/accueil-ouverture', alt: \"Avenue parisienne la nuit après la pluie, traînées de phares\", cadrage: '70% 60%', cadrageMobile: '56% 78%', sizes: '100vw', priorite: true })"
+  },
+  "grok/accueil-hall": {
+    "nom": "grok/accueil-hall",
+    "source": "recu/grok/accueil-hall.jpg",
+    "role": "section-fond",
+    "alt": "Hall d'arrivée d'aéroport la nuit, lumières floues",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "90a40c78bd8bd40d",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "58% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.28,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.19,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.11,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.09,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 56,
+      "width": 1440,
+      "height": 810,
+      "source": [
+        1440,
+        960
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [
+      "agrandie 1,33 fois (source de 1440 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/accueil-hall-640.webp",
+      "grok/accueil-hall-1280.webp",
+      "grok/accueil-hall-1920.webp"
+    ],
+    "poids": {
+      "grok/accueil-hall-640.webp": 13728,
+      "grok/accueil-hall-1280.webp": 29986,
+      "grok/accueil-hall-1920.webp": 47154
+    },
+    "media": "c.media({ nom: 'grok/accueil-hall', alt: \"Hall d'arrivée d'aéroport la nuit, lumières floues\", cadrage: '58% 50%', sizes: '100vw' })"
+  },
+  "grok/service-aeroport": {
+    "nom": "grok/service-aeroport",
+    "source": "recu/grok/service-aeroport.jpg",
+    "role": "carte-service",
+    "alt": "Terminal d'aéroport la nuit, façade de verre éclairée",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "3f5e56368048fbfa",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "57% 60%",
+    "sujet": {
+      "x": 0,
+      "y": 15.6,
+      "l": 95.5,
+      "h": 78.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.52,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.19,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.03,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.01,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-aeroport-480.webp",
+      "grok/service-aeroport-640.webp",
+      "grok/service-aeroport-784.webp"
+    ],
+    "poids": {
+      "grok/service-aeroport-480.webp": 24618,
+      "grok/service-aeroport-640.webp": 34480,
+      "grok/service-aeroport-784.webp": 43332
+    },
+    "media": "c.media({ nom: 'grok/service-aeroport', alt: \"Terminal d'aéroport la nuit, façade de verre éclairée\", cadrage: '57% 60%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/service-gares": {
+    "nom": "grok/service-gares",
+    "source": "recu/grok/service-gares.jpg",
+    "role": "carte-service",
+    "alt": "Grande gare au petit matin, verrière et lumière dorée",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 5,
+    "empreinte": "817da0ca0e6d28b2",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "66% 45%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 95.5,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.06,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-gares-480.webp",
+      "grok/service-gares-640.webp",
+      "grok/service-gares-784.webp"
+    ],
+    "poids": {
+      "grok/service-gares-480.webp": 32016,
+      "grok/service-gares-640.webp": 43342,
+      "grok/service-gares-784.webp": 54538
+    },
+    "media": "c.media({ nom: 'grok/service-gares', alt: \"Grande gare au petit matin, verrière et lumière dorée\", cadrage: '66% 45%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/service-parcs": {
+    "nom": "grok/service-parcs",
+    "source": "recu/grok/service-parcs.jpg",
+    "role": "carte-service",
+    "alt": "Coffre ouvert avec deux valises et un rehausseur, à l'aube",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "077f36019684d8ed",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "50% 49%",
+    "sujet": {
+      "x": 13.6,
+      "y": 25,
+      "l": 81.8,
+      "h": 65.6
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.43,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.28,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.28,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.11,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-parcs-480.webp",
+      "grok/service-parcs-640.webp",
+      "grok/service-parcs-784.webp"
+    ],
+    "poids": {
+      "grok/service-parcs-480.webp": 15000,
+      "grok/service-parcs-640.webp": 20700,
+      "grok/service-parcs-784.webp": 26482
+    },
+    "media": "c.media({ nom: 'grok/service-parcs', alt: \"Coffre ouvert avec deux valises et un rehausseur, à l'aube\", cadrage: '50% 49%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/service-disposition": {
+    "nom": "grok/service-disposition",
+    "source": "recu/grok/service-disposition.jpg",
+    "role": "carte-service",
+    "alt": "Banquette arrière en cuir noir, eau et plaid, lumières de la ville",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "612126f0080373d2",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "44% 40%",
+    "sujet": {
+      "x": 0,
+      "y": 9.4,
+      "l": 63.6,
+      "h": 62.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.67,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.5,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.45,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.35,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-disposition-480.webp",
+      "grok/service-disposition-640.webp",
+      "grok/service-disposition-784.webp"
+    ],
+    "poids": {
+      "grok/service-disposition-480.webp": 14096,
+      "grok/service-disposition-640.webp": 19364,
+      "grok/service-disposition-784.webp": 25072
+    },
+    "media": "c.media({ nom: 'grok/service-disposition', alt: \"Banquette arrière en cuir noir, eau et plaid, lumières de la ville\", cadrage: '44% 40%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/service-evenements": {
+    "nom": "grok/service-evenements",
+    "source": "recu/grok/service-evenements.jpg",
+    "role": "carte-service",
+    "alt": "Ruban blanc noué à la portière d'une berline noire",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "524e064b5ad557e3",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "54% 49%",
+    "sujet": {
+      "x": 9.1,
+      "y": 6.3,
+      "l": 86.4,
+      "h": 90.6
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.11,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-evenements-480.webp",
+      "grok/service-evenements-640.webp",
+      "grok/service-evenements-784.webp"
+    ],
+    "poids": {
+      "grok/service-evenements-480.webp": 27780,
+      "grok/service-evenements-640.webp": 37734,
+      "grok/service-evenements-784.webp": 48048
+    },
+    "media": "c.media({ nom: 'grok/service-evenements', alt: \"Ruban blanc noué à la portière d'une berline noire\", cadrage: '54% 49%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/service-longs-trajets": {
+    "nom": "grok/service-longs-trajets",
+    "source": "recu/grok/service-longs-trajets.jpg",
+    "role": "carte-service",
+    "alt": "Autoroute à la tombée du jour, traînées de lumière",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "6fced76ea3454478",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "56% 54%",
+    "sujet": {
+      "x": 0,
+      "y": 34.4,
+      "l": 95.5,
+      "h": 56.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.77,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.37,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.3,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.05,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1440,
+      "source": [
+        960,
+        1440
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/service-longs-trajets-480.webp",
+      "grok/service-longs-trajets-640.webp",
+      "grok/service-longs-trajets-784.webp"
+    ],
+    "poids": {
+      "grok/service-longs-trajets-480.webp": 17190,
+      "grok/service-longs-trajets-640.webp": 23790,
+      "grok/service-longs-trajets-784.webp": 30818
+    },
+    "media": "c.media({ nom: 'grok/service-longs-trajets', alt: \"Autoroute à la tombée du jour, traînées de lumière\", cadrage: '56% 54%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/accueil-appel": {
+    "nom": "grok/accueil-appel",
+    "source": "recu/grok/accueil-appel.jpg",
+    "role": "section-fond",
+    "alt": "Portière ouverte d'une berline noire sur des pavés mouillés la nuit",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 5,
+    "empreinte": "cfa0cc33dd8e1c35",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "70% 50%",
+    "sujet": {
+      "x": 46.9,
+      "y": 0,
+      "l": 53.1,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.97,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.43,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.41,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.02,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 94,
+      "width": 1440,
+      "height": 810,
+      "source": [
+        1440,
+        960
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [
+      "agrandie 1,33 fois (source de 1440 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/accueil-appel-640.webp",
+      "grok/accueil-appel-1280.webp",
+      "grok/accueil-appel-1920.webp"
+    ],
+    "poids": {
+      "grok/accueil-appel-640.webp": 12612,
+      "grok/accueil-appel-1280.webp": 28104,
+      "grok/accueil-appel-1920.webp": 46528
+    },
+    "media": "c.media({ nom: 'grok/accueil-appel', alt: \"Portière ouverte d'une berline noire sur des pavés mouillés la nuit\", cadrage: '70% 50%', sizes: '100vw' })"
+  },
+  "grok/trajets-ouverture": {
+    "nom": "grok/trajets-ouverture",
+    "source": "recu/grok/trajets-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Voie rapide la nuit, traînées de lumière vers la ville",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 5,
+    "empreinte": "445a91f99a9ff320",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "63% 70%"
+    },
+    "cadrage": "52% 68%",
+    "sujet": {
+      "x": 12.5,
+      "y": 38.9,
+      "l": 75,
+      "h": 61.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.88,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.15,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.11,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/trajets-ouverture-640.webp",
+      "grok/trajets-ouverture-1280.webp",
+      "grok/trajets-ouverture-1920.webp",
+      "grok/trajets-ouverture-mobile-640.webp",
+      "grok/trajets-ouverture-mobile-1080.webp"
+    ],
+    "poids": {
+      "grok/trajets-ouverture-640.webp": 27144,
+      "grok/trajets-ouverture-1280.webp": 58780,
+      "grok/trajets-ouverture-1920.webp": 97960,
+      "grok/trajets-ouverture-mobile-640.webp": 38138,
+      "grok/trajets-ouverture-mobile-1080.webp": 73108
+    },
+    "media": "c.media({ nom: 'grok/trajets-ouverture', alt: \"Voie rapide la nuit, traînées de lumière vers la ville\", cadrage: '52% 68%', cadrageMobile: '63% 70%', sizes: '100vw', priorite: true })"
+  },
+  "grok/services-ouverture": {
+    "nom": "grok/services-ouverture",
+    "source": "recu/grok/services-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Entrée d'un grand hôtel la nuit, berline noire qui attend",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 5,
+    "empreinte": "a67422c978c2e422",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "59% 52%"
+    },
+    "cadrage": "53% 31%",
+    "sujet": {
+      "x": 31.3,
+      "y": 11.1,
+      "l": 68.7,
+      "h": 83.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.52,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.25,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.06,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/services-ouverture-640.webp",
+      "grok/services-ouverture-1280.webp",
+      "grok/services-ouverture-1920.webp",
+      "grok/services-ouverture-mobile-640.webp",
+      "grok/services-ouverture-mobile-1080.webp"
+    ],
+    "poids": {
+      "grok/services-ouverture-640.webp": 21022,
+      "grok/services-ouverture-1280.webp": 45828,
+      "grok/services-ouverture-1920.webp": 73762,
+      "grok/services-ouverture-mobile-640.webp": 36672,
+      "grok/services-ouverture-mobile-1080.webp": 68644
+    },
+    "media": "c.media({ nom: 'grok/services-ouverture', alt: \"Entrée d'un grand hôtel la nuit, berline noire qui attend\", cadrage: '53% 31%', cadrageMobile: '59% 52%', sizes: '100vw', priorite: true })"
+  },
+  "grok/flotte-ouverture": {
+    "nom": "grok/flotte-ouverture",
+    "source": "recu/grok/flotte-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Capot d'une voiture noire, reflet doré dans la pénombre",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "82c760067833711e",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "76% 50%"
+    },
+    "cadrage": "47% 54%",
+    "sujet": {
+      "x": 15.6,
+      "y": 38.9,
+      "l": 71.9,
+      "h": 38.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.92,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.65,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.6,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.57,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/flotte-ouverture-640.webp",
+      "grok/flotte-ouverture-1280.webp",
+      "grok/flotte-ouverture-1920.webp",
+      "grok/flotte-ouverture-mobile-640.webp",
+      "grok/flotte-ouverture-mobile-1080.webp"
+    ],
+    "poids": {
+      "grok/flotte-ouverture-640.webp": 8426,
+      "grok/flotte-ouverture-1280.webp": 19774,
+      "grok/flotte-ouverture-1920.webp": 34290,
+      "grok/flotte-ouverture-mobile-640.webp": 14756,
+      "grok/flotte-ouverture-mobile-1080.webp": 30104
+    },
+    "media": "c.media({ nom: 'grok/flotte-ouverture', alt: \"Capot d'une voiture noire, reflet doré dans la pénombre\", cadrage: '47% 54%', cadrageMobile: '76% 50%', sizes: '100vw', priorite: true })"
+  },
+  "grok/flotte-cuir": {
+    "nom": "grok/flotte-cuir",
+    "source": "recu/grok/flotte-cuir.jpg",
+    "role": "galerie",
+    "alt": "Siège en cuir noir surpiqué, lumière chaude",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "35b9970adc4e1559",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "60% 39%",
+    "sujet": {
+      "x": 19.1,
+      "y": 4.5,
+      "l": 80.9,
+      "h": 77.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.64,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.48,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.33,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.11,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 160,
+      "top": 0,
+      "width": 1280,
+      "height": 960,
+      "source": [
+        1440,
+        960
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/flotte-cuir-480.webp",
+      "grok/flotte-cuir-640.webp",
+      "grok/flotte-cuir-960.webp"
+    ],
+    "poids": {
+      "grok/flotte-cuir-480.webp": 19068,
+      "grok/flotte-cuir-640.webp": 26124,
+      "grok/flotte-cuir-960.webp": 42094
+    },
+    "media": "c.media({ nom: 'grok/flotte-cuir', alt: \"Siège en cuir noir surpiqué, lumière chaude\", cadrage: '60% 39%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "grok/reserver-fond": {
+    "nom": "grok/reserver-fond",
+    "source": "recu/grok/reserver-fond.jpg",
+    "role": "section-fond",
+    "alt": "Gouttes de pluie sur une vitre, lumières de la ville floues",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "bce8e4ea9ed6df9d",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "79% 54%",
+    "sujet": {
+      "x": 53.1,
+      "y": 3.1,
+      "l": 43.8,
+      "h": 86.2
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.91,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.54,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.29,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.04,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 150,
+      "width": 1440,
+      "height": 810,
+      "source": [
+        1440,
+        960
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [
+      "agrandie 1,33 fois (source de 1440 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/reserver-fond-640.webp",
+      "grok/reserver-fond-1280.webp",
+      "grok/reserver-fond-1920.webp"
+    ],
+    "poids": {
+      "grok/reserver-fond-640.webp": 23552,
+      "grok/reserver-fond-1280.webp": 51626,
+      "grok/reserver-fond-1920.webp": 82186
+    },
+    "media": "c.media({ nom: 'grok/reserver-fond', alt: \"Gouttes de pluie sur une vitre, lumières de la ville floues\", cadrage: '79% 54%', sizes: '100vw' })"
+  },
+  "grok/contact-ouverture": {
+    "nom": "grok/contact-ouverture",
+    "source": "recu/grok/contact-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Rue pavée la nuit, un réverbère doré",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "4026993aa80ad172",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "65% 69%"
+    },
+    "cadrage": "85% 60%",
+    "sujet": {
+      "x": 56.3,
+      "y": 11.1,
+      "l": 43.7,
+      "h": 88.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.97,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.57,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.36,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/contact-ouverture-640.webp",
+      "grok/contact-ouverture-1280.webp",
+      "grok/contact-ouverture-1920.webp",
+      "grok/contact-ouverture-mobile-640.webp",
+      "grok/contact-ouverture-mobile-1080.webp"
+    ],
+    "poids": {
+      "grok/contact-ouverture-640.webp": 20118,
+      "grok/contact-ouverture-1280.webp": 43634,
+      "grok/contact-ouverture-1920.webp": 73384,
+      "grok/contact-ouverture-mobile-640.webp": 45294,
+      "grok/contact-ouverture-mobile-1080.webp": 83408
+    },
+    "media": "c.media({ nom: 'grok/contact-ouverture', alt: \"Rue pavée la nuit, un réverbère doré\", cadrage: '85% 60%', cadrageMobile: '65% 69%', sizes: '100vw', priorite: true })"
+  },
+  "grok/page-404": {
+    "nom": "grok/page-404",
+    "source": "recu/grok/page-404.jpg",
+    "role": "404",
+    "alt": "Une valise seule au milieu d'une rue mouillée la nuit",
+    "grok": true,
+    "mention": "Illustration générée",
+    "beaute": 4,
+    "empreinte": "3b09fec4d646422e",
+    "ratio": "16:9",
+    "largeurs": [
+      800,
+      1600
+    ],
+    "mobile": null,
+    "cadrage": "70% 62%",
+    "sujet": {
+      "x": 34.4,
+      "y": 5.6,
+      "l": 53.1,
+      "h": 94.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.78,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.37,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.1,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.03,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080,
+      "source": [
+        1920,
+        1080
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "grok/page-404-800.webp",
+      "grok/page-404-1600.webp"
+    ],
+    "poids": {
+      "grok/page-404-800.webp": 46402,
+      "grok/page-404-1600.webp": 127950
+    },
+    "media": "c.media({ nom: 'grok/page-404', alt: \"Une valise seule au milieu d'une rue mouillée la nuit\", cadrage: '70% 62%', sizes: '100vw', ratio: '16 / 9' })"
+  }
+}

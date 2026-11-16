@@ -1,0 +1,557 @@
+/* Maysam Transfert · direction « Les phares dans la nuit ».
+   Palette tenue partout : nuit (fond dominant), ivoire (sections utiles), or (accent : boutons, un mot par titre).
+   Titres Bodoni Moda (taille optique), texte Manrope, chiffres JetBrains Mono. */
+@font-face { font-family: 'Bodoni Moda'; src: url('/assets/fonts/bodoni-moda.woff2') format('woff2'); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Bodoni Moda'; src: url('/assets/fonts/bodoni-moda-italique.woff2') format('woff2'); font-weight: 400 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/assets/fonts/manrope-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/assets/fonts/manrope-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/assets/fonts/manrope-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+/* Polices de secours ajustées : le texte ne saute pas à l'arrivée des vraies polices. */
+@font-face { font-family: 'Bodoni repli'; src: local('Georgia'), local('Times New Roman'); size-adjust: 96%; ascent-override: 92%; descent-override: 26%; }
+@font-face { font-family: 'Manrope repli'; src: local('Arial'), local('Helvetica'); size-adjust: 104%; ascent-override: 102%; descent-override: 29%; }
+
+:root {
+  --nuit: #0C0E13; --nuit-2: #07080B; --carte: #14171E; --ivoire: #F2EDE3; --ivoire-2: #FBF8F2;
+  --or: #C9A45C; --or-clair: #E2C487; --or-fonce: #7A5A1E;
+  --accent: var(--or); --accent-texte: var(--or);
+  --police-titres: 'Bodoni Moda', 'Bodoni repli', Georgia, serif;
+  --police-texte: 'Manrope', 'Manrope repli', system-ui, sans-serif;
+  --police-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --ligne: rgba(242, 237, 227, .16);
+  --texte-doux: rgba(242, 237, 227, .78);
+  --rayon: 14px;
+  --largeur: 1280px;
+  --section: clamp(60px, 8.5vw, 118px);
+}
+body { font-size: clamp(1rem, .97rem + .18vw, 1.125rem); }
+h1, h2, h3 { font-family: var(--police-titres); font-weight: 500; letter-spacing: -.012em; font-optical-sizing: auto; }
+h1 em, h2 em { font-style: italic; color: var(--accent-texte); }
+h2 { font-size: clamp(2.1rem, 1.3rem + 3.3vw, 4.4rem); line-height: 1.02; }
+h3 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); line-height: 1.12; }
+::selection { background: var(--or); color: var(--nuit); }
+.surtitre { margin: 0 0 1.1em; font: 500 max(12px, .78rem)/1.3 var(--police-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-texte); }
+.texte-doux { color: var(--texte-doux); }
+.conteneur { width: min(100% - 2 * var(--gouttiere), var(--largeur)); }
+
+/* Fonds : nuit par défaut, ivoire pour les sections utiles (estimateur, flotte, tarifs, formulaire, FAQ). */
+.fond-ivoire { background: var(--ivoire); color: var(--nuit); --texte: var(--nuit); --fond: var(--ivoire); --ligne: rgba(12, 14, 19, .16); --texte-doux: #4A4740; --accent-texte: var(--or-fonce); }
+.fond-ivoire a:not(.bouton) { color: inherit; }
+
+/* Boutons. */
+.bouton { background: var(--or); color: var(--nuit); font-weight: 700; letter-spacing: .01em; transition: background-color .25s, color .25s, box-shadow .25s; }
+.bouton:hover { background: var(--or-clair); }
+.bouton--contour { background: transparent; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; }
+.bouton--contour:hover { background: rgba(242, 237, 227, .08); }
+.fond-ivoire .bouton--contour:hover { background: rgba(12, 14, 19, .06); }
+.bouton--sombre { background: var(--nuit); color: var(--ivoire); }
+.bouton--sombre:hover { background: #262a33; }
+.bouton--petit { min-height: 44px; padding: .5em 1.1em; font-size: .95rem; }
+.lien-fleche { display: inline-flex; align-items: center; gap: .55em; min-height: 44px; font-weight: 700; text-decoration: none; color: var(--accent-texte); }
+.lien-fleche::after { content: ""; width: 1.6em; height: 1px; background: currentColor; transition: width .35s var(--courbe); }
+.lien-fleche:hover::after { width: 2.4em; }
+.lien-suite { margin: clamp(28px, 4vw, 48px) 0 0; }
+.point-vert { display: inline-block; width: 8px; height: 8px; margin-right: .6em; border-radius: 50%; background: #5BD18A; box-shadow: 0 0 0 4px rgba(91, 209, 138, .18); vertical-align: .1em; }
+
+/* En-tête. */
+[data-entete] { background: var(--nuit); border-bottom-color: rgba(242, 237, 227, .1); }
+.entete-logo img { width: 40px; height: 40px; object-fit: contain; }
+.entete-logo span { font-family: var(--police-titres); font-size: 1.15rem; font-weight: 600; letter-spacing: .01em; }
+[data-nav] a { font-weight: 600; font-size: .95rem; min-width: 44px; justify-content: center; }
+[data-nav] a[aria-current] { color: var(--or); text-decoration-color: var(--or); }
+[data-menu-bouton] { background: var(--ivoire); color: var(--nuit); }
+.menu-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.menu-dispo { color: var(--texte-doux); font-size: .95rem; }
+
+/* Panneau de l'intro : deux phares qui s'allument dans le noir. */
+.ouverture-panneau { gap: 22px; }
+.ouverture-phares { display: flex; gap: 46px; width: 150px; justify-content: center; }
+.phare { position: relative; width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(circle, #fff 0 18%, #F6E3B4 30%, rgba(201, 164, 92, .55) 52%, rgba(201, 164, 92, 0) 72%); opacity: 0; transform: scale(.4); }
+.phare::after { content: ""; position: absolute; inset: -140%; border-radius: 50%; background: radial-gradient(circle, rgba(246, 227, 180, .28), rgba(201, 164, 92, 0) 62%); }
+.ouverture-nom { margin: 0; font: 500 clamp(1.6rem, 4vw, 2.6rem)/1 var(--police-titres); color: var(--ivoire); letter-spacing: .02em; opacity: 0; }
+.ouverture-ligne { margin: 0; font: 500 12px/1 var(--police-mono); letter-spacing: .24em; text-transform: uppercase; color: var(--or); opacity: 0; }
+
+/* Voile de transition : une vitre teintée qui remonte, filet doré sur son bord. */
+[data-voile] { background: var(--nuit); }
+.voile-filet { position: absolute; left: 0; right: 0; top: -3px; height: 2px; background: linear-gradient(90deg, transparent, var(--or) 20%, var(--or-clair) 50%, var(--or) 80%, transparent); box-shadow: 0 0 24px rgba(201, 164, 92, .55); }
+.voile-contenu img { width: 72px; height: 72px; object-fit: contain; }
+[data-voile-libelle] { color: var(--ivoire); font-style: italic; }
+
+/* Ouverture de l'accueil : avenue de nuit plein cadre, traînées de phares, titre à gauche. */
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + clamp(28px, 6vh, 72px)); overflow: hidden; isolation: isolate; }
+.hero-media { position: absolute; inset: 0; z-index: -3; border-radius: 0; }
+.hero-trainees { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; width: 100%; z-index: -2; pointer-events: none; }
+.hero-voile { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 19, .94) 0%, rgba(12, 14, 19, .78) 34%, rgba(12, 14, 19, .25) 62%, rgba(12, 14, 19, 0) 80%), linear-gradient(0deg, rgba(12, 14, 19, .7), rgba(12, 14, 19, 0) 30%); }
+.hero-contenu { position: relative; max-width: var(--largeur); }
+.hero-titre { max-width: 9.5em; margin: 0 0 .32em; font-size: clamp(3rem, min(8vw, 12.5vh), 8.2rem); line-height: .96; letter-spacing: -.025em; font-weight: 500; }
+.hero-titre em { color: var(--or); }
+.hero-texte { max-width: 33em; font-size: clamp(1.02rem, .95rem + .35vw, 1.25rem); color: var(--texte-doux); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 26px 0 18px; }
+.hero-info { margin: 0; font: 500 max(13px, .85rem)/1.5 var(--police-mono); letter-spacing: .04em; color: var(--ivoire); }
+.hero-points { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; margin: 28px 0 0; padding: 22px 0 0; border-top: 1px solid var(--ligne); font-size: .95rem; color: var(--texte-doux); max-width: 640px; }
+.hero-points li::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: .6em; background: var(--or); transform: rotate(45deg); vertical-align: .15em; }
+/* Avant l'intro (avec JavaScript) : ce que l'intro ou l'arrivée fait apparaître est caché. */
+html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) { opacity: 0; }
+@media (max-width: 760px) {
+  .hero { align-items: start; padding-top: calc(var(--entete-h) + 28px); }
+  .hero-voile { background: linear-gradient(180deg, rgba(12, 14, 19, .92) 0%, rgba(12, 14, 19, .7) 46%, rgba(12, 14, 19, .2) 72%, rgba(12, 14, 19, .6) 100%); }
+  .hero-trainees { height: 40%; }
+  .hero-actions .bouton { flex: 1 1 auto; }
+}
+@media (max-height: 820px) and (min-width: 761px) { .hero-titre { font-size: clamp(2.8rem, min(7vw, 11.5vh), 7rem); } .hero-actions { margin: 18px 0 12px; } }
+@media (max-height: 500px) and (min-width: 561px) { .hero-titre { font-size: clamp(2rem, 9.5vh, 3.2rem); max-width: 14em; } .hero-actions { margin: 10px 0 6px; } .hero-actions .bouton { min-height: 44px; } }
+
+/* Têtes de section. */
+.tete-section { max-width: 760px; margin-bottom: clamp(32px, 5vw, 64px); }
+.tete-section > p:not(.surtitre) { font-size: clamp(1.02rem, .97rem + .25vw, 1.2rem); color: var(--texte-doux); }
+
+/* Tableau des départs : palettes qui tournent. */
+.departs { padding-block: var(--section); }
+.tableau { display: grid; background: var(--nuit-2); border: 1px solid rgba(242, 237, 227, .1); border-radius: 18px; padding: clamp(14px, 2.4vw, 30px); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .8); }
+.tableau-entete, .tableau-ligne { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; align-items: center; column-gap: clamp(14px, 3vw, 44px); }
+.tableau-entete { padding: 0 0 12px; border-bottom: 1px solid rgba(242, 237, 227, .1); font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--or); }
+.tableau-ligne { padding: clamp(10px, 1.4vw, 16px) 0; border-bottom: 1px solid rgba(242, 237, 227, .07); }
+.tableau-ligne:last-child { border-bottom: 0; padding-bottom: 0; }
+.flaps { display: inline-flex; gap: 3px; font: 700 clamp(15px, 1.65vw, 26px)/1 var(--police-mono); font-variant-numeric: tabular-nums; }
+.flap { position: relative; display: inline-grid; place-items: center; width: 1.18em; height: 1.62em; border-radius: 4px; background: #191C24; color: var(--ivoire); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .6); }
+.flap::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0, 0, 0, .7); }
+.flaps--or .flap { color: var(--or); }
+.flaps--petit { font-size: clamp(13px, 1.2vw, 19px); }
+.tableau-duree { display: inline-flex; align-items: center; gap: 6px; }
+.tableau-unite { font: 500 max(12px, .75rem)/1 var(--police-mono); color: var(--texte-doux); text-transform: uppercase; letter-spacing: .1em; }
+.flap.tourne { animation: flap .12s linear; }
+@keyframes flap { 0% { transform: scaleY(1); } 50% { transform: scaleY(.35); } 100% { transform: scaleY(1); } }
+@media (max-width: 760px) {
+  .tableau-entete { display: none; }
+  .tableau-ligne { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "dest dest" "duree prix" "action action"; row-gap: 10px; }
+  .tableau-dest { grid-area: dest; } .tableau-duree { grid-area: duree; } .tableau-prix { grid-area: prix; } .tableau-action { grid-area: action; }
+  .tableau-action .bouton { width: 100%; }
+  .flaps { gap: 2px; font-size: 17px; }
+  .flaps--petit { font-size: 14px; }
+}
+@media (max-width: 360px) { .flaps { font-size: 15px; } .flap { width: 1.12em; } }
+
+/* Estimateur. */
+.estim { padding-block: var(--section); }
+.estim-grille { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); grid-template-areas: "tete resultat" "form resultat"; column-gap: clamp(28px, 5vw, 80px); align-items: start; }
+.estim-tete { grid-area: tete; }
+.estim-tete p:not(.surtitre) { color: var(--texte-doux); max-width: 36em; }
+.estim-form { grid-area: form; display: grid; gap: 28px; }
+.estim-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.estim-form legend { padding: 0; margin-bottom: 12px; font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or-fonce); }
+.estim-choix-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr)); gap: 10px; }
+.estim-choix { position: relative; display: grid; gap: 2px; min-height: 76px; padding: 14px 16px; border: 1px solid rgba(12, 14, 19, .2); border-radius: 12px; background: var(--ivoire-2); cursor: pointer; transition: border-color .25s, background-color .25s, box-shadow .25s; }
+.estim-choix input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.estim-choix-nom { font-weight: 700; }
+.estim-choix-prix { font: 700 1.05rem/1.2 var(--police-mono); color: var(--or-fonce); }
+.estim-choix:has(input:checked) { border-color: var(--nuit); background: #fff; box-shadow: inset 0 0 0 1px var(--nuit), 0 14px 30px -18px rgba(12, 14, 19, .5); }
+.estim-choix:has(input:focus-visible) { outline: 3px solid var(--or-fonce); outline-offset: 2px; }
+.estim-compteurs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.compteur-ligne { display: flex; align-items: center; gap: 10px; padding: 6px; border: 1px solid rgba(12, 14, 19, .2); border-radius: 999px; background: var(--ivoire-2); width: max-content; }
+.compteur-bouton { display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--nuit); color: var(--ivoire); font-size: 1.3rem; line-height: 1; }
+.compteur-bouton:disabled { opacity: .3; cursor: not-allowed; }
+.compteur-valeur { min-width: 2ch; text-align: center; font: 700 1.4rem/1 var(--police-mono); font-variant-numeric: tabular-nums; }
+.estim-resultat { grid-area: resultat; position: sticky; top: calc(var(--entete-h) + 24px); display: grid; gap: 6px; padding: clamp(22px, 3vw, 40px); border-radius: 22px; background: var(--nuit); color: var(--ivoire); box-shadow: 0 40px 70px -40px rgba(12, 14, 19, .8); }
+.estim-label { margin: 0; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.estim-vehicule { display: grid; gap: 4px; }
+.estim-silhouette { width: 100%; max-width: 300px; height: auto; color: var(--ivoire); }
+.estim-silhouette[hidden] { display: none; }
+.estim-vehicule-nom { margin: 0; font-weight: 700; }
+.estim-prix { margin: 8px 0 0; display: flex; align-items: baseline; font: 500 clamp(4.2rem, 3rem + 4vw, 7rem)/1.4 var(--police-titres); color: var(--or); font-variant-numeric: tabular-nums; }
+.estim-prix.sur-demande { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); line-height: 1.4; min-height: 4.2rem; align-items: center; }
+.estim-montant { display: inline-block; min-width: 1.9ch; }
+.estim-devise { font-size: .6em; margin-left: .14em; }
+.estim-duree { margin: 0; font: 500 max(13px, .85rem)/1.4 var(--police-mono); color: var(--ivoire); }
+.estim-note { margin: 6px 0 18px; font-size: .95rem; color: rgba(242, 237, 227, .78); min-height: 3em; }
+@media (max-width: 900px) {
+  .estim-grille { grid-template-columns: minmax(0, 1fr); grid-template-areas: "tete" "form" "resultat"; row-gap: 28px; }
+  .estim-resultat { position: static; }
+}
+@media (max-width: 420px) { .estim-compteurs { grid-template-columns: minmax(0, 1fr); } }
+
+/* Silhouettes dessinées. */
+.silhouette { display: block; width: 100%; height: auto; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.silhouette-vitres { stroke-width: 1.2; opacity: .75; }
+.silhouette-ligne { stroke-width: 1; opacity: .45; }
+.silhouette-roue, .silhouette-jante { stroke: var(--accent-texte); }
+.silhouette-sol { stroke-width: 1; opacity: .35; }
+
+/* Services en galerie épinglée. */
+.services-galerie { background: var(--nuit); overflow: hidden; }
+.services-tete { display: grid; gap: 6px; margin-bottom: clamp(14px, 2.4vh, 28px); }
+.services-tete h2 { margin: 0; padding-bottom: .24em; font-size: clamp(2rem, min(4.6vw, 7.5vh), 4.2rem); }
+.services-tete > p { max-width: 30em; margin: 0; color: var(--texte-doux); }
+.services-piste { display: flex; gap: clamp(14px, 2vw, 28px); padding-inline: var(--gouttiere); width: max-content; }
+.service-carte { display: flex; flex-direction: column; height: 100%; aspect-ratio: 3 / 4.6; min-width: 0; }
+.service-media { flex: 1 1 auto; min-height: 0; border-radius: 16px; }
+.service-texte { flex: none; min-height: 8.6em; padding-top: 14px; }
+.service-num { margin: 0 0 6px; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.service-texte h3 { margin: 0 0 4px; }
+.service-texte p { margin: 0; font-size: .95rem; color: var(--texte-doux); }
+.service-liens { display: flex; flex-wrap: wrap; gap: 0 18px; }
+.galerie-progres { height: 2px; margin: 14px var(--gouttiere) 0; background: var(--ligne); flex: none; }
+.galerie-progres span { display: block; height: 100%; background: var(--or); transform-origin: 0 50%; transform: scaleX(0); }
+@media (max-height: 500px) and (min-width: 761px) { .service-desc { display: none; } .service-texte { min-height: 0; } }
+html:not(.js) .services-galerie.ecran.epingle, html.secours .services-galerie.ecran.epingle { height: auto; min-height: 0; }
+html:not(.js) .services-piste, html.secours .services-piste { width: auto; max-width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; contain: paint; }
+html:not(.js) .service-carte, html.secours .service-carte { flex: 0 0 min(360px, 80vw); height: auto; aspect-ratio: auto; scroll-snap-align: start; }
+html:not(.js) .service-media, html.secours .service-media { aspect-ratio: 3 / 4; flex: none; }
+@media (max-width: 760px) {
+  .services-galerie.ecran.epingle { height: auto; min-height: 0; padding-block: var(--section); }
+  .services-piste { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: none; contain: paint; }
+  .service-carte { flex: 0 0 78vw; height: auto; aspect-ratio: auto; scroll-snap-align: start; }
+  .service-media { aspect-ratio: 4 / 5; flex: none; }
+  .galerie-progres { display: none; }
+}
+
+/* Flotte (accueil). */
+.flotte-accueil { padding-block: var(--section); }
+.vehicules-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 40px); }
+.vehicule { padding: clamp(18px, 2.4vw, 28px); border-radius: 18px; background: var(--ivoire-2); border: 1px solid rgba(12, 14, 19, .1); }
+.vehicule-dessin { color: var(--nuit); margin-bottom: 18px; }
+.vehicule h3 { margin: 0 0 2px; }
+.vehicule-categorie { margin: 0 0 16px; color: var(--texte-doux); }
+.vehicule-chiffres { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding-top: 14px; border-top: 1px solid rgba(12, 14, 19, .14); }
+.vehicule-chiffres dt { font: 500 max(12px, .72rem)/1 var(--police-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--texte-doux); }
+.vehicule-chiffres dd { margin: 2px 0 0; font: 500 clamp(1.6rem, 1.2rem + 1vw, 2.2rem)/1.4 var(--police-titres); }
+@media (max-width: 860px) { .vehicules-grille { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pancarte. */
+.pancarte-section { position: relative; padding-block: var(--section); overflow: hidden; isolation: isolate; }
+.pancarte-fond { position: absolute; inset: 0; z-index: -2; border-radius: 0; }
+.pancarte-section::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 19, .93) 0%, rgba(12, 14, 19, .8) 45%, rgba(12, 14, 19, .35) 100%); }
+.pancarte-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.pancarte-texte > p:not(.surtitre) { color: var(--texte-doux); max-width: 34em; }
+.liste-or { list-style: none; margin: 22px 0 28px; padding: 0; display: grid; gap: 10px; }
+.liste-or li { display: flex; gap: 12px; align-items: baseline; }
+.liste-or li::before { content: ""; flex: none; width: 18px; height: 1px; background: var(--or); transform: translateY(-.3em); }
+.pancarte-essai { display: grid; gap: 8px; max-width: 360px; }
+.pancarte-essai label { font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.pancarte-essai input { min-height: 52px; padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(242, 237, 227, .35); background: rgba(12, 14, 19, .8); color: var(--ivoire); font-size: max(16px, 1rem); }
+.pancarte-essai input:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+.pancarte-essai input::placeholder { color: rgba(242, 237, 227, .6); }
+.pancarte { margin: 0; justify-self: center; width: min(100%, 460px); transform-origin: 50% 0; }
+.pancarte-carton { position: relative; display: grid; justify-items: center; gap: 8px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 36px) clamp(30px, 4vw, 48px); border-radius: 10px; background: #FFFDF8; color: var(--nuit); box-shadow: 0 50px 90px -30px rgba(0, 0, 0, .85), 0 0 0 1px rgba(12, 14, 19, .06); transform: rotate(-2.5deg); }
+.pancarte-carton::before { content: ""; position: absolute; left: 50%; top: -60px; width: 2px; height: 60px; background: linear-gradient(rgba(242, 237, 227, 0), rgba(242, 237, 227, .55)); transform: translateX(-50%); }
+.pancarte-logo { width: 54px; height: 54px; object-fit: contain; }
+.pancarte-marque { margin: 0; font: 700 max(12px, .72rem)/1 var(--police-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--or-fonce); }
+.pancarte-nom { margin: 4px 0 0; min-height: 1.45em; width: 100%; text-align: center; font: 500 clamp(2rem, 1.2rem + 2.6vw, 3.4rem)/1.45 var(--police-titres); font-style: italic; overflow-wrap: anywhere; border-bottom: 2px solid rgba(12, 14, 19, .14); padding-bottom: 10px; }
+@media (max-width: 860px) { .pancarte-grille { grid-template-columns: minmax(0, 1fr); } .pancarte { width: min(100%, 380px); } .pancarte-section::before { background: linear-gradient(180deg, rgba(12, 14, 19, .9), rgba(12, 14, 19, .78)); } }
+
+/* Témoignages. */
+.temoignages { padding-block: var(--section); }
+.temoignages-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.temoignage { margin: 0; padding: clamp(22px, 2.6vw, 32px); border-radius: 18px; background: var(--carte); border: 1px solid rgba(242, 237, 227, .08); display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+.temoignage blockquote { margin: 0; }
+.temoignage blockquote p { margin: 0; font: italic 500 clamp(1.2rem, 1rem + .6vw, 1.55rem)/1.3 var(--police-titres); }
+.temoignage figcaption { display: grid; gap: 4px; font-size: .95rem; color: var(--texte-doux); }
+.temoignage figcaption strong { color: var(--ivoire); }
+.temoignage figcaption .temoignage-trajet { font: 500 max(12px, .76rem)/1.3 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--or); }
+@media (max-width: 960px) { .temoignages-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .temoignages-grille { grid-template-columns: minmax(0, 1fr); } }
+
+/* FAQ. */
+.faq-section, .bon-a-savoir { padding-block: var(--section); }
+.faq-grille { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 6vw, 96px); align-items: start; }
+.faq-grille .tete-section { position: sticky; top: calc(var(--entete-h) + 32px); margin-bottom: 0; }
+.faq-logo { width: 130px; margin-top: 28px; }
+.faq-logo img { width: 100%; height: auto; }
+.faq-item { border-bottom: 1px solid var(--ligne); }
+.faq-item:first-child { border-top: 1px solid var(--ligne); }
+.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 68px; padding: 10px 0; font-weight: 700; font-size: clamp(1.02rem, .98rem + .2vw, 1.15rem); cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-signe { position: relative; flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid currentColor; }
+.faq-signe::before, .faq-signe::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: currentColor; transform: translate(-50%, -50%); transition: transform .35s var(--courbe); }
+.faq-signe::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq-item[open] .faq-signe::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq-reponse { overflow: hidden; }
+.faq-reponse p { margin: 0; padding: 0 0 22px; max-width: 40em; color: var(--texte-doux); }
+@media (max-width: 860px) { .faq-grille { grid-template-columns: minmax(0, 1fr); } .faq-grille .tete-section { position: static; } .faq-logo { width: 96px; } }
+
+/* Appel final. */
+.appel { position: relative; min-height: min(86svh, 820px); display: grid; align-items: center; padding-block: var(--section); overflow: hidden; isolation: isolate; }
+.appel-media { position: absolute; inset: 0; z-index: -2; border-radius: 0; }
+.appel::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 19, .92) 0%, rgba(12, 14, 19, .7) 44%, rgba(12, 14, 19, .12) 80%); }
+.appel-contenu > * { max-width: 620px; }
+.appel-contenu > p:not(.appel-actions) { color: var(--texte-doux); font-size: clamp(1.02rem, .97rem + .25vw, 1.2rem); }
+.appel-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+@media (max-width: 760px) { .appel::before { background: linear-gradient(180deg, rgba(12, 14, 19, .88), rgba(12, 14, 19, .72)); } }
+
+/* Pied de page. */
+.pied { background: var(--nuit-2); border-top: 1px solid rgba(242, 237, 227, .08); }
+.pied-marque img { width: 88px; height: auto; margin-bottom: 10px; }
+.pied-marque p:last-child { color: var(--texte-doux); max-width: 26em; }
+.pied-dispo { color: var(--texte-doux); padding-top: 6px; }
+.pied a { min-width: 44px; }
+.pied-bas { color: rgba(242, 237, 227, .78); }
+.pied-bas a { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* ===== Trajets & tarifs : ouverture « prix en très grand ». ===== */
+.ouv-prix { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + 32px); overflow: hidden; }
+.ouv-prix-grille { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: end; }
+.ouv-prix-texte h1 { font-size: clamp(2.6rem, min(5.8vw, 10vh), 6rem); line-height: .98; }
+.ouv-prix-texte > p:not(.surtitre):not(.hero-actions):not(.hero-info) { color: var(--texte-doux); max-width: 30em; }
+.ouv-prix-media { position: absolute; top: calc(var(--entete-h) + 16px); right: 0; bottom: 16px; width: 54%; z-index: 0; border-radius: 22px 0 0 22px; }
+.ouv-prix-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 14, 19, .55), rgba(12, 14, 19, 0) 40%); pointer-events: none; }
+.prix-geant { justify-self: end; width: min(100%, 440px); padding: clamp(20px, 2.6vw, 34px); border-radius: 22px; background: rgba(7, 8, 11, .94); border: 1px solid rgba(201, 164, 92, .35); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
+.prix-geant-legende { margin: 0 0 8px; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.prix-geant-dest { margin: 0; height: 1.5em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 700; font-size: 1.1rem; }
+.prix-geant-montant { margin: 14px 0 0; display: flex; align-items: baseline; font: 500 clamp(5rem, 3rem + 6vw, 9rem)/1.4 var(--police-titres); color: var(--or); font-variant-numeric: tabular-nums; }
+.prix-geant-montant > span:first-child { display: inline-block; min-width: 2.1ch; }
+.prix-geant-devise { font-size: .5em; margin-left: .12em; }
+.prix-geant-duree { margin: 10px 0 0; height: 1.5em; font: 500 max(13px, .9rem)/1.5 var(--police-mono); color: var(--texte-doux); }
+.prix-geant-points { display: flex; gap: 8px; list-style: none; margin: 16px 0 0; padding: 0; }
+.prix-geant-points li { width: 26px; height: 3px; border-radius: 2px; background: rgba(242, 237, 227, .2); transition: background-color .3s; }
+.prix-geant-points li.actif { background: var(--or); }
+@media (max-width: 860px) {
+  .ouv-prix { min-height: 0; align-items: start; }
+  .ouv-prix-grille { grid-template-columns: minmax(0, 1fr); }
+  .ouv-prix-media { position: relative; top: auto; right: auto; bottom: auto; width: auto; height: 34svh; margin: 20px var(--gouttiere) 0; border-radius: 18px; }
+  .prix-geant { justify-self: stretch; width: auto; }
+  .ouv-prix { display: block; }
+}
+@media (max-height: 820px) and (min-width: 861px) { .prix-geant-montant { font-size: clamp(4rem, 2.6rem + 5vw, 7rem); } .ouv-prix-texte h1 { font-size: clamp(2.4rem, min(5vw, 9.5vh), 5rem); } }
+@media (max-height: 500px) and (min-width: 561px) { .prix-geant-montant { font-size: 3.4rem; } .prix-geant { padding: 14px 18px; } .prix-geant-points { display: none; } .ouv-prix-texte h1 { font-size: clamp(1.9rem, 9vh, 2.8rem); } }
+
+/* Carte des trajets. */
+.carte-section { padding-block: var(--section); }
+.carte { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-areas: "svg liste" "svg detail"; gap: 18px clamp(24px, 4vw, 56px); align-items: start; }
+.carte--zone { grid-template-columns: minmax(0, 1fr); grid-template-areas: "svg"; }
+.carte-svg { grid-area: svg; width: 100%; height: auto; overflow: visible; }
+.carte-idf { fill: rgba(242, 237, 227, .03); stroke: rgba(242, 237, 227, .28); stroke-width: 1; stroke-dasharray: 3 5; }
+.carte-seine { fill: none; stroke: #2B4A6B; stroke-width: 4; stroke-linecap: round; opacity: .8; }
+.carte-peripherique { fill: none; stroke: rgba(242, 237, 227, .45); stroke-width: 1.2; }
+.carte-route { fill: none; stroke: rgba(201, 164, 92, .5); stroke-width: 2; stroke-linecap: round; transition: stroke .3s, stroke-width .3s; }
+.carte-route.actif { stroke: var(--or); stroke-width: 3.2; }
+.carte-voiture { fill: var(--or-clair); }
+.carte-paris { fill: var(--or); }
+.carte-nom-paris { font: 600 16px/1 var(--police-titres); fill: var(--ivoire); letter-spacing: .04em; }
+.carte-point-rond { fill: var(--nuit); stroke: var(--or); stroke-width: 2; }
+.carte-point.actif .carte-point-rond { fill: var(--or); }
+.carte-etiquette-nom { font: 700 15px/1 var(--police-texte); fill: var(--ivoire); }
+.carte-etiquette-prix { font: 500 13px/1 var(--police-mono); fill: var(--or); }
+.carte-liste { grid-area: liste; list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.carte-bouton { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nom prix" "duree prix"; align-items: center; gap: 2px 14px; min-height: 60px; padding: 10px 16px; text-align: left; border-radius: 12px; border: 1px solid rgba(242, 237, 227, .14); background: var(--carte); color: var(--ivoire); transition: border-color .25s, background-color .25s; }
+.carte-bouton[aria-pressed="true"] { border-color: var(--or); background: #1B1E26; }
+.carte-bouton-nom { grid-area: nom; font-weight: 700; }
+.carte-bouton-duree { grid-area: duree; font: 500 max(12px, .8rem)/1.2 var(--police-mono); color: var(--texte-doux); }
+.carte-bouton-prix { grid-area: prix; font: 500 1.6rem/1.4 var(--police-titres); color: var(--or); }
+.carte-detail { grid-area: detail; }
+.carte-fiche { padding: 20px; border-radius: 16px; border: 1px solid rgba(201, 164, 92, .35); }
+.carte-fiche-lieu { margin: 0 0 6px; color: var(--texte-doux); font-size: .95rem; }
+.carte-fiche-prix { margin: 0; font: 500 3.4rem/1.4 var(--police-titres); color: var(--or); }
+.carte-fiche-duree { margin: 6px 0 16px; font: 500 max(13px, .85rem)/1.4 var(--police-mono); }
+.fond-ivoire .carte-idf { fill: rgba(12, 14, 19, .03); stroke: rgba(12, 14, 19, .35); }
+.fond-ivoire .carte-peripherique { stroke: rgba(12, 14, 19, .5); }
+.fond-ivoire .carte-route { stroke: rgba(122, 90, 30, .55); }
+.fond-ivoire .carte-nom-paris, .fond-ivoire .carte-etiquette-nom { fill: var(--nuit); }
+.fond-ivoire .carte-etiquette-prix { fill: var(--or-fonce); }
+.fond-ivoire .carte-point-rond { fill: var(--ivoire); stroke: var(--or-fonce); }
+.fond-ivoire .carte-paris, .fond-ivoire .carte-voiture { fill: var(--or-fonce); }
+@media (max-width: 860px) { .carte { grid-template-columns: minmax(0, 1fr); grid-template-areas: "svg" "liste" "detail"; } .carte-etiquette-prix { display: none; } .carte-etiquette-nom { font-size: 17px; } }
+
+/* Tarifs, ce qui est compris, sur demande. */
+.tarifs, .inclus, .demande { padding-block: var(--section); }
+.tarifs-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.tarif { display: flex; flex-direction: column; gap: 4px; padding: 22px; border-radius: 18px; background: var(--ivoire-2); border: 1px solid rgba(12, 14, 19, .1); }
+.tarif-dest { margin: 0; font-weight: 700; }
+.tarif-lieu { margin: 0; font-size: .9rem; color: var(--texte-doux); min-height: 2.8em; }
+.tarif-prix { margin: 6px 0 0; font: 500 clamp(3rem, 2.4rem + 1.6vw, 4rem)/1.4 var(--police-titres); }
+.tarif-sens { margin: 6px 0 16px; font-size: .9rem; color: var(--texte-doux); }
+.tarif .bouton { margin-top: auto; align-self: flex-start; }
+.inclus-grille { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px); }
+.inclus-item h3 { margin: 14px 0 6px; font-size: clamp(1.25rem, 1.1rem + .6vw, 1.6rem); }
+.inclus-item p { margin: 0; color: var(--texte-doux); }
+.icone { width: 52px; height: 52px; fill: none; stroke: var(--or); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 860px) { .inclus-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .inclus-grille { grid-template-columns: minmax(0, 1fr); } }
+.demande-grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.demande-media { aspect-ratio: 3 / 2; border-radius: 18px; margin-bottom: 18px; }
+.demande-carte h3 { margin: 0 0 6px; }
+.demande-carte p { margin: 0 0 6px; color: var(--texte-doux); }
+.demande-tarif { font: 500 max(13px, .85rem)/1.4 var(--police-mono); color: var(--or-fonce) !important; }
+@media (max-width: 760px) { .demande-grille { grid-template-columns: minmax(0, 1fr); } }
+
+/* ===== Services : ouverture en cadre, titre qui déborde du bas de l'image. ===== */
+.ouv-plein { position: relative; padding: calc(var(--entete-h) + 14px) var(--gouttiere) calc(var(--barres-h) + 24px); min-height: 100vh; min-height: 100svh; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+.ouv-plein-media { grid-row: 1 / 3; grid-column: 1; height: auto; min-height: 0; border-radius: 24px; }
+.ouv-plein-media picture { position: absolute; inset: 0; }
+.ouv-plein-voile { grid-row: 1 / 3; grid-column: 1; border-radius: 24px; background: linear-gradient(0deg, rgba(12, 14, 19, .97) 0%, rgba(12, 14, 19, .88) 42%, rgba(12, 14, 19, 0) 78%), linear-gradient(90deg, rgba(12, 14, 19, .8), rgba(12, 14, 19, 0) 60%); pointer-events: none; }
+.ouv-plein-contenu { grid-row: 2; grid-column: 1; position: relative; z-index: 2; isolation: isolate; width: auto; margin: 0; padding: clamp(20px, 4vw, 56px) clamp(20px, 4vw, 56px) clamp(24px, 6vh, 96px); }
+.ouv-plein-contenu::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: min(100%, 860px); z-index: -1; border-radius: 0 0 0 24px; background: linear-gradient(90deg, rgba(12, 14, 19, .9) 0%, rgba(12, 14, 19, .78) 60%, rgba(12, 14, 19, 0) 100%); pointer-events: none; }
+html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
+.ouv-plein-contenu h1 { max-width: 11em; margin-bottom: .25em; font-size: clamp(2.8rem, min(7vw, 11vh), 7.4rem); line-height: .95; }
+.ouv-plein-contenu > p:not(.surtitre):not(.hero-actions):not(.hero-info) { max-width: 34em; color: var(--texte-doux); }
+@media (max-width: 760px) {
+  .ouv-plein { padding-inline: 12px; grid-template-rows: auto auto; min-height: 0; }
+  .ouv-plein-media { grid-row: 1; height: 30svh; border-radius: 18px; }
+  .ouv-plein-contenu .hero-actions .bouton--contour { display: none; }
+  .ouv-plein-voile { grid-row: 1; border-radius: 18px; background: linear-gradient(0deg, rgba(12, 14, 19, .7), rgba(12, 14, 19, 0) 45%); }
+  .ouv-plein-contenu { grid-row: 2; padding: 22px 4px 8px; }
+}
+@media (max-height: 820px) and (min-width: 761px) { .ouv-plein-contenu h1 { font-size: clamp(2.6rem, min(6vw, 10vh), 6rem); } .ouv-plein-contenu { padding-block: 24px; } }
+@media (max-height: 500px) and (min-width: 561px) { .ouv-plein-contenu h1 { font-size: clamp(1.9rem, 9vh, 2.8rem); } .ouv-plein-contenu { padding: 12px 22px; } .ouv-plein-contenu .surtitre { display: none; } }
+
+/* Planches empilées (module) : variables reliées à la palette. */
+.ple { --couleur-fond: var(--nuit); --couleur-texte: var(--ivoire); --couleur-texte-doux: rgba(242, 237, 227, .78); --couleur-accent: var(--or); --couleur-sur-accent: var(--nuit); --couleur-ligne: rgba(242, 237, 227, .14); --couleur-surface: var(--carte); --police-mono: 'JetBrains Mono', monospace; --ple-fond-planche: var(--carte); }
+.ple__pile { width: min(100% - 2 * var(--gouttiere), var(--largeur)); margin-inline: auto; }
+.ple__tete { margin-bottom: clamp(28px, 5vh, 56px); }
+.ple__titre { font-size: clamp(2.1rem, 1.3rem + 3.3vw, 4.4rem); }
+.ple__visuel.media { border-radius: 0; }
+.ple__visuel picture { position: absolute; inset: 0; }
+.ple__liens { display: flex; flex-wrap: wrap; gap: 10px; margin: auto 0 0; }
+.ple__lien.bouton { min-height: 44px; padding-inline: 1.1em; }
+.ple__nom { font-family: var(--police-titres); font-weight: 500; }
+
+/* Étapes à l'aéroport. */
+.etapes-aeroport { padding-block: var(--section); }
+.etapes-grille { position: relative; }
+.etapes-trait { position: absolute; left: 0; right: 0; top: 18px; width: 100%; height: 40px; fill: none; stroke: var(--or-fonce); stroke-width: 1.5; stroke-dasharray: 4 6; overflow: visible; }
+.etapes-liste { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 56px); }
+.etape-num { display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 18px; border-radius: 50%; background: var(--nuit); color: var(--or); font: 500 1.8rem/1.4 var(--police-titres); }
+.etape h3 { margin: 0 0 6px; }
+.etape p { margin: 0; color: var(--texte-doux); }
+@media (max-width: 760px) { .etapes-liste { grid-template-columns: minmax(0, 1fr); } .etapes-trait { display: none; } }
+
+/* ===== Flotte : grand titre puis bandeau. ===== */
+.ouv-bandeau { padding-top: calc(var(--entete-h) + clamp(20px, 5vh, 56px)); padding-bottom: calc(var(--barres-h) + 20px); min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+.ouv-bandeau-tete h1 { margin-bottom: .28em; font-size: clamp(2.8rem, min(8.4vw, 13vh), 9rem); line-height: .92; letter-spacing: -.03em; }
+.ouv-bandeau-ligne { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; }
+.ouv-bandeau-ligne > p:first-child { flex: 1 1 320px; max-width: 34em; margin: 0; color: var(--texte-doux); }
+.ouv-bandeau-ligne .hero-actions { margin: 0; }
+.ouv-bandeau-image { position: relative; flex: 1 1 auto; min-height: 220px; margin: clamp(18px, 3.4vh, 40px) var(--gouttiere) 0; }
+.ouv-bandeau-media { position: absolute; inset: 0; border-radius: 24px; }
+.ouv-bandeau-trio { position: absolute; left: clamp(16px, 4vw, 56px); bottom: clamp(12px, 3vh, 32px); display: flex; align-items: flex-end; gap: clamp(10px, 2vw, 28px); width: min(52%, 640px); color: var(--or); pointer-events: none; }
+.ouv-bandeau-trio .silhouette { flex: 1 1 0; min-width: 0; width: 33%; stroke-width: 1.4; }
+.ouv-bandeau-trio .silhouette-roue, .ouv-bandeau-trio .silhouette-jante { stroke: var(--ivoire); }
+@media (max-width: 760px) { .ouv-bandeau-image { flex: none; height: 38svh; margin-inline: 12px; } .ouv-bandeau-trio { width: calc(100% - 32px); } }
+@media (max-height: 820px) and (min-width: 761px) { .ouv-bandeau-tete h1 { font-size: clamp(2.6rem, min(7vw, 11.5vh), 7rem); } }
+@media (max-height: 500px) and (min-width: 561px) { .ouv-bandeau-tete h1 { font-size: clamp(1.9rem, 10vh, 3rem); } .ouv-bandeau-image { min-height: 90px; margin-top: 10px; } }
+
+.flotte-liste, .choix, .confort { padding-block: var(--section); }
+.choix, .flotte-liste, .flotte-accueil, .carte-section, .zone, .pancarte-section { overflow: hidden; overflow: clip; }
+.flotte-rangs { display: grid; gap: 18px; }
+.flotte-rang { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) 220px; gap: clamp(18px, 3vw, 44px); align-items: center; padding: clamp(18px, 3vw, 36px); border-radius: 22px; background: var(--ivoire-2); border: 1px solid rgba(12, 14, 19, .1); }
+.flotte-rang-dessin { color: var(--nuit); }
+.flotte-rang-texte h3 { margin: 0 0 14px; font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.6rem); }
+.flotte-rang-texte .surtitre { margin-bottom: .7em; }
+.vehicule-chiffres--grand dd { font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem); }
+.flotte-rang-texte .vehicule-chiffres { margin-bottom: 14px; }
+.badge { display: inline-block; margin: 0 0 6px; padding: 5px 12px; border-radius: 999px; background: var(--nuit); color: var(--ivoire); font: 500 max(12px, .74rem)/1.4 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; }
+.flotte-rang-photo { aspect-ratio: 3 / 2; border-radius: 14px; }
+.flotte-rang-photo--vide { background: radial-gradient(120% 90% at 30% 20%, rgba(201, 164, 92, .25), transparent 60%), var(--nuit); }
+.media-legende { position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(0, 0, 0, .7); color: #fff; font: 600 12px/1.4 var(--police-texte); }
+@media (max-width: 960px) { .flotte-rang { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .flotte-rang-photo { grid-column: 1 / -1; max-width: 360px; } }
+@media (max-width: 620px) { .flotte-rang { grid-template-columns: minmax(0, 1fr); } }
+
+.choix-grille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.choix-form { display: flex; flex-wrap: wrap; gap: 16px 28px; }
+.choix-form .estim-compteur { border: 0; margin: 0; padding: 0; }
+.choix-form legend { margin-bottom: 10px; font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.choix .compteur-ligne { background: var(--carte); border-color: rgba(242, 237, 227, .2); }
+.choix .compteur-bouton { background: var(--ivoire); color: var(--nuit); }
+.choix-vehicules { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.choix-vehicule { position: relative; display: grid; grid-template-columns: 180px minmax(0, 1fr); align-items: center; gap: 18px; padding: 16px 20px; border-radius: 18px; border: 1px solid rgba(242, 237, 227, .12); background: var(--carte); color: var(--ivoire); opacity: .55; transition: opacity .4s, border-color .4s, transform .4s var(--courbe); }
+.choix-vehicule .silhouette { color: var(--ivoire); }
+.choix-vehicule p { margin: 0; }
+.choix-conseil { display: inline-block; margin-top: 6px; padding: 4px 10px; border-radius: 999px; background: var(--or); color: var(--nuit); font: 700 max(12px, .72rem)/1.4 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; opacity: 0; transition: opacity .3s; }
+.choix-vehicule.conseille { opacity: 1; border-color: var(--or); }
+.choix-vehicule.conseille .choix-conseil { opacity: 1; }
+@media (max-width: 860px) { .choix-grille { grid-template-columns: minmax(0, 1fr); } .choix-vehicule { grid-template-columns: 120px minmax(0, 1fr); } }
+
+.confort-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.confort-media { aspect-ratio: 4 / 3; border-radius: 22px; }
+.confort-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.confort-liste h3 { margin: 0 0 4px; }
+.confort-liste p { margin: 0; color: var(--texte-doux); }
+@media (max-width: 760px) { .confort-grille { grid-template-columns: minmax(0, 1fr); } .confort-grille > .media { order: 2; } }
+
+/* ===== Réserver : ouverture compacte centrée, vitre mouillée. ===== */
+.ouv-vitre { position: relative; min-height: min(100svh, 860px); display: grid; place-items: center; text-align: center; padding: calc(var(--entete-h) + 32px) 0 calc(var(--barres-h) + 40px); overflow: hidden; isolation: isolate; }
+.ouv-vitre-media { position: absolute; inset: 0; z-index: -2; border-radius: 0; }
+.ouv-vitre-voile { position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 70% at 50% 50%, rgba(12, 14, 19, .82), rgba(12, 14, 19, .55)); }
+.ouv-vitre-contenu { display: grid; justify-items: center; }
+.ouv-vitre-contenu h1 { max-width: 12em; font-size: clamp(2.6rem, min(6.4vw, 10.5vh), 6.4rem); line-height: .98; }
+.ouv-vitre-contenu > p:not(.surtitre):not(.hero-actions) { max-width: 36em; color: var(--texte-doux); }
+.ouv-vitre .hero-actions { justify-content: center; }
+.garanties { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; margin: 18px 0 0; padding: 0; }
+.garanties li { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 16px 8px 10px; border-radius: 999px; background: rgba(12, 14, 19, .9); border: 1px solid rgba(201, 164, 92, .4); font-size: .95rem; font-weight: 600; }
+.garantie-coche { position: relative; width: 24px; height: 24px; border-radius: 50%; background: var(--or); }
+.garantie-coche::after { content: ""; position: absolute; left: 8px; top: 5px; width: 6px; height: 11px; border: solid var(--nuit); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+@media (max-height: 820px) and (min-width: 761px) { .ouv-vitre-contenu h1 { font-size: clamp(2.4rem, min(5.4vw, 9.5vh), 5.4rem); } }
+@media (max-height: 500px) and (min-width: 561px) { .ouv-vitre-contenu h1 { font-size: clamp(1.8rem, 9vh, 2.6rem); } .garanties { display: none; } }
+
+/* Formulaire par étapes (module) : variables reliées à la palette, sur fond ivoire. */
+.fpe { --couleur-fond: var(--ivoire-2); --couleur-texte: var(--nuit); --couleur-texte-doux: #4A4740; --couleur-accent: var(--nuit); --couleur-sur-accent: var(--ivoire); --couleur-secondaire: var(--or-fonce); --couleur-erreur: #A1281A; --couleur-surface: #FFFFFF; --couleur-ligne: rgba(12, 14, 19, .16); --police-mono: 'JetBrains Mono', monospace; }
+.fpe__h2 { font-family: var(--police-titres); }
+.fpe__titre { font-family: var(--police-titres); font-weight: 500; }
+.fpe__icone { width: 30px; height: 30px; fill: none; stroke: var(--or-fonce); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.fpe__carte-titre { font-weight: 700; }
+.fpe__carte-texte { font-size: .92rem; color: var(--couleur-texte-doux); }
+.fpe__carte:has(input:checked) { border-color: var(--nuit); box-shadow: inset 0 0 0 1px var(--nuit); background: #fff; }
+.socle-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.recap { padding: clamp(22px, 3vw, 36px); border-radius: 22px; background: var(--nuit); color: var(--ivoire); max-width: none !important; }
+.recap .surtitre { color: var(--or); }
+.recap .fpe__h2 { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.8rem); color: var(--ivoire); }
+.recap-chiffres { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 8px; padding-top: 14px; border-top: 1px solid rgba(242, 237, 227, .16); }
+.recap-chiffres dt { font: 500 max(12px, .72rem)/1 var(--police-mono); letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 237, 227, .78); }
+.recap-chiffres dd { margin: 6px 0 0; font-weight: 700; }
+.recap-chiffres dd[data-recap-prix] { font: 500 1.9rem/1.4 var(--police-titres); color: var(--or); }
+.recap-chiffres dd.recap-demande { font: 700 1rem/1.4 var(--police-texte); }
+.pancarte--petite { width: 100%; margin-top: 10px; }
+.pancarte--petite .pancarte-carton { padding: 20px 18px 24px; transform: rotate(-1.5deg); }
+.pancarte--petite .pancarte-carton::before { display: none; }
+.pancarte--petite .pancarte-nom { font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem); }
+.pancarte--petite figcaption { margin-top: 12px; font-size: .9rem; color: rgba(242, 237, 227, .78); text-align: center; }
+@media (max-width: 999px) { .recap { order: 2; } .pancarte--petite { max-width: 360px; } }
+
+/* ===== Contact : ouverture scindée, numéro en très grand. ===== */
+.ouv-scindee { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100svh; padding-top: var(--entete-h); }
+.ouv-scindee-texte { display: flex; flex-direction: column; justify-content: center; padding: clamp(24px, 4vw, 64px) var(--gouttiere) calc(var(--barres-h) + clamp(24px, 4vw, 64px)) max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)); }
+.ouv-scindee-texte h1 { font-size: clamp(2.4rem, min(4.8vw, 9vh), 5rem); line-height: 1; }
+.ouv-scindee-texte > p:not(.surtitre):not(.numero-geant):not(.hero-info) { color: var(--texte-doux); max-width: 30em; }
+.numero-geant { margin: 14px 0 18px; }
+.numero-geant a { display: inline-flex; flex-wrap: nowrap; white-space: nowrap; align-items: baseline; min-height: 44px; text-decoration: none; font: 500 clamp(2.2rem, .9rem + 3.6vw, 5.2rem)/1.4 var(--police-titres); color: var(--or); font-variant-numeric: tabular-nums; }
+.numero-geant .chiffre { display: inline-block; }
+.numero-geant .chiffre--espace { margin-right: .28em; }
+.numero-geant a:hover { color: var(--or-clair); }
+.ouv-scindee-media { border-radius: 0; height: 100%; min-height: 0; }
+@media (max-width: 860px) { .ouv-scindee { grid-template-columns: minmax(0, 1fr); min-height: 0; } .ouv-scindee-media { height: 36svh; margin: 0 12px; border-radius: 18px; } .ouv-scindee-texte { padding-inline: var(--gouttiere); padding-bottom: 28px; } }
+@media (max-height: 820px) and (min-width: 861px) { .numero-geant a { font-size: clamp(2.2rem, .9rem + 3.2vw, 4.4rem); } .ouv-scindee-texte h1 { font-size: clamp(2.2rem, min(4.2vw, 8vh), 4.2rem); } }
+@media (max-height: 500px) and (min-width: 561px) { .numero-geant a { font-size: 2.4rem; } .numero-geant { margin: 6px 0; } .ouv-scindee-texte h1 { font-size: clamp(1.7rem, 8vh, 2.4rem); } }
+
+.joindre { padding-block: var(--section); }
+.joindre-grille { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.joindre-bloc { display: flex; flex-direction: column; padding: 24px; border-radius: 18px; background: var(--carte); border: 1px solid rgba(242, 237, 227, .08); }
+.joindre-num { margin: 0 0 18px; font: 500 max(12px, .76rem)/1 var(--police-mono); color: var(--or); letter-spacing: .14em; }
+.joindre-bloc h3 { margin: 0 0 6px; }
+.joindre-bloc p { margin: 0 0 8px; color: var(--texte-doux); }
+.joindre-valeur { color: var(--ivoire) !important; font-weight: 700; overflow-wrap: anywhere; }
+.joindre-bloc .lien-fleche { margin-top: auto; }
+@media (max-width: 1000px) { .joindre-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .joindre-grille { grid-template-columns: minmax(0, 1fr); } }
+.zone { padding-block: var(--section); }
+.zone-grille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.zone-photo { margin-top: 22px; border-radius: 18px; }
+@media (max-width: 860px) { .zone-grille { grid-template-columns: minmax(0, 1fr); } }
+
+/* 404. */
+.ouv-plein--404 .ouv-plein-contenu { max-width: 640px; }
+.ouv-plein--404 .ouv-plein-voile { background: linear-gradient(90deg, rgba(12, 14, 19, .95) 0%, rgba(12, 14, 19, .8) 38%, rgba(12, 14, 19, 0) 65%); }
+
+/* Mention des illustrations générées : lisible sur fond sombre comme clair. */
+.mention-ia { background: rgba(0, 0, 0, .72); }
+
+/* Prix et chiffres en Bodoni : taille optique plus basse, pour des déliés assez épais (le 4 reste lisible). */
+:is([data-prix], .estim-prix, .prix-geant-montant, .tarif-prix, .carte-bouton-prix, .carte-fiche-prix, .vehicule-chiffres dd, .numero-geant a, .etape-num, .recap-chiffres dd) { font-optical-sizing: none; font-variation-settings: "opsz" 20; }
+
+/* Bodoni a une boîte de glyphe haute (1,53 em) : un titre qui suit un surtitre garde de l'air au-dessus. */
+.surtitre + :is(h1, h2), .surtitre + .hero-titre { padding-top: .2em; }
+@media (max-width: 380px) and (max-height: 700px) { .hero-texte { display: none; } .hero-actions { margin: 16px 0 12px; } .hero-titre { font-size: 2.6rem; } }
+@media (max-width: 760px) and (max-height: 700px) { .ouv-plein-media { height: 22svh; } .ouv-plein-contenu .hero-actions .bouton--contour { display: none; } .ouv-plein-contenu .surtitre { display: none; } .ouv-plein-contenu > p:not(.surtitre):not(.hero-actions):not(.hero-info) { display: none; } .ouv-plein-contenu h1 { font-size: 2.3rem; } }
+@media (max-width: 760px) { .ouv-plein-contenu .hero-actions { margin: 14px 0 10px; } }
+@media (max-width: 380px) and (max-height: 700px) { .ouv-vitre-contenu > p:not(.surtitre):not(.hero-actions):not(.hero-info) { display: none; } .ouv-vitre-contenu h1 { font-size: 2.2rem; } .ouv-vitre .garanties { display: none; } .ouv-vitre { min-height: 0; } }
+@media (max-width: 760px) { .ouv-plein-contenu::before { display: none; } }
+@media (max-height: 600px) and (min-width: 761px) { .hero-texte, .ouv-scindee-texte > p:not(.surtitre):not(.numero-geant):not(.hero-info), .ouv-vitre-contenu > p:not(.surtitre):not(.hero-actions):not(.hero-info) { display: none; } .ouv-vitre .garanties { display: none; } }
+@media (max-width: 1100px) { .fpe__repere:not(.est-actif) .fpe__nom { display: none; } .fpe__repere { flex: 0 0 auto; } .fpe__repere.est-actif { flex: 1 1 auto; } }

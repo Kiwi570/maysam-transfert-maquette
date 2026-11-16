@@ -1,0 +1,22 @@
+[
+ {
+  "q": "Quels moyens de paiement acceptez-vous ?",
+  "r": "Le règlement se fait à bord auprès du chauffeur, en espèces, par carte ou par virement. Le prix est fixé à l'avance et aucun supplément n'est ajouté à l'arrivée."
+ },
+ {
+  "q": "Que se passe-t-il si mon vol est en retard ?",
+  "r": "Le suivi se fait en temps réel grâce au numéro de vol. Le chauffeur attend sans frais et décale l'heure de prise en charge."
+ },
+ {
+  "q": "Y a-t-il une limite de bagages ?",
+  "r": "Chaque passager dispose confortablement d'une valise. Pour les objets volumineux ou un grand nombre de bagages, il faut le signaler à la réservation."
+ },
+ {
+  "q": "Proposez-vous des sièges enfant ?",
+  "r": "Oui, gratuitement et sur demande, pour tous les âges. Il suffit d'indiquer l'âge des enfants dans le champ « Précisions »."
+ },
+ {
+  "q": "Puis-je annuler ma réservation ?",
+  "r": "L'annulation est gratuite jusqu'à 24 heures avant le trajet. Au-delà, il faut téléphoner dès que possible."
+ }
+]

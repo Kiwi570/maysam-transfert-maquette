@@ -1,0 +1,38 @@
+[
+ {
+  "citation": "Chauffeur ponctuel, véhicule impeccable et prix annoncé respecté au centime.",
+  "nom": "Camille",
+  "lieu": "Paris 15e",
+  "trajet": "Orly ↔ Paris"
+ },
+ {
+  "citation": "Suivi du vol en direct et accueil avec pancarte à la sortie du terminal.",
+  "nom": "Sofiane",
+  "lieu": "Boulogne-Billancourt",
+  "trajet": "Roissy CDG ↔ Paris"
+ },
+ {
+  "citation": "Chauffeur devant chez moi à 5h30. Parfait.",
+  "nom": "Élodie",
+  "lieu": "Paris 9e",
+  "trajet": "Gare du Nord ↔ Paris"
+ },
+ {
+  "citation": "Sièges enfants installés sans rien demander.",
+  "nom": "Marc",
+  "lieu": "Créteil",
+  "trajet": "Paris ↔ Disneyland Paris"
+ },
+ {
+  "citation": "Discret, souriant et une conduite très sûre.",
+  "nom": "Nadia",
+  "lieu": "Versailles",
+  "trajet": "Mise à disposition à la journée"
+ },
+ {
+  "citation": "Tarif fixe clair dès la demande, pas de compteur ni de surprise à l'arrivée.",
+  "nom": "Thomas",
+  "lieu": "Paris 11e",
+  "trajet": "Orly ↔ Paris"
+ }
+]

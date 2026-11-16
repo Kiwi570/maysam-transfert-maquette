@@ -1,0 +1,307 @@
+{
+  "client": "Maysam Transfert",
+  "activite": "autre",
+  "direction": "Les phares dans la nuit",
+  "date": "2026-11-16T14:39:19.931Z",
+  "images": [
+    {
+      "nom": "accueil-ouverture",
+      "fichier": "accueil-ouverture.jpg",
+      "page": "accueil",
+      "emplacement": "ouverture (plein cadre, titre à gauche) · ordinateur",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "Wide night view along a broad avenue lined with Haussmann-style cream stone buildings in a historic European capital just after rain, wet asphalt mirroring warm golden street lamps, long-exposure red and white light trails of passing traffic sweeping through the right half of the frame, deep blue-black sky, the left third of the frame dark and calm. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "accueil-ouverture-mobile",
+      "fichier": "accueil-ouverture-mobile.jpg",
+      "page": "accueil",
+      "emplacement": "ouverture (plein cadre, titre à gauche) · téléphone",
+      "role": "ouverture",
+      "format": "9:16",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "Vertical night view looking down a narrow avenue of Haussmann-style cream stone buildings after rain, golden street lamps reflected on wet asphalt, long-exposure red and white light trails curving through the lower half of the frame, the upper half dark and calm. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "accueil-hall",
+      "fichier": "accueil-hall.jpg",
+      "page": "accueil",
+      "emplacement": "section « Votre nom sur la pancarte » (fond, pancarte dessinée à droite)",
+      "role": "section-fond",
+      "format": "3:2",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "section-fond",
+      "pieges": [],
+      "consigne": "Softly blurred interior of a modern airport arrivals hall at night, warm golden bokeh lights from lamps and glass shopfronts, polished pale stone floor reflecting the lights, tall dark windows, completely empty, very shallow depth of field. Landscape composition, aspect ratio 3:2, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-aeroport",
+      "fichier": "service-aeroport.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Transferts aéroport",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "Night view of a modern airport terminal kerbside seen from a low angle, tall glass facade glowing warm gold from inside, an empty drop-off lane of wet asphalt, faint red light trails, deep blue sky. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-gares",
+      "fichier": "service-gares.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Gares & hôtels",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "Early morning inside a grand nineteenth-century railway station hall, high iron and glass roof, soft mist and pale golden light falling through the glass, an empty platform edge, calm and majestic. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-parcs",
+      "fichier": "service-parcs.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Disneyland & parcs",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "véhicules",
+        "enfants"
+      ],
+      "consigne": "The open boot of a plain dark unmarked car at dawn, two hard-shell suitcases and an empty child booster seat neatly arranged inside, soft pink morning light, shallow depth of field. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. Only a child's hands drawing at a table, no face, no body. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-disposition",
+      "fichier": "service-disposition.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Mise à disposition",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Rear seat of a dark luxury sedan at night, soft black leather with fine stitching, a small glass bottle of still water and a folded dark blanket on the seat, blurred golden city lights through the side window, the car completely unbadged. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-evenements",
+      "fichier": "service-evenements.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Événements & mariages",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "véhicules",
+        "visages"
+      ],
+      "consigne": "Close-up of a white silk ribbon tied in a bow on the rear door handle of a glossy black unmarked car, a few pale rose petals on the wet pavement, warm evening light, romantic and elegant. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "service-longs-trajets",
+      "fichier": "service-longs-trajets.jpg",
+      "page": "accueil, services",
+      "emplacement": "carte Longs trajets",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "An empty motorway curving through rolling countryside at dusk, long-exposure red and white light trails following the curve, last orange light on the horizon under a deep blue sky. Vertical composition, aspect ratio 2:3. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "accueil-appel",
+      "fichier": "accueil-appel.jpg",
+      "page": "accueil",
+      "emplacement": "appel final (fond)",
+      "role": "section-fond",
+      "format": "3:2",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "section-fond",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "The rear door of a glossy black unmarked sedan standing half open on a quiet wet cobblestone street at night, warm interior light spilling onto the cobblestones, golden street lamp glow, the left half of the frame dark and calm, the car completely unbadged. Landscape composition, aspect ratio 3:2, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "trajets-ouverture",
+      "fichier": "trajets-ouverture.jpg",
+      "page": "trajets",
+      "emplacement": "ouverture (prix en très grand, image à droite) · ordinateur",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [],
+      "consigne": "Long-exposure view from a high bridge over a multi-lane urban expressway at night, sweeping curves of golden and red light trails flowing into the distance toward a glowing skyline of stone buildings, deep blue-black sky, the left third calm and dark. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "trajets-ouverture-mobile",
+      "fichier": "trajets-ouverture-mobile.jpg",
+      "page": "trajets",
+      "emplacement": "ouverture (prix en très grand, image à droite) · téléphone",
+      "role": "ouverture",
+      "format": "9:16",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [],
+      "consigne": "Vertical long-exposure view from above of an urban interchange at night, golden and red light trails forming elegant intertwined curves, dark surroundings, the upper third calm and dark. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "services-ouverture",
+      "fichier": "services-ouverture.jpg",
+      "page": "services",
+      "emplacement": "ouverture (plein cadre) · ordinateur",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "A grand hotel entrance at night, tall wooden doors and brass lamps glowing warm gold, a plain black unmarked sedan waiting at the kerb with its rear door open, wet pavement reflections, the left third calm and dark, the car completely unbadged. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "services-ouverture-mobile",
+      "fichier": "services-ouverture-mobile.jpg",
+      "page": "services",
+      "emplacement": "ouverture (plein cadre) · téléphone",
+      "role": "ouverture",
+      "format": "9:16",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Vertical view of a grand hotel entrance at night, tall wooden doors and brass lamps glowing warm gold, the rear of a plain black unmarked sedan at the kerb in the lower part, wet pavement reflections, the upper third calm and dark, the car completely unbadged. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "flotte-ouverture",
+      "fichier": "flotte-ouverture.jpg",
+      "page": "flotte",
+      "emplacement": "ouverture (grand titre puis bandeau) · ordinateur",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Studio photograph of the curved bonnet and front wing of a glossy black unmarked luxury car in near darkness, a single long golden rim light tracing the bodywork, deep reflections, the left half pure black. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "flotte-ouverture-mobile",
+      "fichier": "flotte-ouverture-mobile.jpg",
+      "page": "flotte",
+      "emplacement": "ouverture (grand titre puis bandeau) · téléphone",
+      "role": "ouverture",
+      "format": "9:16",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Vertical studio photograph of the curved flank of a glossy black unmarked car in near darkness, one golden rim light along the body line, the upper half pure black. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "flotte-cuir",
+      "fichier": "flotte-cuir.jpg",
+      "page": "flotte",
+      "emplacement": "section confort",
+      "role": "galerie",
+      "format": "3:2",
+      "grok": "1168×784",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Close-up of a black quilted leather car seat with fine contrast stitching and a seat-belt buckle, warm soft side light, very shallow depth of field. Landscape composition, aspect ratio 3:2. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "reserver-fond",
+      "fichier": "reserver-fond.jpg",
+      "page": "reserver",
+      "emplacement": "ouverture compacte (fond sombre derrière le titre)",
+      "role": "section-fond",
+      "format": "3:2",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "section-fond",
+      "pieges": [
+        "véhicules"
+      ],
+      "consigne": "Close-up through a car side window at night covered in raindrops, blurred golden and red city lights bokeh beyond the glass, dark, calm, abstract and elegant. Landscape composition, aspect ratio 3:2, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No vehicles visible, only blurred light trails; or a plain unmarked vehicle with no license plate, no badge and no lettering. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "contact-ouverture",
+      "fichier": "contact-ouverture.jpg",
+      "page": "contact",
+      "emplacement": "ouverture (scindée : numéro en grand, image à droite) · ordinateur",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [],
+      "consigne": "A quiet narrow old street in a historic European capital at night, cream stone facades with wrought-iron balconies, a single warm golden street lamp, wet cobblestones shining, empty and calm, the left third dark. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "contact-ouverture-mobile",
+      "fichier": "contact-ouverture-mobile.jpg",
+      "page": "contact",
+      "emplacement": "ouverture (scindée : numéro en grand, image à droite) · téléphone",
+      "role": "ouverture",
+      "format": "9:16",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "ouverture",
+      "pieges": [],
+      "consigne": "Vertical view of a quiet narrow old street at night, cream stone facades with wrought-iron balconies, one warm golden street lamp, wet cobblestones shining, the upper third dark and calm. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "page-404",
+      "fichier": "page-404.jpg",
+      "page": "404",
+      "emplacement": "image de la page introuvable",
+      "role": "404",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Conseillée",
+      "gabarit": "404",
+      "pieges": [],
+      "consigne": "A single hard-shell suitcase standing alone in the middle of an empty wet street at night under one golden street lamp, a long shadow, a gentle touch of humour. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, natural soft light, calm, nocturnal and refined mood, palette of deep blue-black night, warm gold and soft ivory, warm golden street-lamp light with cool blue shadows, tactile wet asphalt, black lacquered car paint, soft black leather and brushed brass, set in a historic European capital with cream stone buildings on a rainy autumn night, subtle 35mm film grain, shallow depth of field, calm composition with generous negative space, photorealistic, high detail. No product, no artwork, no document or screen with readable content, no place presented as the client's real premises, no stock-photo cliché, no handshake, nobody looking at the camera. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    }
+  ]
+}

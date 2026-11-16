@@ -1,0 +1,198 @@
+{
+  "site": "https://www.maysam-transfert.fr/",
+  "date": "2026-11-16T14:22:31.871Z",
+  "pages": [
+    "https://www.maysam-transfert.fr/",
+    "https://www.maysam-transfert.fr/confidentialite.html",
+    "https://www.maysam-transfert.fr/mentions-legales.html"
+  ],
+  "images": [
+    {
+      "fichier": "logo-sombre.webp",
+      "nom": "logo-sombre",
+      "origine": "https://files.cdn-files-a.com/uploads/12646348/100_6afa1a7d335ad.png",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 3,
+      "emplacement": "img (entete)",
+      "contexte": {
+        "alt": "Logo Maysam Transfert : tour Eiffel dorée et berline de prestige",
+        "legende": "",
+        "titre": "",
+        "section": "",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": ""
+      },
+      "largeur": 100,
+      "hauteur": 100,
+      "poids": 5160,
+      "format": "webp",
+      "transparence": true,
+      "drapeau": "logo",
+      "marque": "principale"
+    },
+    {
+      "fichier": "chauffeur-prive-ouvrant-portiere.webp",
+      "nom": "chauffeur-prive-ouvrant-portiere",
+      "origine": "https://files.cdn-files-a.com/admin/system_photos_stock/normal_6962afc99192a.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 2,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "Chauffeur privé ouvrant la portière à un passager à Paris",
+        "legende": "",
+        "titre": "",
+        "section": "Ils nous confient leurs trajets.",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": "normal_6962afc99192a"
+      },
+      "largeur": 2000,
+      "hauteur": 1116,
+      "largeur_origine": 2752,
+      "hauteur_origine": 1536,
+      "poids": 288548,
+      "format": "webp",
+      "transparence": false,
+      "drapeau": "autre"
+    },
+    {
+      "fichier": "normal-69604b16243f3.webp",
+      "nom": "normal-69604b16243f3",
+      "origine": "https://files.cdn-files-a.com/admin/system_photos_stock/normal_69604b16243f3.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 2,
+      "emplacement": "og (meta)",
+      "contexte": {
+        "alt": "",
+        "legende": "",
+        "titre": "",
+        "section": "",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": "normal_69604b16243f3"
+      },
+      "largeur": 2000,
+      "hauteur": 1116,
+      "largeur_origine": 2752,
+      "hauteur_origine": 1536,
+      "poids": 317110,
+      "format": "webp",
+      "transparence": false,
+      "drapeau": "autre"
+    },
+    {
+      "fichier": "vue-nocturne-paris-monuments.jpg",
+      "nom": "vue-nocturne-paris-monuments",
+      "origine": "https://static.s123-cdn-static-d.com/ready_uploads/media/7871060/2000_642bf83b582a9.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 1,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "Vue nocturne de Paris avec ses monuments illuminés",
+        "legende": "",
+        "titre": "",
+        "section": "",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": ""
+      },
+      "largeur": 2000,
+      "hauteur": 1334,
+      "poids": 414492,
+      "format": "jpeg",
+      "transparence": false,
+      "drapeau": "lieu"
+    },
+    {
+      "fichier": "tour-eiffel-illuminee-paris.jpg",
+      "nom": "tour-eiffel-illuminee-paris",
+      "origine": "https://files.cdn-files-a.com/uploads/12646348/800_gi-6afa147ff1fd8.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 1,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "La tour Eiffel illuminée à Paris",
+        "legende": "",
+        "titre": "",
+        "section": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": "800_gi-6afa147ff1fd8"
+      },
+      "largeur": 800,
+      "hauteur": 1200,
+      "poids": 95409,
+      "format": "jpeg",
+      "transparence": false,
+      "drapeau": "autre"
+    },
+    {
+      "fichier": "tesla-model-y-suv.webp",
+      "nom": "tesla-model-y-suv",
+      "origine": "https://static.s123-cdn-static-d.com/ready_uploads/media/9930032/1200_63953a7751995.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 1,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "Tesla Model Y, SUV électrique de la flotte Maysam Transfert",
+        "legende": "",
+        "titre": "",
+        "section": "Des véhicules premium pour chaque trajet.",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": ""
+      },
+      "largeur": 1200,
+      "hauteur": 617,
+      "poids": 54746,
+      "format": "webp",
+      "transparence": false,
+      "drapeau": "autre"
+    },
+    {
+      "fichier": "mercedes-classe-v-van.webp",
+      "nom": "mercedes-classe-v-van",
+      "origine": "https://files.cdn-files-a.com/uploads/12646348/800_un-6afa11aa8d37b.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 1,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "Mercedes Classe V, van 7 places pour groupes et familles",
+        "legende": "",
+        "titre": "",
+        "section": "Mercedes Classe E",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": "800_un-6afa11aa8d37b"
+      },
+      "largeur": 800,
+      "hauteur": 533,
+      "poids": 12738,
+      "format": "webp",
+      "transparence": false,
+      "drapeau": "lieu"
+    },
+    {
+      "fichier": "mercedes-classe-e-berline.webp",
+      "nom": "mercedes-classe-e-berline",
+      "origine": "https://files.cdn-files-a.com/admin/system_photos_stock/800_695ba28e180c7.jpg",
+      "page": "https://www.maysam-transfert.fr/",
+      "pages": 1,
+      "emplacement": "img",
+      "contexte": {
+        "alt": "Mercedes Classe E, berline avec chauffeur à Paris",
+        "legende": "",
+        "titre": "",
+        "section": "Tesla Model Y",
+        "page": "Votre chauffeur privé à Paris, à l'heure, à chaque trajet.",
+        "fichier_origine": ""
+      },
+      "largeur": 800,
+      "hauteur": 447,
+      "poids": 24306,
+      "format": "webp",
+      "transparence": false,
+      "drapeau": "lieu"
+    }
+  ],
+  "ecartees": [
+    {
+      "url": "https://files.cdn-files-a.com/admin/system_photos_stock/2000_6962afc99192a.jpg",
+      "raison": "meme image que https://files.cdn-files-a.com/admin/system_photos_stock/normal_6962afc99192a.jpg en 2000x1116"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[
+ {
+  "source": "recu/logo/maysam-logo.png",
+  "nom": "logo",
+  "role": "logo",
+  "alt": "Maysam Transfert"
+ },
+ {
+  "source": "recu/site/maysam-transfert-recu/vue-nocturne-paris-monuments.jpg",
+  "nom": "paris-nuit",
+  "role": "galerie",
+  "alt": "Paris la nuit, vu d'en haut",
+  "beaute": 4,
+  "page": "contact",
+  "emplacement": "zone desservie"
+ },
+ {
+  "source": "recu/site/maysam-transfert-recu/tesla-model-y-suv.webp",
+  "nom": "modele-tesla",
+  "role": "vignette",
+  "alt": "Tesla Model Y",
+  "beaute": 2,
+  "page": "flotte",
+  "emplacement": "vignette du modèle"
+ },
+ {
+  "source": "recu/site/maysam-transfert-recu/mercedes-classe-v-van.webp",
+  "nom": "modele-classe-v",
+  "role": "vignette",
+  "alt": "Mercedes Classe V, phares allumés",
+  "beaute": 3,
+  "page": "flotte",
+  "emplacement": "vignette du modèle"
+ }
+]

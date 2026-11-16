@@ -1,0 +1,16 @@
+{
+ "id": "20261116-160029-complet-cible-partiel",
+ "date": "2026-11-16T16:06:07.553Z",
+ "niveau": "complet",
+ "pages": "/,/404,/contact,/flotte,/reserver,/services",
+ "etapes": [
+  "fichiers",
+  "mesures"
+ ],
+ "version": "1",
+ "echecs": 1,
+ "aRegarder": 68,
+ "nonLances": 0,
+ "manquants": 0,
+ "statut": "échecs"
+}

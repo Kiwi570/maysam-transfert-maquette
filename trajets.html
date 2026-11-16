@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="fr" data-v="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trajets et tarifs | Maysam Transfert</title>
+<meta name="description" content="Tarifs fixes : Orly 60 €, Roissy CDG 70 €, gares 45 €, Disneyland Paris 85 €, Beauvais 140 €. Estimez votre trajet.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://maysam-transfert-maquette.vercel.app/trajets">
+<style>:root{--fond:#0C0E13;--texte:#F2EDE3;--voile-fond:#0C0E13;--ouverture-fond:#07080B;--menu-fond:#0C0E13}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.secours) [data-voile] { transform: none; visibility: visible; } html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var mode = type === 'back_forward' ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#0C0E13">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maysam Transfert">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Trajets et tarifs | Maysam Transfert">
+<meta property="og:description" content="Tarifs fixes : Orly 60 €, Roissy CDG 70 €, gares 45 €, Disneyland Paris 85 €, Beauvais 140 €. Estimez votre trajet.">
+<meta property="og:url" content="https://maysam-transfert-maquette.vercel.app/trajets">
+<meta property="og:image" content="https://maysam-transfert-maquette.vercel.app/assets/partage/trajets-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Les tarifs fixes de Maysam Transfert">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Maysam Transfert","url":"https://maysam-transfert-maquette.vercel.app/","telephone":"+33662158363","email":"maysam.transfert@gmail.com","description":"Chauffeur privé à Paris et en Île‑de‑France. Transferts aéroports, gares et Disneyland Paris, 24h/24 et 7j/7.","areaServed":"Paris et Île‑de‑France","openingHours":"Mo-Su 00:00-24:00","image":"https://maysam-transfert-maquette.vercel.app/assets/images/logo-grand.webp","paymentAccepted":"Espèces, carte, virement"}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="glisse" aria-hidden="true"><span class="voile-filet"></span><div class="voile-contenu"><img src="/assets/images/logo-entete.webp" alt="" width="71" height="72"><span data-voile-libelle>Trajets &amp; tarifs</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-phares" data-ouverture-objet><span class="phare phare--g"></span><span class="phare phare--d"></span></div>
+  <p class="ouverture-nom">Maysam Transfert</p>
+  <p class="ouverture-ligne">Chauffeur privé · Paris</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo-entete.webp" alt="" width="142" height="144"><span>Maysam Transfert</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/trajets" data-libelle="Trajets &amp; tarifs" aria-current="page">Trajets &amp; tarifs</a></li><li><a href="/services" data-libelle="Services">Services</a></li><li><a href="/flotte" data-libelle="Flotte">Flotte</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/trajets" class="menu-lien" data-libelle="Trajets &amp; tarifs" aria-current="page">Trajets &amp; tarifs</a></li><li style="--i:2"><a href="/services" class="menu-lien" data-libelle="Services">Services</a></li><li style="--i:3"><a href="/flotte" class="menu-lien" data-libelle="Flotte">Flotte</a></li><li style="--i:4"><a href="/reserver" class="menu-lien" data-libelle="Réserver">Réserver</a></li><li style="--i:5"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a> <a class="bouton bouton--contour" href="tel:+33662158363">Appeler 06 62 15 83 63</a></p>
+  <p class="menu-dispo">24 h/24, 7 j/7, jours fériés inclus</p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="ouv-prix" id="debut" aria-labelledby="trajets-titre">
+  <div class="conteneur ouv-prix-grille">
+    <div class="ouv-prix-texte">
+      <p class="surtitre" data-anime>Chauffeur privé · Paris &amp; Île‑de‑France</p>
+      <h1 id="trajets-titre" data-anime="lignes">Des prix fixes, <em>trajet par trajet.</em></h1>
+      <p class="masque-ecran-tres-bas" data-anime>Cinq trajets à prix fixe, dans un sens ou dans l&#39;autre. Le prix est confirmé à la réservation et se règle à bord.</p>
+      <p class="hero-actions" data-anime><a href="/reserver" class="bouton" data-libelle="Réserver" data-action-principale data-survol="magnetique">Réserver un trajet</a></p>
+      <p class="hero-info" data-info-cle data-anime><span class="point-vert" aria-hidden="true"></span>Paiement à bord · espèces, carte ou virement</p>
+    </div>
+    <div class="prix-geant" data-effet="prix-geant" data-iris-centre aria-live="off">
+      <p class="prix-geant-legende">Prix du trajet</p>
+      <p class="prix-geant-dest" data-pg-dest>Paris ↔ Orly</p>
+      <p class="prix-geant-montant" data-prix><span data-pg-montant>60</span><span class="prix-geant-devise">€</span></p>
+      <p class="prix-geant-duree" data-pg-duree>30–45 min</p>
+      <ol class="prix-geant-points" aria-hidden="true"><li class="actif" data-pg="orly" data-nom="Orly" data-prix-v="60" data-duree="30–45 min"></li><li data-pg="cdg" data-nom="Roissy CDG" data-prix-v="70" data-duree="45–60 min"></li><li data-pg="gares" data-nom="Gares parisiennes" data-prix-v="45" data-duree="20–35 min"></li><li data-pg="disneyland" data-nom="Disneyland Paris" data-prix-v="85" data-duree="45–60 min"></li><li data-pg="beauvais" data-nom="Beauvais" data-prix-v="140" data-duree="60–75 min"></li></ol>
+    </div>
+  </div>
+  <figure class="media ouv-prix-media" data-grok data-fx="parallaxe" data-fx-force="8" style="--cadrage:70% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/trajets-ouverture-mobile-640.webp 640w, /assets/images/grok/trajets-ouverture-mobile-1080.webp 1080w" sizes="(max-width: 760px) 100vw, 60vw">
+    <img src="/assets/images/grok/trajets-ouverture-1280.webp" srcset="/assets/images/grok/trajets-ouverture-640.webp 640w, /assets/images/grok/trajets-ouverture-1280.webp 1280w, /assets/images/grok/trajets-ouverture-1920.webp 1920w" sizes="(max-width: 760px) 100vw, 60vw" alt="Voie rapide la nuit, traînées de lumière vers la ville" width="1280" height="720" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+</section>
+<section class="carte-section" id="carte" aria-labelledby="carte-titre">
+  <div class="conteneur">
+    <div class="tete-section">
+      <p class="surtitre" data-anime>La carte</p>
+      <h2 id="carte-titre" data-anime="lignes">Paris au centre, <em>cinq départs.</em></h2>
+      <p data-anime>Touchez une destination pour voir le prix et la durée du trajet. <span class="texte-doux">Durées indicatives selon la circulation.</span></p>
+    </div>
+    <div class="carte carte--trajets" data-effet="carte-trajets" data-carte>
+  <svg class="carte-svg" viewBox="0 0 640 430" role="img" aria-label="Schéma des trajets depuis Paris (pas à l&#39;échelle)" data-fx="trace" data-visuel>
+    <defs><radialGradient id="carte-trajets-halo"><stop offset="0" stop-color="#C9A45C" stop-opacity=".45"/><stop offset="1" stop-color="#C9A45C" stop-opacity="0"/></radialGradient></defs>
+    <path class="carte-idf" data-superpose d="M120 70 C190 22 330 18 430 52 C520 80 600 150 606 240 C612 320 548 392 440 410 C330 428 200 414 128 360 C60 310 40 220 64 150 C76 112 96 88 120 70 Z" data-fx-trait/>
+    <path class="carte-seine" data-superpose d="M40 300 C110 330 170 250 236 254 C270 256 286 236 300 240 C318 246 330 232 352 236 C410 248 452 310 520 318 C560 322 590 300 620 306" data-fx-trait/>
+    <circle cx="300" cy="240" r="90" fill="url(#carte-trajets-halo)" data-superpose/>
+    <circle class="carte-peripherique" data-superpose cx="300" cy="240" r="30" data-fx-trait/>
+    <path class="carte-route" id="carte-trajets-r-orly" d="M300 240 C275 277 298 325 286 352" data-route="orly" data-superpose data-fx-trait/><path class="carte-route" id="carte-trajets-r-cdg" d="M300 240 C356 215 364 141 398 118" data-route="cdg" data-superpose data-fx-trait/><path class="carte-route" id="carte-trajets-r-gares" d="M300 240 C307 237 308 229 312 226" data-route="gares" data-superpose data-fx-trait/><path class="carte-route" id="carte-trajets-r-disneyland" d="M300 240 C376 292 476 242 532 268" data-route="disneyland" data-superpose data-fx-trait/><path class="carte-route" id="carte-trajets-r-beauvais" d="M300 240 C282 145 172 107 150 46" data-route="beauvais" data-superpose data-fx-trait/>
+    <circle class="carte-voiture" r="5" data-superpose><animateMotion dur="3.0s" begin="0s" repeatCount="indefinite" rotate="auto"><mpath href="#carte-trajets-r-orly"/></animateMotion></circle><circle class="carte-voiture" r="5" data-superpose><animateMotion dur="3.4s" begin="0.7s" repeatCount="indefinite" rotate="auto"><mpath href="#carte-trajets-r-cdg"/></animateMotion></circle><circle class="carte-voiture" r="5" data-superpose><animateMotion dur="3.8s" begin="1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#carte-trajets-r-gares"/></animateMotion></circle><circle class="carte-voiture" r="5" data-superpose><animateMotion dur="4.2s" begin="2.0999999999999996s" repeatCount="indefinite" rotate="auto"><mpath href="#carte-trajets-r-disneyland"/></animateMotion></circle><circle class="carte-voiture" r="5" data-superpose><animateMotion dur="4.6s" begin="2.8s" repeatCount="indefinite" rotate="auto"><mpath href="#carte-trajets-r-beauvais"/></animateMotion></circle>
+    <circle class="carte-paris" cx="300" cy="240" r="9"/>
+    <text class="carte-nom-paris" x="284" y="294">Paris</text>
+    <g class="carte-point" data-route="orly" data-repere>
+      <circle class="carte-point-rond" cx="286" cy="352" r="7"/>
+      <text class="carte-etiquette" x="300" y="378" text-anchor="start"><tspan class="carte-etiquette-nom">Orly</tspan><tspan class="carte-etiquette-prix" x="300" dy="20">60 € · 30–45 min</tspan></text>
+    </g><g class="carte-point" data-route="cdg" data-repere>
+      <circle class="carte-point-rond" cx="398" cy="118" r="7"/>
+      <text class="carte-etiquette" x="412" y="112" text-anchor="start"><tspan class="carte-etiquette-nom">Roissy CDG</tspan><tspan class="carte-etiquette-prix" x="412" dy="20">70 € · 45–60 min</tspan></text>
+    </g><g class="carte-point" data-route="gares" data-repere>
+      <circle class="carte-point-rond" cx="312" cy="226" r="7"/>
+      <text class="carte-etiquette" x="326" y="212" text-anchor="start"><tspan class="carte-etiquette-nom">Gares parisiennes</tspan><tspan class="carte-etiquette-prix" x="326" dy="20">45 € · 20–35 min</tspan></text>
+    </g><g class="carte-point" data-route="disneyland" data-repere>
+      <circle class="carte-point-rond" cx="532" cy="268" r="7"/>
+      <text class="carte-etiquette" x="520" y="300" text-anchor="end"><tspan class="carte-etiquette-nom">Disneyland Paris</tspan><tspan class="carte-etiquette-prix" x="520" dy="20">85 € · 45–60 min</tspan></text>
+    </g><g class="carte-point" data-route="beauvais" data-repere>
+      <circle class="carte-point-rond" cx="150" cy="46" r="7"/>
+      <text class="carte-etiquette" x="164" y="40" text-anchor="start"><tspan class="carte-etiquette-nom">Beauvais</tspan><tspan class="carte-etiquette-prix" x="164" dy="20">140 € · 60–75 min</tspan></text>
+    </g>
+  </svg>
+  <ul class="carte-liste" role="list"><li><button type="button" class="carte-bouton" data-route="orly" aria-pressed="true"><span class="carte-bouton-nom">Orly</span><span class="carte-bouton-prix" data-prix>60 €</span><span class="carte-bouton-duree">30–45 min</span></button></li><li><button type="button" class="carte-bouton" data-route="cdg" aria-pressed="false"><span class="carte-bouton-nom">Roissy CDG</span><span class="carte-bouton-prix" data-prix>70 €</span><span class="carte-bouton-duree">45–60 min</span></button></li><li><button type="button" class="carte-bouton" data-route="gares" aria-pressed="false"><span class="carte-bouton-nom">Gares parisiennes</span><span class="carte-bouton-prix" data-prix>45 €</span><span class="carte-bouton-duree">20–35 min</span></button></li><li><button type="button" class="carte-bouton" data-route="disneyland" aria-pressed="false"><span class="carte-bouton-nom">Disneyland Paris</span><span class="carte-bouton-prix" data-prix>85 €</span><span class="carte-bouton-duree">45–60 min</span></button></li><li><button type="button" class="carte-bouton" data-route="beauvais" aria-pressed="false"><span class="carte-bouton-nom">Beauvais</span><span class="carte-bouton-prix" data-prix>140 €</span><span class="carte-bouton-duree">60–75 min</span></button></li></ul>
+  <div class="carte-detail" aria-live="polite" data-carte-detail>
+    <div class="carte-fiche" data-route="orly">
+      <p class="carte-fiche-lieu">Aéroport d&#39;Orly</p>
+      <p class="carte-fiche-prix" data-prix>60 €</p>
+      <p class="carte-fiche-duree">Paris ↔ Orly · 30–45 min</p>
+      <a href="/reserver?trajet=orly" class="bouton" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Orly</span></a>
+    </div><div class="carte-fiche" data-route="cdg" hidden>
+      <p class="carte-fiche-lieu">Aéroport Roissy Charles de Gaulle</p>
+      <p class="carte-fiche-prix" data-prix>70 €</p>
+      <p class="carte-fiche-duree">Paris ↔ Roissy CDG · 45–60 min</p>
+      <a href="/reserver?trajet=cdg" class="bouton" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Roissy CDG</span></a>
+    </div><div class="carte-fiche" data-route="gares" hidden>
+      <p class="carte-fiche-lieu">Gare du Nord, Montparnasse, Gare de Lyon, Gare de l&#39;Est</p>
+      <p class="carte-fiche-prix" data-prix>45 €</p>
+      <p class="carte-fiche-duree">Paris ↔ Gares parisiennes · 20–35 min</p>
+      <a href="/reserver?trajet=gares" class="bouton" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Gares parisiennes</span></a>
+    </div><div class="carte-fiche" data-route="disneyland" hidden>
+      <p class="carte-fiche-lieu">Disneyland Paris et ses hôtels</p>
+      <p class="carte-fiche-prix" data-prix>85 €</p>
+      <p class="carte-fiche-duree">Paris ↔ Disneyland Paris · 45–60 min</p>
+      <a href="/reserver?trajet=disneyland" class="bouton" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Disneyland Paris</span></a>
+    </div><div class="carte-fiche" data-route="beauvais" hidden>
+      <p class="carte-fiche-lieu">Aéroport de Beauvais</p>
+      <p class="carte-fiche-prix" data-prix>140 €</p>
+      <p class="carte-fiche-duree">Paris ↔ Beauvais · 60–75 min</p>
+      <a href="/reserver?trajet=beauvais" class="bouton" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Beauvais</span></a>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<section class="tarifs fond-ivoire" id="tarifs" aria-labelledby="tarifs-titre">
+  <div class="conteneur">
+    <div class="tete-section">
+      <p class="surtitre" data-anime>Les tarifs</p>
+      <h2 id="tarifs-titre" data-anime="lignes">Cinq trajets, <em>cinq prix.</em></h2>
+    </div>
+    <div class="tarifs-grille" data-anime="cascade"><article class="tarif" id="tarif-orly">
+      <p class="tarif-dest">Paris ↔ Orly</p>
+      <p class="tarif-lieu">Aéroport d&#39;Orly</p>
+      <p class="tarif-prix" data-prix>60 €</p>
+      <p class="tarif-sens">Le trajet, dans un sens ou dans l&#39;autre · 30–45 min</p>
+      <a href="/reserver?trajet=orly" class="bouton bouton--sombre" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Orly</span></a>
+    </article><article class="tarif" id="tarif-cdg">
+      <p class="tarif-dest">Paris ↔ Roissy CDG</p>
+      <p class="tarif-lieu">Aéroport Roissy Charles de Gaulle</p>
+      <p class="tarif-prix" data-prix>70 €</p>
+      <p class="tarif-sens">Le trajet, dans un sens ou dans l&#39;autre · 45–60 min</p>
+      <a href="/reserver?trajet=cdg" class="bouton bouton--sombre" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Roissy CDG</span></a>
+    </article><article class="tarif" id="tarif-gares">
+      <p class="tarif-dest">Paris ↔ Gares parisiennes</p>
+      <p class="tarif-lieu">Gare du Nord, Montparnasse, Gare de Lyon, Gare de l&#39;Est</p>
+      <p class="tarif-prix" data-prix>45 €</p>
+      <p class="tarif-sens">Le trajet, dans un sens ou dans l&#39;autre · 20–35 min</p>
+      <a href="/reserver?trajet=gares" class="bouton bouton--sombre" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Gares parisiennes</span></a>
+    </article><article class="tarif" id="tarif-disneyland">
+      <p class="tarif-dest">Paris ↔ Disneyland Paris</p>
+      <p class="tarif-lieu">Disneyland Paris et ses hôtels</p>
+      <p class="tarif-prix" data-prix>85 €</p>
+      <p class="tarif-sens">Le trajet, dans un sens ou dans l&#39;autre · 45–60 min</p>
+      <a href="/reserver?trajet=disneyland" class="bouton bouton--sombre" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Disneyland Paris</span></a>
+    </article><article class="tarif" id="tarif-beauvais">
+      <p class="tarif-dest">Paris ↔ Beauvais</p>
+      <p class="tarif-lieu">Aéroport de Beauvais</p>
+      <p class="tarif-prix" data-prix>140 €</p>
+      <p class="tarif-sens">Le trajet, dans un sens ou dans l&#39;autre · 60–75 min</p>
+      <a href="/reserver?trajet=beauvais" class="bouton bouton--sombre" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Paris ↔ Beauvais</span></a>
+    </article></div>
+  </div>
+</section>
+<section class="estim fond-ivoire" id="estimation" aria-labelledby="estimation-titre">
+  <div class="conteneur estim-grille">
+    <div class="estim-tete">
+      <p class="surtitre" data-anime>Estimation</p>
+      <h2 id="estimation-titre" data-anime="lignes">Estimez votre tarif <em>en quelques secondes.</em></h2>
+      <p data-anime>Choisissez le trajet et le nombre de passagers : le véhicule et le prix s&#39;affichent.</p>
+    </div>
+    <form class="estim-form" data-estimateur action="/reserver" method="get">
+      <fieldset class="estim-trajets">
+        <legend>Votre trajet</legend>
+        <div class="estim-choix-liste" data-anime="cascade"><label class="estim-choix">
+          <input type="radio" name="trajet" value="orly" data-prix="60" data-duree="30–45 min" checked>
+          <span class="estim-choix-nom">Orly</span><span class="estim-choix-prix">60 €</span>
+        </label><label class="estim-choix">
+          <input type="radio" name="trajet" value="cdg" data-prix="70" data-duree="45–60 min">
+          <span class="estim-choix-nom">Roissy CDG</span><span class="estim-choix-prix">70 €</span>
+        </label><label class="estim-choix">
+          <input type="radio" name="trajet" value="gares" data-prix="45" data-duree="20–35 min">
+          <span class="estim-choix-nom">Gares parisiennes</span><span class="estim-choix-prix">45 €</span>
+        </label><label class="estim-choix">
+          <input type="radio" name="trajet" value="disneyland" data-prix="85" data-duree="45–60 min">
+          <span class="estim-choix-nom">Disneyland Paris</span><span class="estim-choix-prix">85 €</span>
+        </label><label class="estim-choix">
+          <input type="radio" name="trajet" value="beauvais" data-prix="140" data-duree="60–75 min">
+          <span class="estim-choix-nom">Beauvais</span><span class="estim-choix-prix">140 €</span>
+        </label></div>
+      </fieldset>
+      <div class="estim-compteurs">
+        <fieldset class="estim-compteur" data-compte="passagers" data-min="1" data-max="7">
+          <legend>Passagers</legend>
+          <div class="compteur-ligne">
+            <button type="button" class="compteur-bouton" data-moins aria-label="Un de moins (passagers)">−</button>
+            <output class="compteur-valeur" aria-live="polite">1</output>
+            <button type="button" class="compteur-bouton" data-plus aria-label="Un de plus (passagers)">+</button>
+            <input type="hidden" name="passagers" value="1">
+          </div>
+        </fieldset><fieldset class="estim-compteur" data-compte="valises" data-min="0" data-max="7">
+          <legend>Valises</legend>
+          <div class="compteur-ligne">
+            <button type="button" class="compteur-bouton" data-moins aria-label="Un de moins (valises)">−</button>
+            <output class="compteur-valeur" aria-live="polite">1</output>
+            <button type="button" class="compteur-bouton" data-plus aria-label="Un de plus (valises)">+</button>
+            <input type="hidden" name="bagages-n" value="1">
+          </div>
+        </fieldset>
+      </div>
+    </form>
+    <div class="estim-resultat" aria-live="polite" data-estim-resultat>
+      <p class="estim-label">Votre véhicule</p>
+      <div class="estim-vehicule"><svg class="silhouette estim-silhouette" viewBox="0 0 400 140" data-forme="berline" aria-hidden="true" data-visuel>
+  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
+  <path class="silhouette-corps" d="M22 106 C20 98 22 92 30 89 L110 79 C130 66 150 54 168 50 L252 47 C272 49 290 62 312 76 L368 82 C376 84 380 92 378 104 L331 106 A26 26 0 0 0 279 106 L121 106 A26 26 0 0 0 69 106 Z" data-fx-trait/>
+  <path class="silhouette-vitres" d="M170 56 L250 53 C266 56 280 64 296 75 L150 75 C158 66 164 60 170 56 Z M222 54 L222 75" data-fx-trait/>
+  <path class="silhouette-ligne" d="M40 92 L360 92" data-fx-trait/>
+  <circle class="silhouette-roue" cx="95" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="106" r="9" data-fx-trait/><circle class="silhouette-roue" cx="305" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="305" cy="106" r="9" data-fx-trait/>
+</svg><svg class="silhouette estim-silhouette" viewBox="0 0 400 140" data-forme="van" aria-hidden="true" hidden data-visuel>
+  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
+  <path class="silhouette-corps" d="M20 104 C18 90 20 80 30 76 L70 70 C80 52 90 36 104 30 L350 28 C366 28 374 36 376 50 L380 100 L335 104 A26 26 0 0 0 283 104 L121 104 A26 26 0 0 0 69 104 Z" data-fx-trait/>
+  <path class="silhouette-vitres" d="M108 38 L175 36 L175 66 L84 66 C92 52 100 44 108 38 Z M185 36 L268 35 L268 66 L185 66 Z M278 35 L352 34 C360 34 364 40 365 48 L366 66 L278 66 Z" data-fx-trait/>
+  <path class="silhouette-ligne" d="M30 84 L376 84" data-fx-trait/>
+  <circle class="silhouette-roue" cx="95" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="104" r="9" data-fx-trait/><circle class="silhouette-roue" cx="309" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="309" cy="104" r="9" data-fx-trait/>
+</svg><p class="estim-vehicule-nom" data-estim-vehicule>Tesla Model Y ou Mercedes Classe E</p></div>
+      <p class="estim-prix" data-prix><span class="estim-montant" data-estim-montant>60</span><span class="estim-devise"> €</span></p>
+      <p class="estim-duree" data-estim-duree>Paris ↔ Orly · 30–45 min</p>
+      <p class="estim-note" data-estim-note data-fixe="Prix fixe pour ce trajet, dans un sens ou dans l&#39;autre. Paiement à bord." data-van="Pour 4 passagers ou plus de 3 valises, la Classe V : tarif confirmé à la réservation." data-max="Au-delà de 7 passagers, appelez-nous." data-surdemande="Tarif confirmé à la réservation" data-petit="Tesla Model Y ou Mercedes Classe E" data-grand="Mercedes Classe V">Prix fixe pour ce trajet, dans un sens ou dans l&#39;autre. Paiement à bord.</p>
+      <a href="/reserver?trajet=orly&amp;passagers=1" class="bouton" data-libelle="Réserver" data-estim-lien data-survol="magnetique">Réserver ce trajet</a>
+    </div>
+  </div>
+</section>
+<section class="inclus" id="inclus" aria-labelledby="inclus-titre">
+  <div class="conteneur">
+    <div class="tete-section">
+      <p class="surtitre" data-anime>Compris dans le prix</p>
+      <h2 id="inclus-titre" data-anime="lignes">Tout est <em>compris.</em></h2>
+    </div>
+    <ul class="inclus-grille" role="list" data-visuel><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M8 10h32v20H8z M14 30v8 M34 30v8 M14 18h20" data-fx-trait/></svg>
+      <h3>Pancarte nominative</h3><p>Votre chauffeur vous attend à la sortie avec votre nom.</p>
+    </li><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M6 30 L24 22 L42 30 M24 8 v14 M18 34 h12" data-fx-trait/></svg>
+      <h3>Suivi de vol</h3><p>Le vol est suivi en temps réel, l&#39;attente est sans frais.</p>
+    </li><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M12 14h24v26H12z M18 14V8h12v6 M12 24h24" data-fx-trait/></svg>
+      <h3>Bagages</h3><p>Une valise par passager ; les volumineux se signalent à la réservation.</p>
+    </li><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M14 40V20a10 10 0 0 1 20 0v20 M10 40h28 M18 28h12" data-fx-trait/></svg>
+      <h3>Sièges enfant</h3><p>Sièges et rehausseurs gratuits sur demande, pour tous les âges.</p>
+    </li><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M6 14h36v22H6z M6 22h36 M12 30h8" data-fx-trait/></svg>
+      <h3>Paiement à bord</h3><p>Espèces, carte ou virement, sans supplément.</p>
+    </li><li class="inclus-item">
+      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="M24 6a18 18 0 1 0 0 36a18 18 0 1 0 0-36 M24 14v10l7 5" data-fx-trait/></svg>
+      <h3>Annulation</h3><p>Gratuite jusqu&#39;à 24 heures avant le trajet.</p>
+    </li></ul>
+  </div>
+</section>
+<section class="demande fond-ivoire" id="sur-demande" aria-labelledby="demande-titre">
+  <div class="conteneur">
+    <div class="tete-section">
+      <p class="surtitre" data-anime>Sur demande</p>
+      <h2 id="demande-titre" data-anime="lignes">Mise à disposition <em>et longs trajets.</em></h2>
+    </div>
+    <div class="demande-grille">
+      <article class="demande-carte">
+        <figure class="media demande-media" data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-disposition-784.webp" srcset="/assets/images/grok/service-disposition-480.webp 480w, /assets/images/grok/service-disposition-640.webp 640w, /assets/images/grok/service-disposition-784.webp 784w" sizes="(max-width: 760px) 100vw, 45vw" alt="Banquette arrière en cuir noir, eau et plaid" width="784" height="1176" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <h3>Mise à disposition</h3>
+        <p>Un chauffeur à l&#39;heure ou à la journée, à votre rythme.</p>
+        <p class="demande-tarif">Tarif donné à la demande</p>
+        <a href="/reserver?trajet=disposition" class="lien-fleche" data-libelle="Réserver">Demander un tarif<span class="visuellement-cache"> : Mise à disposition</span></a>
+      </article><article class="demande-carte">
+        <figure class="media demande-media" data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/service-longs-trajets-784.webp" srcset="/assets/images/grok/service-longs-trajets-480.webp 480w, /assets/images/grok/service-longs-trajets-640.webp 640w, /assets/images/grok/service-longs-trajets-784.webp 784w" sizes="(max-width: 760px) 100vw, 45vw" alt="Autoroute à la tombée du jour, traînées de lumière" width="784" height="1176" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <h3>Longs trajets</h3>
+        <p>Province et Europe, au départ ou à destination de l&#39;Île‑de‑France, au forfait.</p>
+        <p class="demande-tarif">Tarif donné à la demande</p>
+        <a href="/reserver?trajet=longs" class="lien-fleche" data-libelle="Réserver">Demander un tarif<span class="visuellement-cache"> : Longs trajets</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="appel" id="appel" aria-labelledby="appel-titre">
+  <figure class="media appel-media" data-grok data-fx="parallaxe" data-fx-force="12" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/accueil-appel-1280.webp" srcset="/assets/images/grok/accueil-appel-640.webp 640w, /assets/images/grok/accueil-appel-1280.webp 1280w, /assets/images/grok/accueil-appel-1920.webp 1920w" sizes="100vw" alt="Portière ouverte d&#39;une berline noire sur des pavés mouillés la nuit" width="1280" height="720" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="conteneur appel-contenu">
+    <h2 id="appel-titre" data-anime="lignes">Prêt à réserver <em>votre chauffeur ?</em></h2>
+    <p data-anime>Réservation en ligne ou par téléphone, 24 h/24 et 7 j/7, jours fériés inclus. Confirmation par téléphone ou e-mail.</p>
+    <p class="appel-actions" data-anime>
+      <a href="/reserver" class="bouton" data-libelle="Réserver" data-survol="magnetique">Réserver en ligne</a>
+      <a class="bouton bouton--contour" href="tel:+33662158363">06 62 15 83 63</a>
+      <a class="bouton bouton--contour" href="https://wa.me/33662158363" target="_blank" rel="noopener">WhatsApp</a>
+    </p>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-marque">
+      <img src="/assets/images/logo-grand.webp" alt="" width="157" height="160" loading="lazy">
+      <p><strong>Maysam Transfert</strong></p>
+      <p>Chauffeur privé à Paris et en Île‑de‑France. Transferts aéroports, gares et Disneyland Paris, 24 h/24 et 7 j/7.</p>
+    </div>
+    <nav aria-label="Le site">
+      <p><strong>Le site</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/trajets" data-libelle="Trajets &amp; tarifs" aria-current="page">Trajets &amp; tarifs</a></li><li><a href="/services" data-libelle="Services">Services</a></li><li><a href="/flotte" data-libelle="Flotte">Flotte</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Nous joindre</strong></p>
+      <ul>
+        <li><a href="tel:+33662158363">06 62 15 83 63</a></li>
+        <li><a href="https://wa.me/33662158363" target="_blank" rel="noopener">Écrire sur WhatsApp</a></li>
+        <li><a href="mailto:maysam.transfert@gmail.com">maysam.transfert@gmail.com</a></li>
+        <li class="pied-dispo">24 h/24, 7 j/7, jours fériés inclus</li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas">
+    <p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p>
+    <p><a href="#haut" data-sans-transition>Retour en haut</a></p>
+    <p>© 2026 Maysam Transfert · Maquette de présentation</p>
+  </div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33662158363">Appeler</a>
+  <a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+{
+ "explication": "Maquettes favorites de l'utilisateur : le niveau et le style visés, sur l'accueil ET les pages intérieures. Jamais à copier (ni leur idée, ni leur mise en page) : même harmonie, même fluidité, même soin.",
+ "activite": [
+  "tourisme"
+ ],
+ "metier": "chauffeur privé VTC transfert aéroport",
+ "besoin": [],
+ "ton": [
+  "luxueux"
+ ],
+ "univers": [],
+ "ambiance": [],
+ "concept": [],
+ "depot": "maysam-transfert-maquette",
+ "favorites_dans_la_bibliotheque": 19,
+ "favorites": [
+  {
+   "rang": 1,
+   "maquette": "chateau-haut-piquat-maquette",
+   "client": "château viticole en Lussac Saint-Émilion : vins, boutique en ligne, visites et événements, site bilingue",
+   "metier": "château viticole, vigneron",
+   "pourquoi": "favorite (liste de la skill v11.1, recreee localement)",
+   "proche": [
+    "même activité",
+    "ambiance luxueux"
+   ],
+   "lumiere": "mixte",
+   "note_maquette": 86,
+   "en_ligne": "https://chateau-haut-piquat-maquette.vercel.app",
+   "vues": [
+    {
+     "page": "accueil",
+     "role": "ouverture",
+     "id": "chateau-haut-piquat-maquette/hero",
+     "note_section": 4,
+     "titre": "Château Haut-Piquat",
+     "capture": "medias/chateau-haut-piquat-maquette/hero-p1440.jpg",
+     "video": "medias/chateau-haut-piquat-maquette/hero-p720.mp4",
+     "fiche": "sections/chateau-haut-piquat-maquette/hero.json",
+     "en_ligne": "https://chateau-haut-piquat-maquette.vercel.app"
+    },
+    {
+     "page": "accueil",
+     "role": "manifeste",
+     "id": "chateau-haut-piquat-maquette/terroir",
+     "note_section": 5,
+     "titre": "Sous la vigne, le calcaireBeneath the vines, limestone",
+     "capture": "medias/chateau-haut-piquat-maquette/terroir-p1440.jpg",
+     "video": "medias/chateau-haut-piquat-maquette/terroir-p720.mp4",
+     "fiche": "sections/chateau-haut-piquat-maquette/terroir.json",
+     "en_ligne": "https://chateau-haut-piquat-maquette.vercel.app"
+    },
+    {
+     "page": "oenotourisme",
+     "role": "ouverture",
+     "id": "chateau-haut-piquat-maquette/oenotourisme-ohero",
+     "note_section": 5,
+     "titre": "Passer l’archeThrough the arch",
+     "capture": "medias/chateau-haut-piquat-maquette/oenotourisme-ohero-p1440.jpg",
+     "video": "medias/chateau-haut-piquat-maquette/oenotourisme-ohero-p720.mp4",
+     "fiche": "sections/chateau-haut-piquat-maquette/oenotourisme-ohero.json",
+     "en_ligne": "https://chateau-haut-piquat-maquette.vercel.app/oenotourisme"
+    },
+    {
+     "page": "vins",
+     "role": "produits",
+     "id": "chateau-haut-piquat-maquette/vins-cave",
+     "note_section": 5,
+     "titre": "Le tour de la caveA tour of the cellar",
+     "capture": "medias/chateau-haut-piquat-maquette/vins-cave-p1440.jpg",
+     "video": "medias/chateau-haut-piquat-maquette/vins-cave-p720.mp4",
+     "fiche": "sections/chateau-haut-piquat-maquette/vins-cave.json",
+     "en_ligne": "https://chateau-haut-piquat-maquette.vercel.app/vins"
+    }
+   ]
+  },
+  {
+   "rang": 2,
+   "maquette": "coolcanyoning-maquette",
+   "client": "guide de canyoning, via ferrata et escalade diplômé d'État (Yann) dans le Verdon, l'arrière-pays de Nice et le Haut-Var",
+   "metier": "guide de canyoning",
+   "pourquoi": "favorite (liste de la skill v11.1, recreee localement)",
+   "proche": [
+    "même activité"
+   ],
+   "lumiere": "mixte",
+   "note_maquette": 87,
+   "en_ligne": "https://coolcanyoning-maquette.vercel.app",
+   "vues": [
+    {
+     "page": "accueil",
+     "role": "ouverture",
+     "id": "coolcanyoning-maquette/heros",
+     "note_section": 4,
+     "titre": "Sauter.Glisser.Descendre.",
+     "capture": "medias/coolcanyoning-maquette/heros-p1440.jpg",
+     "video": "medias/coolcanyoning-maquette/heros-p720.mp4",
+     "fiche": "sections/coolcanyoning-maquette/heros.json",
+     "en_ligne": "https://coolcanyoning-maquette.vercel.app"
+    },
+    {
+     "page": "accueil",
+     "role": "manifeste",
+     "id": "coolcanyoning-maquette/le-principe",
+     "note_section": 4,
+     "titre": "La descente · −12 m",
+     "capture": "medias/coolcanyoning-maquette/le-principe-p1440.jpg",
+     "video": null,
+     "fiche": "sections/coolcanyoning-maquette/le-principe.json",
+     "en_ligne": "https://coolcanyoning-maquette.vercel.app"
+    },
+    {
+     "page": "canyoning",
+     "role": "ouverture",
+     "id": "coolcanyoning-maquette/canyoning-ph",
+     "note_section": 3,
+     "titre": "Choisir sa descente.",
+     "capture": "medias/coolcanyoning-maquette/canyoning-ph-p1440.jpg",
+     "video": null,
+     "fiche": "sections/coolcanyoning-maquette/canyoning-ph.json",
+     "en_ligne": "https://coolcanyoning-maquette.vercel.app/canyoning"
+    },
+    {
+     "page": "escalade",
+     "role": "étapes",
+     "id": "coolcanyoning-maquette/escalade-voie-t",
+     "note_section": 4,
+     "titre": "La voie, longueur par longueur",
+     "capture": "medias/coolcanyoning-maquette/escalade-voie-t-p1440.jpg",
+     "video": null,
+     "fiche": "sections/coolcanyoning-maquette/escalade-voie-t.json",
+     "en_ligne": "https://coolcanyoning-maquette.vercel.app/escalade"
+    }
+   ]
+  },
+  {
+   "rang": 3,
+   "maquette": "efficience-triathlon-maquette",
+   "client": "coach de triathlon, tests d'effort lactate et stages",
+   "metier": "coach de triathlon",
+   "pourquoi": "favorite (liste de la skill v11.1, recreee localement)",
+   "proche": [
+    "activité proche"
+   ],
+   "lumiere": "sombre",
+   "note_maquette": 88,
+   "en_ligne": "https://efficience-triathlon-maquette.vercel.app",
+   "vues": [
+    {
+     "page": "accueil",
+     "role": "ouverture",
+     "id": "efficience-triathlon-maquette/top",
+     "note_section": 4,
+     "titre": "Héros vidéo sous ondes",
+     "capture": "medias/efficience-triathlon-maquette/top-p1440.jpg",
+     "video": "medias/efficience-triathlon-maquette/top-p720.mp4",
+     "fiche": "sections/efficience-triathlon-maquette/top.json",
+     "en_ligne": "https://efficience-triathlon-maquette.vercel.app"
+    },
+    {
+     "page": "accueil",
+     "role": "outil-interactif",
+     "id": "efficience-triathlon-maquette/science",
+     "note_section": 5,
+     "titre": "Courbe interactive à curseur",
+     "capture": "medias/efficience-triathlon-maquette/science-p1440.jpg",
+     "video": "medias/efficience-triathlon-maquette/science-p720.mp4",
+     "fiche": "sections/efficience-triathlon-maquette/science.json",
+     "en_ligne": "https://efficience-triathlon-maquette.vercel.app"
+    },
+    {
+     "page": "stage-triathlon-montagne",
+     "role": "ouverture",
+     "id": "efficience-triathlon-maquette/stage-triathlon-montagne-top",
+     "note_section": 4,
+     "titre": "Héros à profil d'altitude",
+     "capture": "medias/efficience-triathlon-maquette/stage-triathlon-montagne-top-p1440.jpg",
+     "video": "medias/efficience-triathlon-maquette/stage-triathlon-montagne-top-p720.mp4",
+     "fiche": "sections/efficience-triathlon-maquette/stage-triathlon-montagne-top.json",
+     "en_ligne": "https://efficience-triathlon-maquette.vercel.app/stage-triathlon-montagne"
+    },
+    {
+     "page": "test-effort",
+     "role": "étapes",
+     "id": "efficience-triathlon-maquette/test-effort-protocole",
+     "note_section": 4,
+     "titre": "Protocole épinglé palier par palier",
+     "capture": "medias/efficience-triathlon-maquette/test-effort-protocole-p1440.jpg",
+     "video": "medias/efficience-triathlon-maquette/test-effort-protocole-p720.mp4",
+     "fiche": "sections/efficience-triathlon-maquette/test-effort-protocole.json",
+     "en_ligne": "https://efficience-triathlon-maquette.vercel.app/test-effort"
+    }
+   ]
+  },
+  {
+   "rang": 4,
+   "maquette": "nolanis-maquette",
+   "client": "Agence de communication visuelle à Strasbourg : print et web, espaces publicitaires, publipostage, photo et vidéo, objets publicitaires, sauvegarde en ligne, formation photo",
+   "metier": "agence de communication visuelle",
+   "pourquoi": "favorite (liste de la skill v11.1, recreee localement)",
+   "proche": [],
+   "lumiere": "clair",
+   "note_maquette": 86,
+   "en_ligne": "https://nolanis-maquette.vercel.app",
+   "vues": [
+    {
+     "page": "accueil",
+     "role": "ouverture",
+     "id": "nolanis-maquette/debut",
+     "note_section": 5,
+     "titre": "Votre agence de communication visuelle à Strasbourg",
+     "capture": "medias/nolanis-maquette/debut-p1440.jpg",
+     "video": "medias/nolanis-maquette/debut-p720.mp4",
+     "fiche": "sections/nolanis-maquette/debut.json",
+     "en_ligne": "https://nolanis-maquette.vercel.app"
+    },
+    {
+     "page": "accueil",
+     "role": "services",
+     "id": "nolanis-maquette/services",
+     "note_section": 4,
+     "titre": "La liasse des épreuves",
+     "capture": "medias/nolanis-maquette/services-p1440.jpg",
+     "video": "medias/nolanis-maquette/services-p720.mp4",
+     "fiche": "sections/nolanis-maquette/services.json",
+     "en_ligne": "https://nolanis-maquette.vercel.app"
+    },
+    {
+     "page": "formations",
+     "role": "ouverture",
+     "id": "nolanis-maquette/formations-debut",
+     "note_section": 4,
+     "titre": "Choisir l’image juste",
+     "capture": "medias/nolanis-maquette/formations-debut-p1440.jpg",
+     "video": "medias/nolanis-maquette/formations-debut-p720.mp4",
+     "fiche": "sections/nolanis-maquette/formations-debut.json",
+     "en_ligne": "https://nolanis-maquette.vercel.app/formations"
+    },
+    {
+     "page": "contact",
+     "role": "outil-interactif",
+     "id": "nolanis-maquette/contact-devis",
+     "note_section": 4,
+     "titre": "Votre demande, en trois étapes",
+     "capture": "medias/nolanis-maquette/contact-devis-p1440.jpg",
+     "video": "medias/nolanis-maquette/contact-devis-p720.mp4",
+     "fiche": "sections/nolanis-maquette/contact-devis.json",
+     "en_ligne": "https://nolanis-maquette.vercel.app/contact"
+    }
+   ]
+  }
+ ]
+}

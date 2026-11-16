@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maysam Transfert · trois directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;600&family=DM+Mono:wght@500&family=Gloock&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#E9E6E0;color:#1B1C1F;font:16px/1.55 Manrope,system-ui,sans-serif;padding:clamp(16px,3vw,40px)}
+  .tete{max-width:1240px;margin:0 auto 28px}
+  .tete h1{font:700 clamp(28px,3.4vw,44px)/1.1 Manrope,sans-serif;letter-spacing:-.02em}
+  .tete p{max-width:760px;margin-top:10px;color:#4a4b50}
+  .dir{max-width:1240px;margin:0 auto 34px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.05),0 12px 40px -20px rgba(0,0,0,.25)}
+  .dir-tete{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;padding:22px 26px 6px}
+  .lettre{font:700 15px/1 JetBrains Mono,monospace;background:#1B1C1F;color:#fff;border-radius:8px;padding:7px 10px}
+  .dir-tete h2{font:700 clamp(22px,2.4vw,30px)/1.15 Manrope,sans-serif;letter-spacing:-.01em}
+  .reco{font:600 13px/1 Manrope,sans-serif;background:#E8F3EA;color:#1f6b35;border-radius:99px;padding:6px 10px}
+  .sous{padding:0 26px 18px;color:#55565b;max-width:900px}
+  .grille{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:0}
+  @media (max-width:900px){.grille{grid-template-columns:minmax(0,1fr)}}
+  .ecran{position:relative;min-height:460px;height:100%;overflow:hidden}
+  @media (max-width:900px){.ecran{min-height:0;height:auto;aspect-ratio:4/3.2}}
+  .infos{padding:22px 26px;display:flex;flex-direction:column;gap:18px;border-left:1px solid #eee}
+  .infos h3{font:700 12px/1 JetBrains Mono,monospace;letter-spacing:.08em;text-transform:uppercase;color:#7a7b80;margin-bottom:8px}
+  .pal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .pal div{border-radius:10px;height:62px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;font:500 11px/1.25 JetBrains Mono,monospace;border:1px solid rgba(0,0,0,.08)}
+  .plan{list-style:none;counter-reset:n;display:grid;gap:4px;font-size:14px}
+  .plan li{counter-increment:n;display:flex;gap:8px}
+  .plan li::before{content:counter(n,decimal-leading-zero);font:500 12px/1.6 JetBrains Mono,monospace;color:#9a9ba0}
+  .txt{font-size:14.5px;color:#333}
+  .txt b{color:#111}
+  .bas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #eee}
+  @media (max-width:900px){.bas{grid-template-columns:minmax(0,1fr)}}
+  .bas>div{padding:18px 26px;border-right:1px solid #eee}
+  .bas>div:last-child{border-right:0}
+  /* ===== A ===== */
+  .A{background:#0C0E13;color:#F2EDE3;font-family:Manrope,sans-serif}
+  .A .photo{position:absolute;inset:0;background:url(__NUIT__) center 60%/cover;filter:brightness(.55) saturate(.9);transform:scale(1.06);animation:aZoom 9s ease-out both}
+  @keyframes aZoom{to{transform:scale(1)}}
+  .A .voile{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,14,19,.92) 0%,rgba(12,14,19,.55) 48%,rgba(12,14,19,.1) 100%)}
+  .A .phare{position:absolute;width:46%;aspect-ratio:1;border-radius:50%;top:8%;background:radial-gradient(circle,rgba(255,236,190,.55),rgba(201,164,92,.18) 35%,transparent 66%);mix-blend-mode:screen;opacity:0;animation:aPhare 2.6s .3s ease-out forwards}
+  .A .phare.g{left:-14%}.A .phare.d{left:10%;animation-delay:.45s}
+  @keyframes aPhare{0%{opacity:0;transform:scale(.4)}30%{opacity:1}100%{opacity:.35;transform:scale(1)}}
+  .A .trainee{position:absolute;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#C9A45C,transparent);opacity:.7;animation:aTrain 2.4s linear infinite}
+  @keyframes aTrain{from{transform:translateX(-30%)}to{transform:translateX(160%)}}
+  .A .contenu{position:absolute;left:6%;top:12%;right:40%;display:flex;flex-direction:column;gap:14px}
+  .A .sur{font:500 11px/1 JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:#C9A45C}
+  .A h4{font:500 clamp(28px,4.4vw,58px)/1.02 'Bodoni Moda',serif;letter-spacing:-.01em;opacity:0;animation:aTitre 1.2s 1s ease-out forwards}
+  .A h4 em{color:#C9A45C}
+  @keyframes aTitre{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+  .A .btn{align-self:flex-start;background:#C9A45C;color:#0C0E13;font-weight:700;font-size:13px;border-radius:99px;padding:10px 16px}
+  .A .cle{font:500 12px/1 JetBrains Mono,monospace;color:#d8d2c5}
+  .A .tableau{position:absolute;right:4%;bottom:6%;width:auto;background:#08090c;border:1px solid #2a2d36;border-radius:10px;padding:10px;display:grid;gap:5px;font:700 clamp(8px,.85vw,11.5px)/1 'JetBrains Mono',monospace}
+  .A .ligne{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}
+  .A .case{display:inline-flex;gap:2px}
+  .A .case span{display:inline-block;width:1.15em;padding:.28em 0;text-align:center;background:#171A21;color:#F2EDE3;border-radius:2px;position:relative}
+  .A .case span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#08090c}
+  .A .prix span{color:#C9A45C}
+  /* ===== B ===== */
+  .B{background:#F4EFE6;color:#14161B;font-family:'Inter Tight',sans-serif}
+  .B svg{position:absolute;right:0;top:6%;width:54%;height:84%}
+  .B .contenu{position:absolute;left:6%;top:14%;width:40%;display:flex;flex-direction:column;gap:14px}
+  .B .sur{font:500 11px/1 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#A87B32}
+  .B h4{font:400 clamp(28px,4vw,56px)/1 'Instrument Serif',serif;letter-spacing:-.01em}
+  .B h4 em{color:#A87B32}
+  .B .btn{align-self:flex-start;background:#14161B;color:#F4EFE6;font-weight:600;font-size:13px;border-radius:99px;padding:10px 16px}
+  .B .cle{font:500 12px/1 'DM Mono',monospace;color:#5a5a5a}
+  .B .bulle{position:absolute;right:9%;bottom:10%;background:#14161B;color:#F4EFE6;border-radius:12px;padding:10px 14px;font:500 12px/1.4 'DM Mono',monospace}
+  .B .bulle b{color:#E2B868;font-size:18px}
+  /* ===== C ===== */
+  .C{background:#F3EEE6;color:#121110;font-family:Figtree,sans-serif}
+  .C .noir{position:absolute;right:0;top:0;bottom:0;width:44%;background:#121110}
+  .C .halo{position:absolute;right:6%;top:18%;width:32%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(168,97,47,.45),transparent 65%)}
+  .C .pancarte{position:absolute;right:10%;top:28%;width:28%;aspect-ratio:1.45;background:#fff;border-radius:6px;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transform:rotate(-4deg);animation:cBalance 4s ease-in-out infinite}
+  @keyframes cBalance{50%{transform:rotate(-1deg) translateY(-4px)}}
+  .C .pancarte small{font:600 9px/1 Figtree,sans-serif;letter-spacing:.14em;color:#A8612F;text-transform:uppercase}
+  .C .pancarte strong{font:400 clamp(16px,2.2vw,28px)/1 Gloock,serif;border-right:2px solid #A8612F;padding-right:3px;animation:cCurseur .8s steps(1) infinite}
+  @keyframes cCurseur{50%{border-color:transparent}}
+  .C .contenu{position:absolute;left:6%;top:14%;width:46%;display:flex;flex-direction:column;gap:14px}
+  .C .sur{font:600 11px/1 Figtree,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#A8612F}
+  .C h4{font:400 clamp(28px,4.3vw,58px)/1.02 Gloock,serif}
+  .C h4 em{font-style:normal;color:#A8612F}
+  .C .btn{align-self:flex-start;background:#A8612F;color:#fff;font-weight:700;font-size:13px;border-radius:6px;padding:10px 16px}
+  .C .etapes{position:absolute;left:6%;bottom:8%;width:48%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;font:600 11px/1.2 Figtree,sans-serif}
+  .C .etapes span{border-top:2px solid #121110;padding-top:6px;opacity:.35}
+  .C .etapes span.on{opacity:1;border-color:#A8612F;color:#A8612F}
+  .typo{display:grid;gap:6px}
+  @media (max-width:600px){.A .tableau,.B .bulle,.C .etapes{display:none}.A .contenu,.B .contenu,.C .contenu{right:6%;width:auto}.B svg{opacity:.3;width:100%;right:-20%}.C .noir{width:30%}.C .pancarte{right:4%;top:auto;bottom:8%;width:46%}.C .halo{display:none}}
+  .note{max-width:1240px;margin:0 auto;color:#55565b;font-size:14px}
+</style>
+</head>
+<body>
+<header class="tete">
+  <h1>Maysam Transfert · trois directions</h1>
+  <p>Chauffeur privé à Paris et en Île-de-France. Les trois partent de ce qui existe chez le client : le logo or et noir, les prix fixes par trajet, la pancarte nominative et le suivi de vol, les trois modèles de véhicules, le service 24 h/24. Les photos du site actuel viennent toutes de banques d'images : les grandes images seront créées avec Grok, sans faux véhicule de la flotte et sans visage.</p>
+</header>
+
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">A</span><h2>Les phares dans la nuit</h2><span class="reco">Recommandée</span></div>
+  <p class="sous">Paris la nuit, vu d'une berline noire. Le noir et l'or du logo, du calme et de la précision. Deux sections claires (tarifs et réservation) pour que les infos utiles respirent.</p>
+  <div class="grille">
+    <div class="ecran A">
+      <div class="photo"></div><div class="voile"></div>
+      <div class="phare g"></div><div class="phare d"></div>
+      <div class="trainee" style="top:78%;left:0;width:40%"></div>
+      <div class="trainee" style="top:84%;left:20%;width:30%;animation-delay:-1s"></div>
+      <div class="trainee" style="top:90%;left:10%;width:50%;animation-delay:-1.7s"></div>
+      <div class="contenu">
+        <span class="sur">Chauffeur privé · Paris &amp; Île-de-France</span>
+        <h4>À l'heure, <em>à chaque</em> trajet.</h4>
+        <span class="btn">Réserver un trajet</span>
+        <span class="cle">24 h/24 · Orly dès 60 €</span>
+      </div>
+      <div class="tableau" id="tableau"></div>
+    </div>
+    <div class="infos">
+      <div><h3>Palette</h3><div class="pal">
+        <div style="background:#0C0E13;color:#F2EDE3">nuit<br>#0C0E13<br>fond</div>
+        <div style="background:#171A21;color:#F2EDE3">asphalte<br>#171A21<br>2e fond</div>
+        <div style="background:#F2EDE3">ivoire<br>#F2EDE3<br>tarifs, résa</div>
+        <div style="background:#C9A45C">or<br>#C9A45C<br>accent</div>
+      </div></div>
+      <div class="typo"><h3>Typographies</h3>
+        <div style="font:500 30px/1.05 'Bodoni Moda',serif">Orly <em style="color:#a5823e">60 €</em></div>
+        <div style="font:400 15px/1.5 Manrope">Manrope pour le texte : sobre, très lisible.</div>
+        <div style="font:700 13px/1 'JetBrains Mono'">CDG · 70 € · 45–60 MIN</div>
+      </div>
+      <div><h3>Accueil (9 écrans)</h3><ol class="plan">
+        <li>Ouverture : Paris de nuit, phares qui s'allument, traînées de lumière</li>
+        <li>Tableau des départs : les 5 trajets, prix et durées en palettes</li>
+        <li>Estimateur (ivoire) : trajet et passagers, le véhicule et le prix</li>
+        <li>Services en grandes photos, à faire défiler</li>
+        <li>La flotte : 3 modèles, places et valises</li>
+        <li>« Votre nom sur la pancarte » : suivi de vol, attente sans frais</li>
+        <li>Témoignages (les 6 vrais)</li>
+        <li>FAQ courte</li>
+        <li>Appel final : Réserver, Appeler, WhatsApp</li>
+      </ol></div>
+    </div>
+  </div>
+  <div class="bas">
+    <div class="txt"><b>L'idée qui relie :</b> la lumière des phares. Ils s'allument à l'intro et leur faisceau dévoile le titre ; le voile entre les pages est un faisceau qui balaie l'écran ; un halo doré suit le pointeur sur les photos de nuit.</div>
+    <div class="txt"><b>Animations :</b> palettes du tableau qui tournent, traînées de lumière qui accélèrent avec le défilement, prix qui roulent dans l'estimateur, nom écrit en direct sur la pancarte, cartes de services qui s'inclinent.</div>
+    <div class="txt"><b>Favorites proches :</b> Efficience Triathlon pour la franchise (prix et outil visibles tout de suite), Château Haut-Piquat pour le luxe sombre et les grandes photos.</div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">B</span><h2>Le plan des trajets</h2></div>
+  <p class="sous">Une carte élégante de l'Île-de-France, tracée à l'encre et à l'or comme le plan d'un grand hôtel. Fond ivoire dominant, bandes encre pour la flotte et l'appel final.</p>
+  <div class="grille">
+    <div class="ecran B">
+      <svg viewBox="0 0 400 300" aria-hidden="true">
+        <g fill="none" stroke="#14161B" stroke-width="1" opacity=".18"><path d="M40 150 C 120 60, 280 60, 360 150 C 280 240, 120 240, 40 150Z"/><path d="M90 150 C 150 95, 250 95, 310 150 C 250 205, 150 205, 90 150Z"/></g>
+        <g fill="none" stroke="#A87B32" stroke-width="1.6" stroke-linecap="round">
+          <path id="r1" d="M200 150 C 200 120, 230 80, 262 52"/>
+          <path d="M200 150 C 190 180, 180 210, 178 236"/>
+          <path d="M200 150 C 160 130, 110 90, 70 48"/>
+          <path d="M200 150 C 250 160, 300 170, 350 176"/>
+          <path d="M200 150 C 205 145, 215 140, 224 128"/>
+        </g>
+        <circle cx="200" cy="150" r="9" fill="#14161B"/><circle cx="200" cy="150" r="3.5" fill="#E2B868"/>
+        <g font-family="DM Mono" font-size="9" fill="#14161B">
+          <circle cx="262" cy="52" r="3.5" fill="#14161B"/><text x="270" y="50">Roissy CDG · 70 €</text>
+          <circle cx="178" cy="236" r="3.5" fill="#14161B"/><text x="186" y="244">Orly · 60 €</text>
+          <circle cx="70" cy="48" r="3.5" fill="#14161B"/><text x="20" y="38">Beauvais · 140 €</text>
+          <circle cx="350" cy="176" r="3.5" fill="#14161B"/><text x="300" y="194">Disneyland · 85 €</text>
+          <circle cx="224" cy="128" r="3" fill="#14161B"/><text x="230" y="124">Gares · 45 €</text>
+        </g>
+        <circle r="5" fill="#A87B32"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
+      </svg>
+      <div class="contenu">
+        <span class="sur">Chauffeur privé · Paris &amp; Île-de-France</span>
+        <h4>Paris, <em>et tous ses départs.</em></h4>
+        <span class="btn">Estimer mon trajet</span>
+        <span class="cle">Prix fixes · 24 h/24</span>
+      </div>
+      <div class="bulle">Paris ↔ Roissy CDG<br><b>70 €</b> · 45–60 min</div>
+    </div>
+    <div class="infos">
+      <div><h3>Palette</h3><div class="pal">
+        <div style="background:#F4EFE6">ivoire<br>#F4EFE6<br>fond</div>
+        <div style="background:#E9E1D2">sable<br>#E9E1D2<br>2e fond</div>
+        <div style="background:#14161B;color:#F4EFE6">encre<br>#14161B<br>bandes</div>
+        <div style="background:#A87B32;color:#fff">or brun<br>#A87B32<br>accent</div>
+      </div></div>
+      <div class="typo"><h3>Typographies</h3>
+        <div style="font:400 34px/1 'Instrument Serif',serif">Disneyland <em style="color:#A87B32">85 €</em></div>
+        <div style="font:400 15px/1.5 'Inter Tight'">Inter Tight pour le texte : net, moderne.</div>
+        <div style="font:500 13px/1 'DM Mono'">PARIS ↔ ORLY · 30–45 MIN</div>
+      </div>
+      <div><h3>Accueil (9 écrans)</h3><ol class="plan">
+        <li>Ouverture : grand titre et la carte, Paris qui brille au centre</li>
+        <li>La carte s'épingle : une pastille dorée parcourt chaque trajet, prix et durée à l'arrivée</li>
+        <li>Estimateur : on touche une destination sur la carte</li>
+        <li>Services, en cartes photo</li>
+        <li>La flotte (bande encre)</li>
+        <li>Accueil à l'aéroport : pancarte, suivi de vol</li>
+        <li>Témoignages, placés sur la carte (Paris 15e, Créteil, Versailles…)</li>
+        <li>FAQ</li>
+        <li>Appel final (bande encre)</li>
+      </ol></div>
+    </div>
+  </div>
+  <div class="bas">
+    <div class="txt"><b>L'idée qui relie :</b> la carte des trajets, qui sert aussi d'estimateur et de zone desservie. On la retrouve en petit à l'ouverture de chaque page.</div>
+    <div class="txt"><b>Animations :</b> tracés qui se dessinent, pastille qui roule le long des routes, prix qui s'affichent à l'arrivée, cartes de services qui se soulèvent, témoignages qui s'allument sur la carte.</div>
+    <div class="txt"><b>Favorite proche :</b> Cool Canyoning (l'altimètre qui suit la descente : une idée du métier qui reste à sa place).</div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">C</span><h2>De la pancarte à votre porte</h2></div>
+  <p class="sous">Le trajet raconté étape par étape : on vous attend avec votre nom, on prend vos valises, vous vous installez, Paris défile, vous êtes arrivé. Plus chaleureux et rassurant, crème et noir alternés, accent cognac.</p>
+  <div class="grille">
+    <div class="ecran C">
+      <div class="noir"></div><div class="halo"></div>
+      <div class="pancarte"><small>Maysam Transfert</small><strong id="nom">M. Martin</strong></div>
+      <div class="contenu">
+        <span class="sur">Chauffeur privé · Paris &amp; Île-de-France</span>
+        <h4>On vous attend <em>à la sortie.</em></h4>
+        <span class="btn">Réserver un trajet</span>
+      </div>
+      <div class="etapes"><span class="on">1 · Accueil</span><span>2 · Valises</span><span>3 · À bord</span><span>4 · Paris</span><span>5 · Arrivée</span></div>
+    </div>
+    <div class="infos">
+      <div><h3>Palette</h3><div class="pal">
+        <div style="background:#F3EEE6">crème<br>#F3EEE6<br>fond</div>
+        <div style="background:#121110;color:#F3EEE6">noir chaud<br>#121110<br>2e fond</div>
+        <div style="background:#FFFFFF">blanc<br>#FFFFFF<br>cartes</div>
+        <div style="background:#A8612F;color:#fff">cognac<br>#A8612F<br>accent</div>
+      </div></div>
+      <div class="typo"><h3>Typographies</h3>
+        <div style="font:400 30px/1.05 Gloock,serif">Gare du Nord, <span style="color:#A8612F">5 h 30</span></div>
+        <div style="font:400 15px/1.5 Figtree">Figtree pour le texte : rond, chaleureux.</div>
+      </div>
+      <div><h3>Accueil (9 écrans)</h3><ol class="plan">
+        <li>Ouverture : la pancarte qui porte votre nom</li>
+        <li>Récit en 5 étapes épinglées (on entre dans la voiture par la vitre)</li>
+        <li>Tarifs en grandes cartes</li>
+        <li>Estimateur</li>
+        <li>Services</li>
+        <li>Flotte</li>
+        <li>Témoignages</li>
+        <li>FAQ</li>
+        <li>Appel final</li>
+      </ol></div>
+    </div>
+  </div>
+  <div class="bas">
+    <div class="txt"><b>L'idée qui relie :</b> le parcours du voyageur, de la sortie de l'avion ou du train jusqu'à la porte. Chaque étape répond à une inquiétude (retard, valises, siège enfant, prix).</div>
+    <div class="txt"><b>Animations :</b> nom qui s'écrit sur la pancarte, plongée dans la voiture au défilement, valises qui se rangent, Paris qui défile derrière la vitre, étapes qui s'allument.</div>
+    <div class="txt"><b>Favorites proches :</b> Laure Polin et Lemoy Premium (sobres, grandes photos, finition très tenue).</div>
+  </div>
+</section>
+<p class="note">Les trois gardent le même périmètre, les mêmes vrais contenus (prix, durées, services, témoignages, FAQ) et la réservation simulée. Seuls l'ambiance, le plan de l'accueil et les animations changent.</p>
+
+<script>
+(function(){
+  var lignes=[["ORLY","60 €","30-45"],["ROISSY CDG","70 €","45-60"],["GARES","45 €","20-35"],["DISNEYLAND","85 €","45-60"],["BEAUVAIS","140 €","60-75"]];
+  var t=document.getElementById('tableau'); if(!t) return;
+  var L="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -€";
+  function cases(txt,n,cls){var h='<span class="case '+(cls||'')+'">';for(var i=0;i<n;i++){h+='<span data-c="'+(txt[i]||' ')+'"> </span>'}return h+'</span>'}
+  t.innerHTML=lignes.map(function(l){return '<div class="ligne">'+cases(l[0],10)+cases(l[1],5,'prix')+cases(l[2],5)+'</div>'}).join('');
+  var spans=[].slice.call(t.querySelectorAll('[data-c]'));
+  spans.forEach(function(s,i){var cible=s.dataset.c,k=0,max=6+((i*7)%14);var iv=setInterval(function(){k++;s.textContent=k>=max?cible:L[(Math.random()*L.length)|0];if(k>=max)clearInterval(iv)},55+((i*13)%40))});
+  var noms=["M. Martin","Mme Duval","Famille Rossi","Mr. Smith"],j=0,el=document.getElementById('nom');
+  setInterval(function(){j=(j+1)%noms.length;var n=noms[j],k=0;el.textContent='';var iv=setInterval(function(){k++;el.textContent=n.slice(0,k);if(k>=n.length)clearInterval(iv)},90)},3200);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+{
+ "accueil": {
+  "hero": {
+   "points": [
+    "Disponible 24 h/24",
+    "Véhicules premium",
+    "Tarifs fixes",
+    "Accueil personnalisé"
+   ]
+  },
+  "pancarte": {
+   "points": [
+    "Pancarte nominative à la sortie",
+    "Suivi du vol en temps réel",
+    "Attente sans frais en cas de retard"
+   ]
+  }
+ },
+ "trajets": {
+  "inclus": {
+   "points": [
+    [
+     "Pancarte nominative",
+     "Votre chauffeur vous attend à la sortie avec votre nom."
+    ],
+    [
+     "Suivi de vol",
+     "Le vol est suivi en temps réel, l'attente est sans frais."
+    ],
+    [
+     "Bagages",
+     "Une valise par passager ; les volumineux se signalent à la réservation."
+    ],
+    [
+     "Sièges enfant",
+     "Sièges et rehausseurs gratuits sur demande, pour tous les âges."
+    ],
+    [
+     "Paiement à bord",
+     "Espèces, carte ou virement, sans supplément."
+    ],
+    [
+     "Annulation",
+     "Gratuite jusqu'à 24 heures avant le trajet."
+    ]
+   ]
+  }
+ },
+ "services": {
+  "aeroport": {
+   "etapes": [
+    [
+     "Le vol est suivi",
+     "Votre numéro de vol suffit : le chauffeur suit l'atterrissage en temps réel."
+    ],
+    [
+     "La pancarte vous attend",
+     "À la sortie, votre nom sur la pancarte : pas besoin de chercher."
+    ],
+    [
+     "L'attente est sans frais",
+     "En cas de retard, l'heure de prise en charge est décalée, sans supplément."
+    ]
+   ]
+  }
+ },
+ "flotte": {
+  "confort": {
+   "points": [
+    [
+     "Sièges enfant gratuits",
+     "Sièges et rehausseurs sur demande, pour tous les âges : indiquez l'âge des enfants."
+    ],
+    [
+     "Bagages volumineux",
+     "Skis, poussette, valises en plus : signalez-les à la réservation."
+    ],
+    [
+     "100 % électrique",
+     "La Tesla Model Y roule sans émission à l'usage."
+    ]
+   ]
+  }
+ },
+ "reserver": {
+  "points": [
+   "Confirmation rapide par e-mail",
+   "Accueil avec pancarte nominative",
+   "Prix fixe confirmé à l'avance"
+  ],
+  "form": {
+   "bagagesOptions": [
+    "Aucun",
+    "1 valise",
+    "2 valises",
+    "3 valises et plus",
+    "Bagages volumineux (skis, poussette…)"
+   ]
+  }
+ },
+ "contact": {
+  "blocs": [
+   [
+    "Téléphone",
+    "Assistance 24 h/24, 7 j/7.",
+    "Appeler"
+   ],
+   [
+    "WhatsApp",
+    "Un message, une photo de votre billet : on vous répond.",
+    "Écrire"
+   ],
+   [
+    "E-mail",
+    "Réponse sous quelques heures.",
+    "Écrire un e-mail"
+   ],
+   [
+    "Disponibilité",
+    "24 h/24, 7 j/7, jours fériés inclus.",
+    "Réserver"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,119 @@
+[
+ {
+  "cle": "aeroport",
+  "titre": "Transferts aéroport",
+  "court": "Aéroports",
+  "image": "grok/service-aeroport",
+  "alt": "Terminal d'aéroport la nuit, façade de verre éclairée",
+  "texte": "Orly, Roissy CDG et Beauvais, avec pancarte nominative et suivi de vol.",
+  "inclus": [
+   "Accueil avec pancarte nominative",
+   "Suivi du vol en temps réel",
+   "Attente sans frais en cas de retard"
+  ],
+  "liens": [
+   [
+    "orly",
+    "Orly"
+   ],
+   [
+    "cdg",
+    "Roissy CDG"
+   ],
+   [
+    "beauvais",
+    "Beauvais"
+   ]
+  ]
+ },
+ {
+  "cle": "gares",
+  "titre": "Gares & hôtels",
+  "court": "Gares",
+  "image": "grok/service-gares",
+  "alt": "Grande gare au petit matin, verrière et lumière dorée",
+  "texte": "Gare du Nord, Montparnasse, Gare de Lyon, Gare de l'Est : prise en charge porte à porte dans Paris.",
+  "inclus": [
+   "Porte à porte dans Paris",
+   "45 € par trajet, prix fixe"
+  ],
+  "liens": [
+   [
+    "gares",
+    "Réserver ce trajet"
+   ]
+  ]
+ },
+ {
+  "cle": "parcs",
+  "titre": "Disneyland & parcs",
+  "court": "Parcs",
+  "image": "grok/service-parcs",
+  "alt": "Coffre ouvert avec deux valises et un rehausseur, à l'aube",
+  "texte": "Trajets en famille ou en groupe, bagages inclus.",
+  "inclus": [
+   "Sièges enfant et rehausseurs gratuits sur demande",
+   "Bagages inclus",
+   "85 € par trajet vers Disneyland Paris"
+  ],
+  "liens": [
+   [
+    "disneyland",
+    "Réserver ce trajet"
+   ]
+  ]
+ },
+ {
+  "cle": "disposition",
+  "titre": "Mise à disposition",
+  "court": "À l'heure",
+  "image": "grok/service-disposition",
+  "alt": "Banquette arrière en cuir noir, eau et plaid, lumières de la ville",
+  "texte": "Un chauffeur disponible à l'heure ou à la journée.",
+  "inclus": [
+   "À l'heure ou à la journée",
+   "Tarif donné à la demande"
+  ],
+  "liens": [
+   [
+    "disposition",
+    "Demander un tarif"
+   ]
+  ]
+ },
+ {
+  "cle": "evenements",
+  "titre": "Événements & mariages",
+  "court": "Événements",
+  "image": "grok/service-evenements",
+  "alt": "Ruban blanc noué à la portière d'une berline noire",
+  "texte": "Berlines de prestige pour cérémonies et soirées.",
+  "inclus": [
+   "Cérémonies, soirées, occasions spéciales",
+   "Tarif donné à la demande"
+  ],
+  "liens": [
+   [
+    "evenement",
+    "Demander un tarif"
+   ]
+  ]
+ },
+ {
+  "cle": "longs",
+  "titre": "Longs trajets",
+  "court": "Province, Europe",
+  "image": "grok/service-longs-trajets",
+  "alt": "Autoroute à la tombée du jour, traînées de lumière",
+  "texte": "Province et Europe, au départ ou à destination de l'Île‑de‑France, au forfait.",
+  "inclus": [
+   "Forfait donné à la demande"
+  ],
+  "liens": [
+   [
+    "longs",
+    "Demander un forfait"
+   ]
+  ]
+ }
+]

@@ -1,0 +1,42 @@
+{
+ "nom": "Maysam Transfert",
+ "adresse": "https://maysam-transfert-maquette.vercel.app",
+ "siteActuel": "maysam-transfert.fr",
+ "version": 1,
+ "langues": [
+  "fr"
+ ],
+ "navigation": [
+  "accueil",
+  "trajets",
+  "services",
+  "flotte",
+  "reserver",
+  "contact"
+ ],
+ "actionEntete": {
+  "page": "reserver"
+ },
+ "couleurs": {
+  "fond": "#0C0E13",
+  "texte": "#F2EDE3",
+  "voile": "#0C0E13",
+  "theme": "#0C0E13",
+  "ouverture": "#07080B",
+  "menu": "#0C0E13"
+ },
+ "formeVoile": "glisse",
+ "contact": {
+  "telephone": "06 62 15 83 63",
+  "telephoneLien": "+33662158363",
+  "email": "maysam.transfert@gmail.com",
+  "whatsapp": "https://wa.me/33662158363",
+  "adresse": "Paris et Île-de-France"
+ },
+ "polices": [
+  "/assets/fonts/bodoni-moda.woff2",
+  "/assets/fonts/manrope-400.woff2"
+ ],
+ "imagePartage": "accueil-ouverture-1280.webp",
+ "curseur": false
+}

@@ -1,0 +1,34 @@
+{
+ "siteActuel": "maysam-transfert.fr",
+ "pagesTypes": [
+  "/",
+  "/trajets",
+  "/services",
+  "/flotte",
+  "/reserver",
+  "/contact"
+ ],
+ "effets": [
+  "phares",
+  "tableau-departs",
+  "estimateur",
+  "pancarte",
+  "carte-trajets",
+  "prix-geant",
+  "silhouettes",
+  "choix-vehicule",
+  "numero",
+  "garanties",
+  "rideau-ouverture"
+ ],
+ "grille": {
+  "dispenses": {
+   "voile": "vitre teintée qui remonte (glisse) : le geste du métier, filet doré sur le bord",
+   "manipuler": "v11 : pas d'objet obligatoire ; l'estimateur et la pancarte au nom tapé servent le visiteur",
+   "fil": "v11 : la lumière des phares relie l'intro, le voile et l'ouverture",
+   "typo": "v11 : titres francs en Bodoni, mot en or italique",
+   "scene": "la galerie des services est la vitrine des six prestations",
+   "retour": "v11 : la pancarte affiche le nom tapé dans le formulaire"
+  }
+ }
+}

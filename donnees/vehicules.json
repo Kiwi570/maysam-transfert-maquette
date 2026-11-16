@@ -1,0 +1,37 @@
+[
+ {
+  "cle": "tesla",
+  "nom": "Tesla Model Y",
+  "categorie": "SUV 100 % électrique",
+  "passagers": "1 à 3",
+  "pmax": 3,
+  "valises": 3,
+  "forme": "suv",
+  "photo": "modele-tesla",
+  "photoAlt": "Tesla Model Y",
+  "badge": "Électrique"
+ },
+ {
+  "cle": "classe-e",
+  "nom": "Mercedes Classe E",
+  "categorie": "Berline",
+  "passagers": "1 à 3",
+  "pmax": 3,
+  "valises": 3,
+  "forme": "berline",
+  "photo": null,
+  "badge": ""
+ },
+ {
+  "cle": "classe-v",
+  "nom": "Mercedes Classe V",
+  "categorie": "Van 7 places",
+  "passagers": "1 à 7",
+  "pmax": 7,
+  "valises": 7,
+  "forme": "van",
+  "photo": "modele-classe-v",
+  "photoAlt": "Mercedes Classe V, phares allumés",
+  "badge": "Familles et groupes"
+ }
+]
