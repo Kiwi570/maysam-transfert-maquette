@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1">
+<html lang="fr" data-v="2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,15 +35,15 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 })();</script>
 <link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/formulaire-par-etapes.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/formulaire-par-etapes.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#0C0E13">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -135,6 +135,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <div class="pancarte-carton">
           <p class="pancarte-marque">Maysam Transfert</p>
           <p class="pancarte-nom" data-pancarte-nom data-defaut="Votre nom">Votre nom</p>
+          <span class="tampon" aria-hidden="true" data-tampon>Demande prête</span>
         </div>
         <figcaption>Votre pancarte</figcaption>
       </figure>
@@ -195,7 +196,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
             <div class="fpe__champ"><label for="r-tel">Téléphone <i aria-hidden="true">*</i></label><input id="r-tel" name="tel" type="tel" required autocomplete="tel" inputmode="tel"></div>
             <div class="fpe__champ"><label for="r-email">E-mail <i aria-hidden="true">*</i></label><input id="r-email" name="email" type="email" required autocomplete="email"></div>
           </div>
-          <p class="mention-donnees">Vos données servent seulement à traiter votre réservation. Politique de confidentialité : à compléter.</p>
+          <p class="mention-donnees">Vos données servent seulement à traiter votre réservation.</p>
         </fieldset>
         <fieldset class="fpe__etape" data-etape="Vérifier" data-recap>
           <legend class="fpe__legende"><h3 class="fpe__titre">Tout est juste ?</h3></legend>

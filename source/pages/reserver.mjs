@@ -49,6 +49,7 @@ export default (c) => {
         <div class="pancarte-carton">
           <p class="pancarte-marque">Maysam Transfert</p>
           <p class="pancarte-nom" data-pancarte-nom data-defaut="Votre nom">Votre nom</p>
+          <span class="tampon" aria-hidden="true" data-tampon>Demande prête</span>
         </div>
         <figcaption>${c.t('reserver.recap.pancarte')}</figcaption>
       </figure>

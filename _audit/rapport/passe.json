@@ -1,15 +1,17 @@
 {
- "id": "20261116-162621-complet-cible-partiel",
- "date": "2026-11-16T16:27:38.456Z",
+ "id": "20261117-201204-complet-cible-partiel",
+ "date": "2026-11-17T20:15:53.515Z",
  "niveau": "complet",
- "pages": "/",
+ "pages": "/,/reserver",
  "etapes": [
   "fichiers",
-  "mesures"
+  "mouvement",
+  "fluidite",
+  "parcours"
  ],
- "version": "1",
+ "version": "2",
  "echecs": 0,
- "aRegarder": 33,
+ "aRegarder": 1,
  "nonLances": 0,
  "manquants": 0,
  "statut": "complet"

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1">
+<html lang="fr" data-v="2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,14 +35,14 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 })();</script>
 <link rel="preload" href="/assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#0C0E13">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -132,33 +132,33 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <h2 id="tableau-titre" data-anime="lignes">Des prix clairs, <em>sans surprise.</em></h2>
       <p data-anime>Un prix fixe par trajet, dans un sens ou dans l&#39;autre, confirmé à la réservation. Sans compteur ni supplément à l&#39;arrivée.</p>
     </div>
-    <div class="tableau" data-effet="tableau-departs" role="table" aria-labelledby="tableau-titre">
+    <div class="tableau" data-effet="tableau-departs" role="table" aria-labelledby="tableau-titre" data-visuel>
   <div class="tableau-entete" role="row"><span role="columnheader">Destination</span><span role="columnheader">Durée</span><span role="columnheader">Prix</span><span role="columnheader"><span class="visuellement-cache">Réserver</span></span></div>
   <div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest"><span class="flaps " aria-hidden="true" data-flaps="ORLY      "><span class="flap">O</span><span class="flap">R</span><span class="flap">L</span><span class="flap">Y</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span></span><span class="visuellement-cache">Orly</span></span>
     <span role="cell" class="tableau-duree"><span class="flaps flaps--petit" aria-hidden="true" data-flaps="30-45"><span class="flap">3</span><span class="flap">0</span><span class="flap">-</span><span class="flap">4</span><span class="flap">5</span></span><span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">30–45 min</span></span>
     <span role="cell" class="tableau-prix" data-prix><span class="flaps flaps--or" aria-hidden="true" data-flaps=" 60€"><span class="flap">&nbsp;</span><span class="flap">6</span><span class="flap">0</span><span class="flap">€</span></span><span class="visuellement-cache">60 €</span></span>
-    <span role="cell" class="tableau-action"><a href="/reserver?trajet=orly" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Orly</span></a></span>
+    <span role="cell" class="tableau-action"><a href="/reserver?trajet=orly" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Orly</span><span class="fleche" aria-hidden="true">→</span></a></span>
   </div><div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest"><span class="flaps " aria-hidden="true" data-flaps="ROISSY CDG"><span class="flap">R</span><span class="flap">O</span><span class="flap">I</span><span class="flap">S</span><span class="flap">S</span><span class="flap">Y</span><span class="flap">&nbsp;</span><span class="flap">C</span><span class="flap">D</span><span class="flap">G</span></span><span class="visuellement-cache">Roissy CDG</span></span>
     <span role="cell" class="tableau-duree"><span class="flaps flaps--petit" aria-hidden="true" data-flaps="45-60"><span class="flap">4</span><span class="flap">5</span><span class="flap">-</span><span class="flap">6</span><span class="flap">0</span></span><span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">45–60 min</span></span>
     <span role="cell" class="tableau-prix" data-prix><span class="flaps flaps--or" aria-hidden="true" data-flaps=" 70€"><span class="flap">&nbsp;</span><span class="flap">7</span><span class="flap">0</span><span class="flap">€</span></span><span class="visuellement-cache">70 €</span></span>
-    <span role="cell" class="tableau-action"><a href="/reserver?trajet=cdg" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Roissy CDG</span></a></span>
+    <span role="cell" class="tableau-action"><a href="/reserver?trajet=cdg" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Roissy CDG</span><span class="fleche" aria-hidden="true">→</span></a></span>
   </div><div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest"><span class="flaps " aria-hidden="true" data-flaps="GARES     "><span class="flap">G</span><span class="flap">A</span><span class="flap">R</span><span class="flap">E</span><span class="flap">S</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span></span><span class="visuellement-cache">Gares parisiennes</span></span>
     <span role="cell" class="tableau-duree"><span class="flaps flaps--petit" aria-hidden="true" data-flaps="20-35"><span class="flap">2</span><span class="flap">0</span><span class="flap">-</span><span class="flap">3</span><span class="flap">5</span></span><span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">20–35 min</span></span>
     <span role="cell" class="tableau-prix" data-prix><span class="flaps flaps--or" aria-hidden="true" data-flaps=" 45€"><span class="flap">&nbsp;</span><span class="flap">4</span><span class="flap">5</span><span class="flap">€</span></span><span class="visuellement-cache">45 €</span></span>
-    <span role="cell" class="tableau-action"><a href="/reserver?trajet=gares" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Gares parisiennes</span></a></span>
+    <span role="cell" class="tableau-action"><a href="/reserver?trajet=gares" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Gares parisiennes</span><span class="fleche" aria-hidden="true">→</span></a></span>
   </div><div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest"><span class="flaps " aria-hidden="true" data-flaps="DISNEYLAND"><span class="flap">D</span><span class="flap">I</span><span class="flap">S</span><span class="flap">N</span><span class="flap">E</span><span class="flap">Y</span><span class="flap">L</span><span class="flap">A</span><span class="flap">N</span><span class="flap">D</span></span><span class="visuellement-cache">Disneyland Paris</span></span>
     <span role="cell" class="tableau-duree"><span class="flaps flaps--petit" aria-hidden="true" data-flaps="45-60"><span class="flap">4</span><span class="flap">5</span><span class="flap">-</span><span class="flap">6</span><span class="flap">0</span></span><span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">45–60 min</span></span>
     <span role="cell" class="tableau-prix" data-prix><span class="flaps flaps--or" aria-hidden="true" data-flaps=" 85€"><span class="flap">&nbsp;</span><span class="flap">8</span><span class="flap">5</span><span class="flap">€</span></span><span class="visuellement-cache">85 €</span></span>
-    <span role="cell" class="tableau-action"><a href="/reserver?trajet=disneyland" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Disneyland Paris</span></a></span>
+    <span role="cell" class="tableau-action"><a href="/reserver?trajet=disneyland" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Disneyland Paris</span><span class="fleche" aria-hidden="true">→</span></a></span>
   </div><div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest"><span class="flaps " aria-hidden="true" data-flaps="BEAUVAIS  "><span class="flap">B</span><span class="flap">E</span><span class="flap">A</span><span class="flap">U</span><span class="flap">V</span><span class="flap">A</span><span class="flap">I</span><span class="flap">S</span><span class="flap">&nbsp;</span><span class="flap">&nbsp;</span></span><span class="visuellement-cache">Beauvais</span></span>
     <span role="cell" class="tableau-duree"><span class="flaps flaps--petit" aria-hidden="true" data-flaps="60-75"><span class="flap">6</span><span class="flap">0</span><span class="flap">-</span><span class="flap">7</span><span class="flap">5</span></span><span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">60–75 min</span></span>
     <span role="cell" class="tableau-prix" data-prix><span class="flaps flaps--or" aria-hidden="true" data-flaps="140€"><span class="flap">1</span><span class="flap">4</span><span class="flap">0</span><span class="flap">€</span></span><span class="visuellement-cache">140 €</span></span>
-    <span role="cell" class="tableau-action"><a href="/reserver?trajet=beauvais" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Beauvais</span></a></span>
+    <span role="cell" class="tableau-action"><a href="/reserver?trajet=beauvais" class="bouton bouton--petit" data-libelle="Réserver">Réserver<span class="visuellement-cache"> Beauvais</span><span class="fleche" aria-hidden="true">→</span></a></span>
   </div>
 </div>
     <p class="lien-suite" data-anime><a href="/trajets" class="lien-fleche" data-libelle="Trajets &amp; tarifs">Voir les trajets et la carte</a></p>
@@ -213,20 +213,33 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </form>
     <div class="estim-resultat" aria-live="polite" data-estim-resultat>
       <p class="estim-label">Votre véhicule</p>
-      <div class="estim-vehicule"><svg class="silhouette estim-silhouette" viewBox="0 0 400 140" data-forme="berline" aria-hidden="true" data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="M22 106 C20 98 22 92 30 89 L110 79 C130 66 150 54 168 50 L252 47 C272 49 290 62 312 76 L368 82 C376 84 380 92 378 104 L331 106 A26 26 0 0 0 279 106 L121 106 A26 26 0 0 0 69 106 Z" data-fx-trait/>
-  <path class="silhouette-vitres" d="M170 56 L250 53 C266 56 280 64 296 75 L150 75 C158 66 164 60 170 56 Z M222 54 L222 75" data-fx-trait/>
-  <path class="silhouette-ligne" d="M40 92 L360 92" data-fx-trait/>
-  <circle class="silhouette-roue" cx="95" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="106" r="9" data-fx-trait/><circle class="silhouette-roue" cx="305" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="305" cy="106" r="9" data-fx-trait/>
-</svg><svg class="silhouette estim-silhouette" viewBox="0 0 400 140" data-forme="van" aria-hidden="true" hidden data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="M20 104 C18 90 20 80 30 76 L70 70 C80 52 90 36 104 30 L350 28 C366 28 374 36 376 50 L380 100 L335 104 A26 26 0 0 0 283 104 L121 104 A26 26 0 0 0 69 104 Z" data-fx-trait/>
-  <path class="silhouette-vitres" d="M108 38 L175 36 L175 66 L84 66 C92 52 100 44 108 38 Z M185 36 L268 35 L268 66 L185 66 Z M278 35 L352 34 C360 34 364 40 365 48 L366 66 L278 66 Z" data-fx-trait/>
-  <path class="silhouette-ligne" d="M30 84 L376 84" data-fx-trait/>
-  <circle class="silhouette-roue" cx="95" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="104" r="9" data-fx-trait/><circle class="silhouette-roue" cx="309" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="309" cy="104" r="9" data-fx-trait/>
+      <div class="estim-vehicule"><svg class="silhouette estim-silhouette" viewBox="0 0 400 150" data-forme="berline" aria-hidden="true" data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="M18 112 C16 104 18 96 26 93 L66 88 C80 86 96 84 112 80 C130 66 150 56 172 52 C196 48 228 47 254 49 C276 51 296 62 316 76 C332 78 352 80 366 84 C376 87 382 94 382 104 L382 110 L334 112 A27 27 0 0 0 280 112 L122 112 A27 27 0 0 0 68 112 Z" data-trait/>
+    <path class="silhouette-vitres" d="M176 58 C196 54 226 53 250 55 C266 57 282 66 296 76 L226 76 L226 58 Z M168 60 L220 57 L220 76 L144 76 C150 70 158 64 168 60 Z" data-trait/>
+    <path class="silhouette-lignes" d="M222 80 L222 108 M148 80 C149 92 148 100 146 108 M70 93 L372 90 M300 84 L312 84" data-trait/>
+    <path class="silhouette-feu" d="M372 86 L380 88 L380 96" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="96" r="30"/><circle cx="30" cy="96" r="18"/><circle cx="30" cy="96" r="9"/></g>
+    <path class="silhouette-phare" d="M20 96 C26 93 36 92 44 94" data-trait/>
+    <g class="silhouette-roue-g"><circle class="silhouette-roue" cx="95" cy="112" r="21" data-trait/><circle class="silhouette-jante" cx="95" cy="112" r="13" data-trait/><path class="silhouette-rayons" d="M95 112 L108.0 112.0 M95 112 L99.0 124.4 M95 112 L84.5 119.7 M95 112 L84.5 104.3 M95 112 L99.0 99.6" data-trait/></g><g class="silhouette-roue-g"><circle class="silhouette-roue" cx="307" cy="112" r="21" data-trait/><circle class="silhouette-jante" cx="307" cy="112" r="13" data-trait/><path class="silhouette-rayons" d="M307 112 L320.0 112.0 M307 112 L311.0 124.4 M307 112 L296.5 119.7 M307 112 L296.5 104.3 M307 112 L311.0 99.6" data-trait/></g>
+  </g>
+</svg><svg class="silhouette estim-silhouette" viewBox="0 0 400 150" data-forme="van" aria-hidden="true" hidden data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="M16 108 C14 96 16 86 26 82 L56 76 C66 58 78 40 96 32 C110 28 130 27 150 27 L344 26 C362 26 372 34 374 48 L380 98 L380 106 L334 108 A26 26 0 0 0 282 108 L120 108 A26 26 0 0 0 68 108 Z" data-trait/>
+    <path class="silhouette-vitres" d="M100 38 C112 34 130 33 150 33 L178 33 L178 64 L72 64 C80 52 88 44 100 38 Z M188 33 L262 33 L262 64 L188 64 Z M272 33 L348 33 C358 33 364 40 365 50 L366 64 L272 64 Z" data-trait/>
+    <path class="silhouette-lignes" d="M184 70 L184 104 M268 70 L268 104 M28 79 L376 77 M200 74 L214 74" data-trait/>
+    <path class="silhouette-feu" d="M372 54 L378 56 L379 70" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="90" r="30"/><circle cx="30" cy="90" r="18"/><circle cx="30" cy="90" r="9"/></g>
+    <path class="silhouette-phare" d="M18 90 C24 87 32 86 40 88" data-trait/>
+    <g class="silhouette-roue-g"><circle class="silhouette-roue" cx="94" cy="108" r="21" data-trait/><circle class="silhouette-jante" cx="94" cy="108" r="13" data-trait/><path class="silhouette-rayons" d="M94 108 L107.0 108.0 M94 108 L98.0 120.4 M94 108 L83.5 115.7 M94 108 L83.5 100.3 M94 108 L98.0 95.6" data-trait/></g><g class="silhouette-roue-g"><circle class="silhouette-roue" cx="308" cy="108" r="21" data-trait/><circle class="silhouette-jante" cx="308" cy="108" r="13" data-trait/><path class="silhouette-rayons" d="M308 108 L321.0 108.0 M308 108 L312.0 120.4 M308 108 L297.5 115.7 M308 108 L297.5 100.3 M308 108 L312.0 95.6" data-trait/></g>
+  </g>
 </svg><p class="estim-vehicule-nom" data-estim-vehicule>Tesla Model Y ou Mercedes Classe E</p></div>
       <p class="estim-prix" data-prix><span class="estim-montant" data-estim-montant>60</span><span class="estim-devise"> €</span></p>
+      <div class="estim-route" aria-hidden="true"><span class="estim-route-point">Paris</span><span class="estim-route-ligne"><span class="estim-route-trace"></span><svg class="estim-route-voiture" viewBox="0 0 40 18"><path d="M3 13 C3 10 4 9 7 8.5 L12 8 C15 5 18 3.5 22 3.5 L28 3.5 C31 4 34 6 36 8.5 C38 9 38.5 11 38 13 Z"/><circle cx="11" cy="13.5" r="3"/><circle cx="30" cy="13.5" r="3"/></svg></span><span class="estim-route-point" data-estim-arrivee>Orly</span></div>
       <p class="estim-duree" data-estim-duree>Paris ↔ Orly · 30–45 min</p>
       <p class="estim-note" data-estim-note data-fixe="Prix fixe pour ce trajet, dans un sens ou dans l&#39;autre. Paiement à bord." data-van="Pour 4 passagers ou plus de 3 valises, la Classe V : tarif confirmé à la réservation." data-max="Au-delà de 7 passagers, appelez-nous." data-surdemande="Tarif confirmé à la réservation" data-petit="Tesla Model Y ou Mercedes Classe E" data-grand="Mercedes Classe V">Prix fixe pour ce trajet, dans un sens ou dans l&#39;autre. Paiement à bord.</p>
       <a href="/reserver?trajet=orly&amp;passagers=1" class="bouton" data-libelle="Réserver" data-estim-lien data-survol="magnetique">Réserver ce trajet</a>
@@ -242,7 +255,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <p class="masque-ecran-bas">Des transferts aéroport à la mise à disposition, dans toute l&#39;Île‑de‑France. <a href="/services" class="lien-fleche" data-libelle="Services">Tous les services</a></p>
   </div>
   <div class="piste services-piste" data-galerie tabindex="0" role="region" aria-label="Services, défilement horizontal" data-anime="cascade">
-    <article class="service-carte" id="service-aeroport">
+    <article class="service-carte" id="service-aeroport" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-aeroport-784.webp" srcset="/assets/images/grok/service-aeroport-480.webp 480w, /assets/images/grok/service-aeroport-640.webp 640w, /assets/images/grok/service-aeroport-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Terminal d&#39;aéroport la nuit, façade de verre éclairée" width="784" height="1176" loading="lazy" decoding="async">
@@ -254,7 +267,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <p class="service-desc">Orly, Roissy CDG et Beauvais, avec pancarte nominative et suivi de vol.</p>
         <p class="service-liens"><a href="/reserver?trajet=orly" class="lien-fleche" data-libelle="Réserver">Orly</a><a href="/reserver?trajet=cdg" class="lien-fleche" data-libelle="Réserver">Roissy CDG</a><a href="/reserver?trajet=beauvais" class="lien-fleche" data-libelle="Réserver">Beauvais</a></p>
       </div>
-    </article><article class="service-carte" id="service-gares">
+    </article><article class="service-carte" id="service-gares" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-gares-784.webp" srcset="/assets/images/grok/service-gares-480.webp 480w, /assets/images/grok/service-gares-640.webp 640w, /assets/images/grok/service-gares-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Grande gare au petit matin, verrière et lumière dorée" width="784" height="1176" loading="lazy" decoding="async">
@@ -266,7 +279,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <p class="service-desc">Gare du Nord, Montparnasse, Gare de Lyon, Gare de l&#39;Est : prise en charge porte à porte dans Paris.</p>
         <p class="service-liens"><a href="/reserver?trajet=gares" class="lien-fleche" data-libelle="Réserver">Réserver ce trajet<span class="visuellement-cache"> : Gares &amp; hôtels</span></a></p>
       </div>
-    </article><article class="service-carte" id="service-parcs">
+    </article><article class="service-carte" id="service-parcs" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-parcs-784.webp" srcset="/assets/images/grok/service-parcs-480.webp 480w, /assets/images/grok/service-parcs-640.webp 640w, /assets/images/grok/service-parcs-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Coffre ouvert avec deux valises et un rehausseur, à l&#39;aube" width="784" height="1176" loading="lazy" decoding="async">
@@ -278,7 +291,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <p class="service-desc">Trajets en famille ou en groupe, bagages inclus.</p>
         <p class="service-liens"><a href="/reserver?trajet=disneyland" class="lien-fleche" data-libelle="Réserver">Réserver ce trajet<span class="visuellement-cache"> : Disneyland &amp; parcs</span></a></p>
       </div>
-    </article><article class="service-carte" id="service-disposition">
+    </article><article class="service-carte" id="service-disposition" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-disposition-784.webp" srcset="/assets/images/grok/service-disposition-480.webp 480w, /assets/images/grok/service-disposition-640.webp 640w, /assets/images/grok/service-disposition-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Banquette arrière en cuir noir, eau et plaid, lumières de la ville" width="784" height="1176" loading="lazy" decoding="async">
@@ -290,7 +303,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <p class="service-desc">Un chauffeur disponible à l&#39;heure ou à la journée.</p>
         <p class="service-liens"><a href="/reserver?trajet=disposition" class="lien-fleche" data-libelle="Réserver">Demander un tarif<span class="visuellement-cache"> : Mise à disposition</span></a></p>
       </div>
-    </article><article class="service-carte" id="service-evenements">
+    </article><article class="service-carte" id="service-evenements" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-evenements-784.webp" srcset="/assets/images/grok/service-evenements-480.webp 480w, /assets/images/grok/service-evenements-640.webp 640w, /assets/images/grok/service-evenements-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Ruban blanc noué à la portière d&#39;une berline noire" width="784" height="1176" loading="lazy" decoding="async">
@@ -302,7 +315,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <p class="service-desc">Berlines de prestige pour cérémonies et soirées.</p>
         <p class="service-liens"><a href="/reserver?trajet=evenement" class="lien-fleche" data-libelle="Réserver">Demander un tarif<span class="visuellement-cache"> : Événements &amp; mariages</span></a></p>
       </div>
-    </article><article class="service-carte" id="service-longs">
+    </article><article class="service-carte" id="service-longs" data-survol="incline" data-survol-force="4">
       <figure class="media service-media" data-grok data-fx="vitesse" data-fx-force="2" style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/service-longs-trajets-784.webp" srcset="/assets/images/grok/service-longs-trajets-480.webp 480w, /assets/images/grok/service-longs-trajets-640.webp 640w, /assets/images/grok/service-longs-trajets-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Autoroute à la tombée du jour, traînées de lumière" width="784" height="1176" loading="lazy" decoding="async">
@@ -317,6 +330,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </article>
   </div>
   <div class="galerie-progres" aria-hidden="true"><span></span></div>
+  <p class="glisser conteneur" aria-hidden="true">Faites glisser</p>
 </section>
 <section class="flotte-accueil fond-ivoire" id="vehicules" aria-labelledby="flotte-titre">
   <div class="conteneur">
@@ -325,35 +339,53 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <h2 id="flotte-titre" data-anime="lignes">Des véhicules premium <em>pour chaque trajet.</em></h2>
       <p data-anime>Une flotte récente et entretenue, du transfert seul au voyage en famille.</p>
     </div>
-    <div class="vehicules-grille" data-effet="silhouettes"><article class="vehicule" data-vehicule="tesla">
-      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 140" data-forme="suv" role="img" aria-label="Tesla Model Y" data-fx="trace" data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="M22 104 C20 92 24 84 34 80 L112 72 C134 56 156 42 178 38 L262 37 C300 42 330 58 360 72 C374 76 380 86 378 102 L333 104 A28 28 0 0 0 277 104 L123 104 A28 28 0 0 0 67 104 Z" data-fx-trait/>
-  <path class="silhouette-vitres" d="M180 45 L260 44 C288 48 310 58 332 70 L150 70 C160 58 170 50 180 45 Z M228 44 L228 70" data-fx-trait/>
-  <path class="silhouette-ligne" d="M38 88 L362 88" data-fx-trait/>
-  <circle class="silhouette-roue" cx="95" cy="104" r="22" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="104" r="10" data-fx-trait/><circle class="silhouette-roue" cx="305" cy="104" r="22" data-fx-trait/><circle class="silhouette-jante" cx="305" cy="104" r="10" data-fx-trait/>
+    <div class="vehicules-grille"><article class="vehicule" data-vehicule="tesla" data-survol="incline" data-survol-force="5">
+      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 150" data-forme="suv" role="img" aria-label="Tesla Model Y" data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="M18 110 C16 98 20 90 30 86 L64 82 C82 80 100 76 116 70 C136 56 158 44 182 40 C208 36 240 36 266 40 C300 46 330 60 356 74 C372 78 382 88 382 100 L382 108 L336 110 A29 29 0 0 0 278 110 L124 110 A29 29 0 0 0 66 110 Z" data-trait/>
+    <path class="silhouette-vitres" d="M186 47 C210 43 238 43 262 46 C284 50 304 58 324 70 L230 70 L230 46 Z M178 49 L224 46 L224 70 L148 70 C156 60 166 53 178 49 Z" data-trait/>
+    <path class="silhouette-lignes" d="M227 74 L227 106 M150 74 C151 88 150 98 148 106 M70 89 L372 86 M300 78 L312 78" data-trait/>
+    <path class="silhouette-feu" d="M372 82 L380 85 L381 94" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="92" r="30"/><circle cx="30" cy="92" r="18"/><circle cx="30" cy="92" r="9"/></g>
+    <path class="silhouette-phare" d="M20 92 C28 89 38 88 46 90" data-trait/>
+    <g class="silhouette-roue-g"><circle class="silhouette-roue" cx="95" cy="110" r="23" data-trait/><circle class="silhouette-jante" cx="95" cy="110" r="14" data-trait/><path class="silhouette-rayons" d="M95 110 L109.3 110.0 M95 110 L99.4 123.6 M95 110 L83.5 118.4 M95 110 L83.5 101.6 M95 110 L99.4 96.4" data-trait/></g><g class="silhouette-roue-g"><circle class="silhouette-roue" cx="307" cy="110" r="23" data-trait/><circle class="silhouette-jante" cx="307" cy="110" r="14" data-trait/><path class="silhouette-rayons" d="M307 110 L321.3 110.0 M307 110 L311.4 123.6 M307 110 L295.5 118.4 M307 110 L295.5 101.6 M307 110 L311.4 96.4" data-trait/></g>
+  </g>
 </svg></div>
       <h3>Tesla Model Y</h3>
       <p class="vehicule-categorie">SUV 100 % électrique</p>
       <dl class="vehicule-chiffres"><div><dt>Passagers</dt><dd>1 à 3</dd></div><div><dt>Valises</dt><dd>3</dd></div></dl>
-    </article><article class="vehicule" data-vehicule="classe-e">
-      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 140" data-forme="berline" role="img" aria-label="Mercedes Classe E" data-fx="trace" data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="M22 106 C20 98 22 92 30 89 L110 79 C130 66 150 54 168 50 L252 47 C272 49 290 62 312 76 L368 82 C376 84 380 92 378 104 L331 106 A26 26 0 0 0 279 106 L121 106 A26 26 0 0 0 69 106 Z" data-fx-trait/>
-  <path class="silhouette-vitres" d="M170 56 L250 53 C266 56 280 64 296 75 L150 75 C158 66 164 60 170 56 Z M222 54 L222 75" data-fx-trait/>
-  <path class="silhouette-ligne" d="M40 92 L360 92" data-fx-trait/>
-  <circle class="silhouette-roue" cx="95" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="106" r="9" data-fx-trait/><circle class="silhouette-roue" cx="305" cy="106" r="20" data-fx-trait/><circle class="silhouette-jante" cx="305" cy="106" r="9" data-fx-trait/>
+    </article><article class="vehicule" data-vehicule="classe-e" data-survol="incline" data-survol-force="5">
+      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 150" data-forme="berline" role="img" aria-label="Mercedes Classe E" data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="M18 112 C16 104 18 96 26 93 L66 88 C80 86 96 84 112 80 C130 66 150 56 172 52 C196 48 228 47 254 49 C276 51 296 62 316 76 C332 78 352 80 366 84 C376 87 382 94 382 104 L382 110 L334 112 A27 27 0 0 0 280 112 L122 112 A27 27 0 0 0 68 112 Z" data-trait/>
+    <path class="silhouette-vitres" d="M176 58 C196 54 226 53 250 55 C266 57 282 66 296 76 L226 76 L226 58 Z M168 60 L220 57 L220 76 L144 76 C150 70 158 64 168 60 Z" data-trait/>
+    <path class="silhouette-lignes" d="M222 80 L222 108 M148 80 C149 92 148 100 146 108 M70 93 L372 90 M300 84 L312 84" data-trait/>
+    <path class="silhouette-feu" d="M372 86 L380 88 L380 96" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="96" r="30"/><circle cx="30" cy="96" r="18"/><circle cx="30" cy="96" r="9"/></g>
+    <path class="silhouette-phare" d="M20 96 C26 93 36 92 44 94" data-trait/>
+    <g class="silhouette-roue-g"><circle class="silhouette-roue" cx="95" cy="112" r="21" data-trait/><circle class="silhouette-jante" cx="95" cy="112" r="13" data-trait/><path class="silhouette-rayons" d="M95 112 L108.0 112.0 M95 112 L99.0 124.4 M95 112 L84.5 119.7 M95 112 L84.5 104.3 M95 112 L99.0 99.6" data-trait/></g><g class="silhouette-roue-g"><circle class="silhouette-roue" cx="307" cy="112" r="21" data-trait/><circle class="silhouette-jante" cx="307" cy="112" r="13" data-trait/><path class="silhouette-rayons" d="M307 112 L320.0 112.0 M307 112 L311.0 124.4 M307 112 L296.5 119.7 M307 112 L296.5 104.3 M307 112 L311.0 99.6" data-trait/></g>
+  </g>
 </svg></div>
       <h3>Mercedes Classe E</h3>
       <p class="vehicule-categorie">Berline</p>
       <dl class="vehicule-chiffres"><div><dt>Passagers</dt><dd>1 à 3</dd></div><div><dt>Valises</dt><dd>3</dd></div></dl>
-    </article><article class="vehicule" data-vehicule="classe-v">
-      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 140" data-forme="van" role="img" aria-label="Mercedes Classe V" data-fx="trace" data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="M20 104 C18 90 20 80 30 76 L70 70 C80 52 90 36 104 30 L350 28 C366 28 374 36 376 50 L380 100 L335 104 A26 26 0 0 0 283 104 L121 104 A26 26 0 0 0 69 104 Z" data-fx-trait/>
-  <path class="silhouette-vitres" d="M108 38 L175 36 L175 66 L84 66 C92 52 100 44 108 38 Z M185 36 L268 35 L268 66 L185 66 Z M278 35 L352 34 C360 34 364 40 365 48 L366 66 L278 66 Z" data-fx-trait/>
-  <path class="silhouette-ligne" d="M30 84 L376 84" data-fx-trait/>
-  <circle class="silhouette-roue" cx="95" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="95" cy="104" r="9" data-fx-trait/><circle class="silhouette-roue" cx="309" cy="104" r="20" data-fx-trait/><circle class="silhouette-jante" cx="309" cy="104" r="9" data-fx-trait/>
+    </article><article class="vehicule" data-vehicule="classe-v" data-survol="incline" data-survol-force="5">
+      <div class="vehicule-dessin"><svg class="silhouette " viewBox="0 0 400 150" data-forme="van" role="img" aria-label="Mercedes Classe V" data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="M16 108 C14 96 16 86 26 82 L56 76 C66 58 78 40 96 32 C110 28 130 27 150 27 L344 26 C362 26 372 34 374 48 L380 98 L380 106 L334 108 A26 26 0 0 0 282 108 L120 108 A26 26 0 0 0 68 108 Z" data-trait/>
+    <path class="silhouette-vitres" d="M100 38 C112 34 130 33 150 33 L178 33 L178 64 L72 64 C80 52 88 44 100 38 Z M188 33 L262 33 L262 64 L188 64 Z M272 33 L348 33 C358 33 364 40 365 50 L366 64 L272 64 Z" data-trait/>
+    <path class="silhouette-lignes" d="M184 70 L184 104 M268 70 L268 104 M28 79 L376 77 M200 74 L214 74" data-trait/>
+    <path class="silhouette-feu" d="M372 54 L378 56 L379 70" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="90" r="30"/><circle cx="30" cy="90" r="18"/><circle cx="30" cy="90" r="9"/></g>
+    <path class="silhouette-phare" d="M18 90 C24 87 32 86 40 88" data-trait/>
+    <g class="silhouette-roue-g"><circle class="silhouette-roue" cx="94" cy="108" r="21" data-trait/><circle class="silhouette-jante" cx="94" cy="108" r="13" data-trait/><path class="silhouette-rayons" d="M94 108 L107.0 108.0 M94 108 L98.0 120.4 M94 108 L83.5 115.7 M94 108 L83.5 100.3 M94 108 L98.0 95.6" data-trait/></g><g class="silhouette-roue-g"><circle class="silhouette-roue" cx="308" cy="108" r="21" data-trait/><circle class="silhouette-jante" cx="308" cy="108" r="13" data-trait/><path class="silhouette-rayons" d="M308 108 L321.0 108.0 M308 108 L312.0 120.4 M308 108 L297.5 115.7 M308 108 L297.5 100.3 M308 108 L312.0 95.6" data-trait/></g>
+  </g>
 </svg></div>
       <h3>Mercedes Classe V</h3>
       <p class="vehicule-categorie">Van 7 places</p>
@@ -395,25 +427,56 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <h2 id="temoignages-titre" data-anime="lignes">Ils nous confient <em>leurs trajets.</em></h2>
       <p data-anime>Des clients pour les aéroports, les gares et les sorties en Île‑de‑France.</p>
     </div>
-    <div class="temoignages-grille" data-anime="cascade"><figure class="temoignage">
-      <blockquote><p>« Chauffeur ponctuel, véhicule impeccable et prix annoncé respecté au centime. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Camille</strong> · Paris 15e</span><span class="temoignage-trajet">Orly ↔ Paris</span></figcaption>
-    </figure><figure class="temoignage">
-      <blockquote><p>« Suivi du vol en direct et accueil avec pancarte à la sortie du terminal. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Sofiane</strong> · Boulogne-Billancourt</span><span class="temoignage-trajet">Roissy CDG ↔ Paris</span></figcaption>
-    </figure><figure class="temoignage">
-      <blockquote><p>« Chauffeur devant chez moi à 5h30. Parfait. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Élodie</strong> · Paris 9e</span><span class="temoignage-trajet">Gare du Nord ↔ Paris</span></figcaption>
-    </figure><figure class="temoignage">
-      <blockquote><p>« Sièges enfants installés sans rien demander. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Marc</strong> · Créteil</span><span class="temoignage-trajet">Paris ↔ Disneyland Paris</span></figcaption>
-    </figure><figure class="temoignage">
-      <blockquote><p>« Discret, souriant et une conduite très sûre. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Nadia</strong> · Versailles</span><span class="temoignage-trajet">Mise à disposition à la journée</span></figcaption>
-    </figure><figure class="temoignage">
-      <blockquote><p>« Tarif fixe clair dès la demande, pas de compteur ni de surprise à l&#39;arrivée. »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>Thomas</strong> · Paris 11e</span><span class="temoignage-trajet">Orly ↔ Paris</span></figcaption>
+    <div class="billets" data-visuel tabindex="0" role="region" aria-label="Témoignages, faites défiler"><figure class="billet" style="--i:0" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Orly ↔ Paris</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Camille</strong><span>Paris 15e</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Chauffeur ponctuel, véhicule impeccable et prix annoncé respecté au centime. »</p></blockquote>
+    </figure><figure class="billet" style="--i:1" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Roissy CDG ↔ Paris</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Sofiane</strong><span>Boulogne-Billancourt</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Suivi du vol en direct et accueil avec pancarte à la sortie du terminal. »</p></blockquote>
+    </figure><figure class="billet" style="--i:2" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Gare du Nord ↔ Paris</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Élodie</strong><span>Paris 9e</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Chauffeur devant chez moi à 5h30. Parfait. »</p></blockquote>
+    </figure><figure class="billet" style="--i:3" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Paris ↔ Disneyland Paris</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Marc</strong><span>Créteil</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Sièges enfants installés sans rien demander. »</p></blockquote>
+    </figure><figure class="billet" style="--i:4" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Mise à disposition à la journée</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Nadia</strong><span>Versailles</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Discret, souriant et une conduite très sûre. »</p></blockquote>
+    </figure><figure class="billet" style="--i:5" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">Orly ↔ Paris</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>Thomas</strong><span>Paris 11e</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« Tarif fixe clair dès la demande, pas de compteur ni de surprise à l&#39;arrivée. »</p></blockquote>
     </figure></div>
+    <p class="glisser" aria-hidden="true">Faites glisser</p>
   </div>
 </section>
 <section class="faq-section fond-ivoire" id="faq" aria-labelledby="faq-titre">

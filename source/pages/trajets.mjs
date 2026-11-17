@@ -1,7 +1,7 @@
 /* Trajets & tarifs · ouverture « prix en très grand » : le prix géant change de trajet tout seul (effet prix-geant),
    l'image de la voie rapide à droite. Puis la carte, les tarifs, l'estimateur, ce qui est compris, sur demande. */
 import { html, brut } from '../../outils/gabarit.mjs';
-import { carte, estimateur, appel, euros } from '../gabarits/blocs.mjs';
+import { carte, estimateur, appel } from '../gabarits/blocs.mjs';
 
 export const page = { cle: 'trajets', fichier: 'trajets', imagePartage: 'grok/trajets-ouverture-1280.webp' };
 
@@ -48,22 +48,6 @@ export default (c) => {
   </div>
 </section>
 
-<section class="tarifs fond-ivoire" id="tarifs" aria-labelledby="tarifs-titre">
-  <div class="conteneur">
-    <div class="tete-section">
-      <p class="surtitre" data-anime>${c.t('trajets.liste.surtitre')}</p>
-      <h2 id="tarifs-titre" data-anime="lignes">${c.tb('trajets.liste.titre')}</h2>
-    </div>
-    <div class="tarifs-grille" data-anime="cascade">${T.map((t) => html`<article class="tarif" id="tarif-${t.cle}">
-      <p class="tarif-dest">Paris ↔ ${t.nom}</p>
-      <p class="tarif-lieu">${t.lieu}</p>
-      <p class="tarif-prix" data-prix>${euros(t.prix)}</p>
-      <p class="tarif-sens">${c.t('trajets.liste.sens')} · ${t.duree}</p>
-      ${c.lien('reserver', { params: `trajet=${t.cle}`, classe: 'bouton bouton--sombre', texte: html`Réserver<span class="visuellement-cache"> Paris ↔ ${t.nom}</span>` })}
-    </article>`)}</div>
-  </div>
-</section>
-
 ${estimateur(c, { id: 'estimation' })}
 
 <section class="inclus" id="inclus" aria-labelledby="inclus-titre">
@@ -73,7 +57,7 @@ ${estimateur(c, { id: 'estimation' })}
       <h2 id="inclus-titre" data-anime="lignes">${c.tb('trajets.inclus.titre')}</h2>
     </div>
     <ul class="inclus-grille" role="list" data-visuel>${c.donnees.contenus.trajets.inclus.points.map(([t, d], i) => html`<li class="inclus-item">
-      <svg class="icone" viewBox="0 0 48 48" aria-hidden="true" data-fx="trace"><path d="${ICONES[i]}" data-fx-trait/></svg>
+      <span class="icone-anneau" aria-hidden="true"><svg class="icone" viewBox="0 0 48 48" data-fx="trace"><path d="${ICONES[i]}" data-fx-trait/></svg></span>
       <h3>${t}</h3><p>${d}</p>
     </li>`)}</ul>
   </div>

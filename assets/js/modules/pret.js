@@ -1,6 +1,6 @@
 /* Pont entre les modules de la bibliothèque et le socle du projet : les modules appellent pret([...])
    et reçoivent le GSAP, le ScrollTrigger et les mesures du socle de la skill (rien n'est rechargé ni réinstancié). */
-import { rafraichir, boucle } from '../socle/index.js?v=1';
+import { rafraichir, boucle } from '../socle/index.js?v=2';
 
 const html = document.documentElement;
 const socle = {

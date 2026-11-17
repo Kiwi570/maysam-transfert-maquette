@@ -4,32 +4,46 @@ import { html, brut } from '../../outils/gabarit.mjs';
 
 export const euros = (n) => `${n} €`;
 
-/* Silhouettes dessinées (traits dorés) : aucun faux véhicule photographié. */
+/* Silhouettes dessinées (traits dorés) : aucun faux véhicule photographié. Elles regardent vers la droite,
+   arrivent en roulant (roues qui tournent, effet silhouettes) et allument leurs phares. */
 const CORPS = {
   berline: {
-    corps: 'M22 106 C20 98 22 92 30 89 L110 79 C130 66 150 54 168 50 L252 47 C272 49 290 62 312 76 L368 82 C376 84 380 92 378 104 L331 106 A26 26 0 0 0 279 106 L121 106 A26 26 0 0 0 69 106 Z',
-    vitres: 'M170 56 L250 53 C266 56 280 64 296 75 L150 75 C158 66 164 60 170 56 Z M222 54 L222 75',
-    ligne: 'M40 92 L360 92', roues: [[95, 106, 20], [305, 106, 20]],
+    corps: 'M18 112 C16 104 18 96 26 93 L66 88 C80 86 96 84 112 80 C130 66 150 56 172 52 C196 48 228 47 254 49 C276 51 296 62 316 76 C332 78 352 80 366 84 C376 87 382 94 382 104 L382 110 L334 112 A27 27 0 0 0 280 112 L122 112 A27 27 0 0 0 68 112 Z',
+    vitres: 'M176 58 C196 54 226 53 250 55 C266 57 282 66 296 76 L226 76 L226 58 Z M168 60 L220 57 L220 76 L144 76 C150 70 158 64 168 60 Z',
+    lignes: 'M222 80 L222 108 M148 80 C149 92 148 100 146 108 M70 93 L372 90 M300 84 L312 84',
+    phare: 'M20 96 C26 93 36 92 44 94', feu: 'M372 86 L380 88 L380 96', yPhare: 96,
+    roues: [[95, 112, 21], [307, 112, 21]],
   },
   suv: {
-    corps: 'M22 104 C20 92 24 84 34 80 L112 72 C134 56 156 42 178 38 L262 37 C300 42 330 58 360 72 C374 76 380 86 378 102 L333 104 A28 28 0 0 0 277 104 L123 104 A28 28 0 0 0 67 104 Z',
-    vitres: 'M180 45 L260 44 C288 48 310 58 332 70 L150 70 C160 58 170 50 180 45 Z M228 44 L228 70',
-    ligne: 'M38 88 L362 88', roues: [[95, 104, 22], [305, 104, 22]],
+    corps: 'M18 110 C16 98 20 90 30 86 L64 82 C82 80 100 76 116 70 C136 56 158 44 182 40 C208 36 240 36 266 40 C300 46 330 60 356 74 C372 78 382 88 382 100 L382 108 L336 110 A29 29 0 0 0 278 110 L124 110 A29 29 0 0 0 66 110 Z',
+    vitres: 'M186 47 C210 43 238 43 262 46 C284 50 304 58 324 70 L230 70 L230 46 Z M178 49 L224 46 L224 70 L148 70 C156 60 166 53 178 49 Z',
+    lignes: 'M227 74 L227 106 M150 74 C151 88 150 98 148 106 M70 89 L372 86 M300 78 L312 78',
+    phare: 'M20 92 C28 89 38 88 46 90', feu: 'M372 82 L380 85 L381 94', yPhare: 92,
+    roues: [[95, 110, 23], [307, 110, 23]],
   },
   van: {
-    corps: 'M20 104 C18 90 20 80 30 76 L70 70 C80 52 90 36 104 30 L350 28 C366 28 374 36 376 50 L380 100 L335 104 A26 26 0 0 0 283 104 L121 104 A26 26 0 0 0 69 104 Z',
-    vitres: 'M108 38 L175 36 L175 66 L84 66 C92 52 100 44 108 38 Z M185 36 L268 35 L268 66 L185 66 Z M278 35 L352 34 C360 34 364 40 365 48 L366 66 L278 66 Z',
-    ligne: 'M30 84 L376 84', roues: [[95, 104, 20], [309, 104, 20]],
+    corps: 'M16 108 C14 96 16 86 26 82 L56 76 C66 58 78 40 96 32 C110 28 130 27 150 27 L344 26 C362 26 372 34 374 48 L380 98 L380 106 L334 108 A26 26 0 0 0 282 108 L120 108 A26 26 0 0 0 68 108 Z',
+    vitres: 'M100 38 C112 34 130 33 150 33 L178 33 L178 64 L72 64 C80 52 88 44 100 38 Z M188 33 L262 33 L262 64 L188 64 Z M272 33 L348 33 C358 33 364 40 365 50 L366 64 L272 64 Z',
+    lignes: 'M184 70 L184 104 M268 70 L268 104 M28 79 L376 77 M200 74 L214 74',
+    phare: 'M18 90 C24 87 32 86 40 88', feu: 'M372 54 L378 56 L379 70', yPhare: 90,
+    roues: [[94, 108, 21], [308, 108, 21]],
   },
 };
-export function silhouette(forme, { classe = '', trace = true, label = '', cache = false } = {}) {
+const rayons = (x, y, r) => [0, 72, 144, 216, 288].map((a) => { const t = (a * Math.PI) / 180; return `M${x} ${y} L${(x + Math.cos(t) * r * 0.62).toFixed(1)} ${(y + Math.sin(t) * r * 0.62).toFixed(1)}`; }).join(' ');
+export function silhouette(forme, { classe = '', label = '', cache = false } = {}) {
   const f = CORPS[forme] || CORPS.berline;
-  return html`<svg class="silhouette ${classe}" viewBox="0 0 400 140" data-forme="${forme}" ${brut(label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"')}${brut(trace ? ' data-fx="trace"' : '')}${brut(cache ? ' hidden' : '')} data-visuel>
-  <path class="silhouette-sol" d="M10 128 L390 128" data-fx-trait/>
-  <path class="silhouette-corps" d="${f.corps}" data-fx-trait/>
-  <path class="silhouette-vitres" d="${f.vitres}" data-fx-trait/>
-  <path class="silhouette-ligne" d="${f.ligne}" data-fx-trait/>
-  ${f.roues.map(([x, y, r]) => html`<circle class="silhouette-roue" cx="${x}" cy="${y}" r="${r}" data-fx-trait/><circle class="silhouette-jante" cx="${x}" cy="${y}" r="${Math.round(r * 0.45)}" data-fx-trait/>`)}
+  return html`<svg class="silhouette ${classe}" viewBox="0 0 400 150" data-forme="${forme}" ${brut(label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"')}${brut(cache ? ' hidden' : '')} data-visuel>
+  <ellipse class="silhouette-ombre" cx="200" cy="126" rx="178" ry="7"/>
+  <g transform="translate(400 0) scale(-1 1)">
+    <path class="silhouette-sol" d="M-20 128 L420 128" data-trait/>
+    <path class="silhouette-corps" d="${f.corps}" data-trait/>
+    <path class="silhouette-vitres" d="${f.vitres}" data-trait/>
+    <path class="silhouette-lignes" d="${f.lignes}" data-trait/>
+    <path class="silhouette-feu" d="${f.feu}" data-trait/>
+    <g class="silhouette-halo"><circle cx="30" cy="${f.yPhare}" r="30"/><circle cx="30" cy="${f.yPhare}" r="18"/><circle cx="30" cy="${f.yPhare}" r="9"/></g>
+    <path class="silhouette-phare" d="${f.phare}" data-trait/>
+    ${f.roues.map(([x, y, r]) => html`<g class="silhouette-roue-g"><circle class="silhouette-roue" cx="${x}" cy="${y}" r="${r}" data-trait/><circle class="silhouette-jante" cx="${x}" cy="${y}" r="${Math.round(r * 0.62)}" data-trait/><path class="silhouette-rayons" d="${rayons(x, y, r)}" data-trait/></g>`)}
+  </g>
 </svg>`;
 }
 
@@ -40,13 +54,13 @@ const cases = (texte, n, classe = '') => {
 };
 export function tableau(c, { titreId = 'tableau-titre' } = {}) {
   const T = c.donnees.trajets;
-  return html`<div class="tableau" data-effet="tableau-departs" role="table" aria-labelledby="${titreId}">
+  return html`<div class="tableau" data-effet="tableau-departs" role="table" aria-labelledby="${titreId}" data-visuel>
   <div class="tableau-entete" role="row"><span role="columnheader">Destination</span><span role="columnheader">Durée</span><span role="columnheader">Prix</span><span role="columnheader"><span class="visuellement-cache">Réserver</span></span></div>
   ${T.map((t) => html`<div class="tableau-ligne" role="row">
     <span role="cell" class="tableau-dest">${cases(t.court, 10)}<span class="visuellement-cache">${t.nom}</span></span>
     <span role="cell" class="tableau-duree">${cases(t.duree.replace('–', '-').replace(' min', ''), 5, 'flaps--petit')}<span class="tableau-unite" aria-hidden="true">min</span><span class="visuellement-cache">${t.duree}</span></span>
     <span role="cell" class="tableau-prix" data-prix>${cases((String(t.prix) + '€').padStart(4, ' '), 4, 'flaps--or')}<span class="visuellement-cache">${euros(t.prix)}</span></span>
-    <span role="cell" class="tableau-action">${c.lien('reserver', { params: `trajet=${t.cle}`, classe: 'bouton bouton--petit', texte: html`Réserver<span class="visuellement-cache"> ${t.nom}</span>` })}</span>
+    <span role="cell" class="tableau-action">${c.lien('reserver', { params: `trajet=${t.cle}`, classe: 'bouton bouton--petit', texte: html`Réserver<span class="visuellement-cache"> ${t.nom}</span><span class="fleche" aria-hidden="true">→</span>` })}</span>
   </div>`)}
 </div>`;
 }
@@ -83,8 +97,9 @@ export function estimateur(c, { id = 'estimation' } = {}) {
     </form>
     <div class="estim-resultat" aria-live="polite" data-estim-resultat>
       <p class="estim-label">${c.t('estim.vehicule')}</p>
-      <div class="estim-vehicule">${silhouette('berline', { classe: 'estim-silhouette', trace: false })}${silhouette('van', { classe: 'estim-silhouette', trace: false, cache: true })}<p class="estim-vehicule-nom" data-estim-vehicule>${c.t('estim.petit')}</p></div>
+      <div class="estim-vehicule">${silhouette('berline', { classe: 'estim-silhouette' })}${silhouette('van', { classe: 'estim-silhouette', cache: true })}<p class="estim-vehicule-nom" data-estim-vehicule>${c.t('estim.petit')}</p></div>
       <p class="estim-prix" data-prix><span class="estim-montant" data-estim-montant>${t0.prix}</span><span class="estim-devise"> €</span></p>
+      <div class="estim-route" aria-hidden="true"><span class="estim-route-point">Paris</span><span class="estim-route-ligne"><span class="estim-route-trace"></span><svg class="estim-route-voiture" viewBox="0 0 40 18"><path d="M3 13 C3 10 4 9 7 8.5 L12 8 C15 5 18 3.5 22 3.5 L28 3.5 C31 4 34 6 36 8.5 C38 9 38.5 11 38 13 Z"/><circle cx="11" cy="13.5" r="3"/><circle cx="30" cy="13.5" r="3"/></svg></span><span class="estim-route-point" data-estim-arrivee>${t0.nom}</span></div>
       <p class="estim-duree" data-estim-duree>Paris ↔ ${t0.nom} · ${t0.duree}</p>
       <p class="estim-note" data-estim-note data-fixe="${c.s('estim.noteFixe')}" data-van="${c.s('estim.noteVan')}" data-max="${c.s('estim.max')}" data-surdemande="${c.s('estim.surDemande')}" data-petit="${c.s('estim.petit')}" data-grand="${c.s('estim.grand')}">${c.t('estim.noteFixe')}</p>
       ${c.lien('reserver', { params: `trajet=${t0.cle}&passagers=1`, classe: 'bouton', texte: c.t('estim.reserver'), attrs: 'data-estim-lien data-survol="magnetique"' })}
@@ -103,14 +118,14 @@ const route = (t) => {
 export function carte(c, { id = 'carte', mode = 'trajets' } = {}) {
   const T = c.donnees.trajets;
   return html`<div class="carte carte--${mode}" data-effet="carte-trajets" data-carte>
-  <svg class="carte-svg" viewBox="0 0 640 430" role="img" aria-label="${c.s('trajets.carte.schema')}" data-fx="trace" data-visuel>
+  <svg class="carte-svg" viewBox="0 0 640 430" role="img" aria-label="${c.s('trajets.carte.schema')}" data-visuel>
     <defs><radialGradient id="${id}-halo"><stop offset="0" stop-color="#C9A45C" stop-opacity=".45"/><stop offset="1" stop-color="#C9A45C" stop-opacity="0"/></radialGradient></defs>
-    <path class="carte-idf" data-superpose d="M120 70 C190 22 330 18 430 52 C520 80 600 150 606 240 C612 320 548 392 440 410 C330 428 200 414 128 360 C60 310 40 220 64 150 C76 112 96 88 120 70 Z" data-fx-trait/>
-    <path class="carte-seine" data-superpose d="M40 300 C110 330 170 250 236 254 C270 256 286 236 300 240 C318 246 330 232 352 236 C410 248 452 310 520 318 C560 322 590 300 620 306" data-fx-trait/>
+    <path class="carte-idf" data-superpose d="M120 70 C190 22 330 18 430 52 C520 80 600 150 606 240 C612 320 548 392 440 410 C330 428 200 414 128 360 C60 310 40 220 64 150 C76 112 96 88 120 70 Z" data-trait/>
+    <path class="carte-seine" data-superpose d="M40 300 C110 330 170 250 236 254 C270 256 286 236 300 240 C318 246 330 232 352 236 C410 248 452 310 520 318 C560 322 590 300 620 306" data-trait/>
     <circle cx="${PARIS[0]}" cy="${PARIS[1]}" r="90" fill="url(#${id}-halo)" data-superpose/>
-    <circle class="carte-peripherique" data-superpose cx="${PARIS[0]}" cy="${PARIS[1]}" r="30" data-fx-trait/>
-    ${T.map((t) => html`<path class="carte-route" id="${id}-r-${t.cle}" d="${route(t)}" data-route="${t.cle}" data-superpose data-fx-trait/>`)}
-    ${T.map((t, i) => html`<circle class="carte-voiture" r="5" data-superpose><animateMotion dur="${(3 + i * 0.4).toFixed(1)}s" begin="${i * 0.7}s" repeatCount="indefinite" rotate="auto"><mpath href="#${id}-r-${t.cle}"/></animateMotion></circle>`)}
+    <circle class="carte-peripherique" data-superpose cx="${PARIS[0]}" cy="${PARIS[1]}" r="30" data-trait/>
+    ${T.map((t) => html`<path class="carte-route" id="${id}-r-${t.cle}" d="${route(t)}" data-route="${t.cle}" data-superpose data-trait/>`)}
+    ${T.map((t, i) => html`<circle class="carte-voiture" r="5" data-superpose><animateMotion dur="${(3 + i * 0.4).toFixed(1)}s" begin="-${(i * 0.7).toFixed(1)}s" repeatCount="indefinite" rotate="auto"><mpath href="#${id}-r-${t.cle}"/></animateMotion></circle>`)}
     <circle class="carte-paris" cx="${PARIS[0]}" cy="${PARIS[1]}" r="9"/>
     <text class="carte-nom-paris" x="${PARIS[0] - 16}" y="${PARIS[1] + 54}">${c.t('trajets.carte.paris')}</text>
     ${T.map((t) => html`<g class="carte-point" data-route="${t.cle}" data-repere>

@@ -31,13 +31,13 @@ h1 em, h2 em { font-style: italic; color: var(--accent-texte); }
 h2 { font-size: clamp(2.1rem, 1.3rem + 3.3vw, 4.4rem); line-height: 1.02; }
 h3 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); line-height: 1.12; }
 ::selection { background: var(--or); color: var(--nuit); }
-.surtitre { margin: 0 0 1.1em; font: 500 max(12px, .78rem)/1.3 var(--police-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-texte); }
+.surtitre { margin: 0 0 1.1em; font: 500 max(13px, .8rem)/1.3 var(--police-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-texte); }
 .texte-doux { color: var(--texte-doux); }
 .conteneur { width: min(100% - 2 * var(--gouttiere), var(--largeur)); }
 
 /* Fonds : nuit par défaut, ivoire pour les sections utiles (estimateur, flotte, tarifs, formulaire, FAQ). */
 .fond-ivoire { background: var(--ivoire); color: var(--nuit); --texte: var(--nuit); --fond: var(--ivoire); --ligne: rgba(12, 14, 19, .16); --texte-doux: #4A4740; --accent-texte: var(--or-fonce); }
-.fond-ivoire a:not(.bouton) { color: inherit; }
+.fond-ivoire a:not(.bouton):not(.fpe__bouton) { color: inherit; }
 
 /* Boutons. */
 .bouton { background: var(--or); color: var(--nuit); font-weight: 700; letter-spacing: .01em; transition: background-color .25s, color .25s, box-shadow .25s; }
@@ -81,7 +81,7 @@ h3 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); line-height: 1.12; }
 /* Ouverture de l'accueil : avenue de nuit plein cadre, traînées de phares, titre à gauche. */
 .hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + clamp(28px, 6vh, 72px)); overflow: hidden; isolation: isolate; }
 .hero-media { position: absolute; inset: 0; z-index: -3; border-radius: 0; }
-.hero-trainees { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; width: 100%; z-index: -2; pointer-events: none; }
+.hero-trainees { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
 .hero-voile { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 19, .94) 0%, rgba(12, 14, 19, .78) 34%, rgba(12, 14, 19, .25) 62%, rgba(12, 14, 19, 0) 80%), linear-gradient(0deg, rgba(12, 14, 19, .7), rgba(12, 14, 19, 0) 30%); }
 .hero-contenu { position: relative; max-width: var(--largeur); }
 .hero-titre { max-width: 9.5em; margin: 0 0 .32em; font-size: clamp(3rem, min(8vw, 12.5vh), 8.2rem); line-height: .96; letter-spacing: -.025em; font-weight: 500; }
@@ -96,7 +96,6 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 @media (max-width: 760px) {
   .hero { align-items: start; padding-top: calc(var(--entete-h) + 28px); }
   .hero-voile { background: linear-gradient(180deg, rgba(12, 14, 19, .92) 0%, rgba(12, 14, 19, .7) 46%, rgba(12, 14, 19, .2) 72%, rgba(12, 14, 19, .6) 100%); }
-  .hero-trainees { height: 40%; }
   .hero-actions .bouton { flex: 1 1 auto; }
 }
 @media (max-height: 820px) and (min-width: 761px) { .hero-titre { font-size: clamp(2.8rem, min(7vw, 11.5vh), 7rem); } .hero-actions { margin: 18px 0 12px; } }
@@ -111,9 +110,12 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 .tableau { display: grid; background: var(--nuit-2); border: 1px solid rgba(242, 237, 227, .1); border-radius: 18px; padding: clamp(14px, 2.4vw, 30px); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .8); }
 .tableau-entete, .tableau-ligne { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; align-items: center; column-gap: clamp(14px, 3vw, 44px); }
 .tableau-entete { padding: 0 0 12px; border-bottom: 1px solid rgba(242, 237, 227, .1); font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--or); }
-.tableau-ligne { padding: clamp(10px, 1.4vw, 16px) 0; border-bottom: 1px solid rgba(242, 237, 227, .07); }
+.tableau-ligne { padding: clamp(10px, 1.4vw, 16px) 0; border-bottom: 1px solid rgba(242, 237, 227, .07); transition: background-color .3s; }
+.tableau-ligne:hover { background: linear-gradient(90deg, rgba(201, 164, 92, .08), transparent 70%); }
+.bouton .fleche { display: inline-block; transition: transform .3s var(--courbe); }
+.bouton:hover .fleche { transform: translateX(4px); }
 .tableau-ligne:last-child { border-bottom: 0; padding-bottom: 0; }
-.flaps { display: inline-flex; gap: 3px; font: 700 clamp(15px, 1.65vw, 26px)/1 var(--police-mono); font-variant-numeric: tabular-nums; }
+.flaps { display: inline-flex; gap: 3px; font: 700 clamp(15px, 1.9vw, 30px)/1 var(--police-mono); font-variant-numeric: tabular-nums; }
 .flap { position: relative; display: inline-grid; place-items: center; width: 1.18em; height: 1.62em; border-radius: 4px; background: #191C24; color: var(--ivoire); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .6); }
 .flap::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0, 0, 0, .7); }
 .flaps--or .flap { color: var(--or); }
@@ -124,13 +126,12 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 @keyframes flap { 0% { transform: scaleY(1); } 50% { transform: scaleY(.35); } 100% { transform: scaleY(1); } }
 @media (max-width: 760px) {
   .tableau-entete { display: none; }
-  .tableau-ligne { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "dest dest" "duree prix" "action action"; row-gap: 10px; }
-  .tableau-dest { grid-area: dest; } .tableau-duree { grid-area: duree; } .tableau-prix { grid-area: prix; } .tableau-action { grid-area: action; }
-  .tableau-action .bouton { width: 100%; }
-  .flaps { gap: 2px; font-size: 17px; }
-  .flaps--petit { font-size: 14px; }
+  .tableau-ligne { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "dest prix" "duree action"; row-gap: 8px; column-gap: 8px; }
+  .tableau-dest { grid-area: dest; } .tableau-duree { grid-area: duree; } .tableau-prix { grid-area: prix; justify-self: end; } .tableau-action { grid-area: action; justify-self: end; }
+  .flaps { gap: 2px; font-size: 16px; }
+  .flaps--petit { font-size: 13px; }
 }
-@media (max-width: 360px) { .flaps { font-size: 15px; } .flap { width: 1.12em; } }
+@media (max-width: 380px) { .flaps { font-size: 13px; gap: 1px; } .flap { width: 1.14em; } .tableau { padding: 12px 10px; } }
 
 /* Estimateur. */
 .estim { padding-block: var(--section); }
@@ -139,7 +140,7 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 .estim-tete p:not(.surtitre) { color: var(--texte-doux); max-width: 36em; }
 .estim-form { grid-area: form; display: grid; gap: 28px; }
 .estim-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
-.estim-form legend { padding: 0; margin-bottom: 12px; font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or-fonce); }
+.estim-form legend { padding: 0; margin-bottom: 12px; font: 500 max(13px, .78rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or-fonce); }
 .estim-choix-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr)); gap: 10px; }
 .estim-choix { position: relative; display: grid; gap: 2px; min-height: 76px; padding: 14px 16px; border: 1px solid rgba(12, 14, 19, .2); border-radius: 12px; background: var(--ivoire-2); cursor: pointer; transition: border-color .25s, background-color .25s, box-shadow .25s; }
 .estim-choix input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
@@ -153,7 +154,7 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 .compteur-bouton:disabled { opacity: .3; cursor: not-allowed; }
 .compteur-valeur { min-width: 2ch; text-align: center; font: 700 1.4rem/1 var(--police-mono); font-variant-numeric: tabular-nums; }
 .estim-resultat { grid-area: resultat; position: sticky; top: calc(var(--entete-h) + 24px); display: grid; gap: 6px; padding: clamp(22px, 3vw, 40px); border-radius: 22px; background: var(--nuit); color: var(--ivoire); box-shadow: 0 40px 70px -40px rgba(12, 14, 19, .8); }
-.estim-label { margin: 0; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.estim-label { margin: 0; font: 500 max(13px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
 .estim-vehicule { display: grid; gap: 4px; }
 .estim-silhouette { width: 100%; max-width: 300px; height: auto; color: var(--ivoire); }
 .estim-silhouette[hidden] { display: none; }
@@ -163,6 +164,13 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 .estim-montant { display: inline-block; min-width: 1.9ch; }
 .estim-devise { font-size: .6em; margin-left: .14em; }
 .estim-duree { margin: 0; font: 500 max(13px, .85rem)/1.4 var(--police-mono); color: var(--ivoire); }
+.estim-route { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 10px; margin: 2px 0 6px; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; color: rgba(242, 237, 227, .78); }
+.estim-route-ligne { position: relative; height: 18px; margin-inline: 18px; }
+.estim-route-ligne::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgba(242, 237, 227, .3); }
+.estim-route-trace { position: absolute; left: 0; right: 0; top: calc(50% - 1px); height: 2px; background: var(--or); transform-origin: 0 50%; }
+.estim-route-voiture { position: absolute; left: 0; top: 0; width: 34px; height: 16px; margin-left: -17px; fill: var(--or); }
+.estim-route-voiture circle { fill: var(--nuit); stroke: var(--or); stroke-width: 1.6; }
+.estim-route-point { white-space: nowrap; }
 .estim-note { margin: 6px 0 18px; font-size: .95rem; color: rgba(242, 237, 227, .78); min-height: 3em; }
 @media (max-width: 900px) {
   .estim-grille { grid-template-columns: minmax(0, 1fr); grid-template-areas: "tete" "form" "resultat"; row-gap: 28px; }
@@ -170,12 +178,24 @@ html.js:not(.secours):not([data-arrivee="retour"]) :is(.hero-anim, .hero-titre) 
 }
 @media (max-width: 420px) { .estim-compteurs { grid-template-columns: minmax(0, 1fr); } }
 
-/* Silhouettes dessinées. */
-.silhouette { display: block; width: 100%; height: auto; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.silhouette-vitres { stroke-width: 1.2; opacity: .75; }
-.silhouette-ligne { stroke-width: 1; opacity: .45; }
-.silhouette-roue, .silhouette-jante { stroke: var(--accent-texte); }
-.silhouette-sol { stroke-width: 1; opacity: .35; }
+/* Silhouettes dessinées : traits, ombre au sol, roues à rayons, phares qui s'allument. */
+.silhouette { display: block; width: 100%; height: auto; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.silhouette-vitres { stroke-width: 1.3; opacity: .8; }
+.silhouette-lignes { stroke-width: 1.1; opacity: .5; }
+.silhouette-sol { stroke-width: 1; opacity: .3; }
+.silhouette-ombre { fill: currentColor; stroke: none; opacity: .08; }
+.silhouette-roue, .silhouette-jante, .silhouette-rayons { stroke: var(--accent-texte); }
+.silhouette-rayons { stroke-width: 1.2; }
+.silhouette-roue-g { transform-box: fill-box; transform-origin: 50% 50%; }
+.silhouette-phare { stroke: var(--or); stroke-width: 3; }
+.silhouette-feu { stroke: #E0533F; stroke-width: 2.4; }
+.silhouette-halo circle { fill: var(--or-clair); stroke: none; }
+.silhouette-halo circle:nth-child(1) { opacity: .1; } .silhouette-halo circle:nth-child(2) { opacity: .16; } .silhouette-halo circle:nth-child(3) { opacity: .35; }
+.silhouette-halo { opacity: 0; transition: opacity .6s var(--courbe); }
+.silhouette.allumee .silhouette-halo { opacity: 1; }
+:is(html:not(.js), html.secours, html[data-arrivee="retour"]) .silhouette-halo { opacity: 1; }
+/* Avant d'arriver (avec JavaScript), la silhouette est cachée : elle se dessine en roulant. */
+html.js:not(.secours):not([data-arrivee="retour"]) .silhouette:not(.roulee):not(.estim-silhouette) [data-trait] { stroke-dasharray: var(--l, 1200); stroke-dashoffset: var(--l, 1200); }
 
 /* Services en galerie épinglée. */
 .services-galerie { background: var(--nuit); overflow: hidden; }
@@ -227,7 +247,7 @@ html:not(.js) .service-media, html.secours .service-media { aspect-ratio: 3 / 4;
 .liste-or li { display: flex; gap: 12px; align-items: baseline; }
 .liste-or li::before { content: ""; flex: none; width: 18px; height: 1px; background: var(--or); transform: translateY(-.3em); }
 .pancarte-essai { display: grid; gap: 8px; max-width: 360px; }
-.pancarte-essai label { font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.pancarte-essai label { font: 500 max(13px, .78rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
 .pancarte-essai input { min-height: 52px; padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(242, 237, 227, .35); background: rgba(12, 14, 19, .8); color: var(--ivoire); font-size: max(16px, 1rem); }
 .pancarte-essai input:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
 .pancarte-essai input::placeholder { color: rgba(242, 237, 227, .6); }
@@ -235,21 +255,27 @@ html:not(.js) .service-media, html.secours .service-media { aspect-ratio: 3 / 4;
 .pancarte-carton { position: relative; display: grid; justify-items: center; gap: 8px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 36px) clamp(30px, 4vw, 48px); border-radius: 10px; background: #FFFDF8; color: var(--nuit); box-shadow: 0 50px 90px -30px rgba(0, 0, 0, .85), 0 0 0 1px rgba(12, 14, 19, .06); transform: rotate(-2.5deg); }
 .pancarte-carton::before { content: ""; position: absolute; left: 50%; top: -60px; width: 2px; height: 60px; background: linear-gradient(rgba(242, 237, 227, 0), rgba(242, 237, 227, .55)); transform: translateX(-50%); }
 .pancarte-logo { width: 54px; height: 54px; object-fit: contain; }
-.pancarte-marque { margin: 0; font: 700 max(12px, .72rem)/1 var(--police-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--or-fonce); }
+.pancarte-marque { margin: 0; font: 700 max(13px, .74rem)/1 var(--police-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--or-fonce); }
 .pancarte-nom { margin: 4px 0 0; min-height: 1.45em; width: 100%; text-align: center; font: 500 clamp(2rem, 1.2rem + 2.6vw, 3.4rem)/1.45 var(--police-titres); font-style: italic; overflow-wrap: anywhere; border-bottom: 2px solid rgba(12, 14, 19, .14); padding-bottom: 10px; }
 @media (max-width: 860px) { .pancarte-grille { grid-template-columns: minmax(0, 1fr); } .pancarte { width: min(100%, 380px); } .pancarte-section::before { background: linear-gradient(180deg, rgba(12, 14, 19, .9), rgba(12, 14, 19, .78)); } }
 
-/* Témoignages. */
+/* Témoignages en billets : talon (trajet, passager), perforation, avis. */
 .temoignages { padding-block: var(--section); }
-.temoignages-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
-.temoignage { margin: 0; padding: clamp(22px, 2.6vw, 32px); border-radius: 18px; background: var(--carte); border: 1px solid rgba(242, 237, 227, .08); display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
-.temoignage blockquote { margin: 0; }
-.temoignage blockquote p { margin: 0; font: italic 500 clamp(1.2rem, 1rem + .6vw, 1.55rem)/1.3 var(--police-titres); }
-.temoignage figcaption { display: grid; gap: 4px; font-size: .95rem; color: var(--texte-doux); }
-.temoignage figcaption strong { color: var(--ivoire); }
-.temoignage figcaption .temoignage-trajet { font: 500 max(12px, .76rem)/1.3 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--or); }
-@media (max-width: 960px) { .temoignages-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 620px) { .temoignages-grille { grid-template-columns: minmax(0, 1fr); } }
+.billets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 30px); }
+.billet { position: relative; margin: 0; display: grid; grid-template-rows: auto 1fr; border-radius: 16px; background: var(--ivoire); color: var(--nuit); box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .9); }
+.billet-talon { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; column-gap: 14px; row-gap: 10px; padding: 18px 22px 20px; border-bottom: 2px dashed rgba(12, 14, 19, .22); }
+.billet-talon::before, .billet-talon::after { content: ""; position: absolute; bottom: -12px; width: 22px; height: 22px; border-radius: 50%; background: var(--nuit); }
+.billet-talon::before { left: -11px; } .billet-talon::after { right: -11px; }
+.billet-label { margin: 0; font: 500 max(12px, .68rem)/1.4 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: #6E6A62; }
+.billet-route { margin: 0; font: 700 max(13px, .86rem)/1.35 var(--police-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--or-fonce); }
+.billet-nom { margin: 0; display: flex; flex-wrap: wrap; gap: 2px .5em; font-size: .95rem; line-height: 1.3; }
+.billet-nom span { color: #4A4740; }
+.billet-avis { margin: 0; padding: 20px 22px 26px; }
+.billet-avis p { margin: 0; font: italic 500 clamp(1.15rem, 1rem + .5vw, 1.45rem)/1.35 var(--police-titres); }
+@media (max-width: 960px) {
+  .billets { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 14px var(--gouttiere) 20px; margin-inline: calc(-1 * var(--gouttiere)); scrollbar-width: none; contain: paint; }
+  .billet { flex: 0 0 min(82vw, 380px); scroll-snap-align: center; transform: none; }
+}
 
 /* FAQ. */
 .faq-section, .bon-a-savoir { padding-block: var(--section); }
@@ -295,7 +321,7 @@ html:not(.js) .service-media, html.secours .service-media { aspect-ratio: 3 / 4;
 .ouv-prix-media { position: absolute; top: calc(var(--entete-h) + 16px); right: 0; bottom: 16px; width: 54%; z-index: 0; border-radius: 22px 0 0 22px; }
 .ouv-prix-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 14, 19, .55), rgba(12, 14, 19, 0) 40%); pointer-events: none; }
 .prix-geant { justify-self: end; width: min(100%, 440px); padding: clamp(20px, 2.6vw, 34px); border-radius: 22px; background: rgba(7, 8, 11, .94); border: 1px solid rgba(201, 164, 92, .35); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
-.prix-geant-legende { margin: 0 0 8px; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.prix-geant-legende { margin: 0 0 8px; font: 500 max(13px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
 .prix-geant-dest { margin: 0; height: 1.5em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 700; font-size: 1.1rem; }
 .prix-geant-montant { margin: 14px 0 0; display: flex; align-items: baseline; font: 500 clamp(5rem, 3rem + 6vw, 9rem)/1.4 var(--police-titres); color: var(--or); font-variant-numeric: tabular-nums; }
 .prix-geant-montant > span:first-child { display: inline-block; min-width: 2.1ch; }
@@ -363,9 +389,10 @@ html:not(.js) .service-media, html.secours .service-media { aspect-ratio: 3 / 4;
 .inclus-grille { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px); }
 .inclus-item h3 { margin: 14px 0 6px; font-size: clamp(1.25rem, 1.1rem + .6vw, 1.6rem); }
 .inclus-item p { margin: 0; color: var(--texte-doux); }
-.icone { width: 52px; height: 52px; fill: none; stroke: var(--or); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.icone-anneau { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; border: 1px solid rgba(201, 164, 92, .45); background: radial-gradient(circle, rgba(201, 164, 92, .14), transparent 70%); }
+.icone { width: 40px; height: 40px; fill: none; stroke: var(--or); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 860px) { .inclus-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 520px) { .inclus-grille { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .inclus-grille { gap: 24px 16px; } .inclus-item h3 { font-size: 1.15rem; } .inclus-item p { font-size: .95rem; } .icone-anneau { width: 60px; height: 60px; } .icone { width: 32px; height: 32px; } }
 .demande-grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
 .demande-media { aspect-ratio: 3 / 2; border-radius: 18px; margin-bottom: 18px; }
 .demande-carte h3 { margin: 0 0 6px; }
@@ -422,9 +449,10 @@ html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
 .ouv-bandeau-ligne .hero-actions { margin: 0; }
 .ouv-bandeau-image { position: relative; flex: 1 1 auto; min-height: 220px; margin: clamp(18px, 3.4vh, 40px) var(--gouttiere) 0; }
 .ouv-bandeau-media { position: absolute; inset: 0; border-radius: 24px; }
-.ouv-bandeau-trio { position: absolute; left: clamp(16px, 4vw, 56px); bottom: clamp(12px, 3vh, 32px); display: flex; align-items: flex-end; gap: clamp(10px, 2vw, 28px); width: min(52%, 640px); color: var(--or); pointer-events: none; }
+.ouv-bandeau-trio { position: absolute; left: clamp(16px, 4vw, 56px); bottom: clamp(12px, 3vh, 32px); display: flex; align-items: flex-end; gap: clamp(14px, 2.4vw, 40px); width: min(68%, 980px); color: var(--or); pointer-events: none; }
 .ouv-bandeau-trio .silhouette { flex: 1 1 0; min-width: 0; width: 33%; stroke-width: 1.4; }
-.ouv-bandeau-trio .silhouette-roue, .ouv-bandeau-trio .silhouette-jante { stroke: var(--ivoire); }
+.ouv-bandeau-trio .silhouette-roue, .ouv-bandeau-trio .silhouette-jante, .ouv-bandeau-trio .silhouette-rayons { stroke: var(--ivoire); }
+.ouv-bandeau-trio .silhouette-ombre { opacity: .35; fill: #000; }
 @media (max-width: 760px) { .ouv-bandeau-image { flex: none; height: 38svh; margin-inline: 12px; } .ouv-bandeau-trio { width: calc(100% - 32px); } }
 @media (max-height: 820px) and (min-width: 761px) { .ouv-bandeau-tete h1 { font-size: clamp(2.6rem, min(7vw, 11.5vh), 7rem); } }
 @media (max-height: 500px) and (min-width: 561px) { .ouv-bandeau-tete h1 { font-size: clamp(1.9rem, 10vh, 3rem); } .ouv-bandeau-image { min-height: 90px; margin-top: 10px; } }
@@ -432,23 +460,23 @@ html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
 .flotte-liste, .choix, .confort { padding-block: var(--section); }
 .choix, .flotte-liste, .flotte-accueil, .carte-section, .zone, .pancarte-section { overflow: hidden; overflow: clip; }
 .flotte-rangs { display: grid; gap: 18px; }
-.flotte-rang { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) 220px; gap: clamp(18px, 3vw, 44px); align-items: center; padding: clamp(18px, 3vw, 36px); border-radius: 22px; background: var(--ivoire-2); border: 1px solid rgba(12, 14, 19, .1); }
+.flotte-rang { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) 220px; gap: clamp(18px, 3vw, 44px); align-items: center; padding: clamp(18px, 3vw, 36px); border-radius: 22px; background: var(--ivoire-2); border: 1px solid rgba(12, 14, 19, .1); }
 .flotte-rang-dessin { color: var(--nuit); }
 .flotte-rang-texte h3 { margin: 0 0 14px; font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.6rem); }
 .flotte-rang-texte .surtitre { margin-bottom: .7em; }
 .vehicule-chiffres--grand dd { font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem); }
 .flotte-rang-texte .vehicule-chiffres { margin-bottom: 14px; }
-.badge { display: inline-block; margin: 0 0 6px; padding: 5px 12px; border-radius: 999px; background: var(--nuit); color: var(--ivoire); font: 500 max(12px, .74rem)/1.4 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; }
+.badge { display: inline-block; margin: 0 0 6px; padding: 5px 12px; border-radius: 999px; background: var(--nuit); color: var(--ivoire); font: 500 max(13px, .76rem)/1.4 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; }
 .flotte-rang-photo { aspect-ratio: 3 / 2; border-radius: 14px; }
 .flotte-rang-photo--vide { background: radial-gradient(120% 90% at 30% 20%, rgba(201, 164, 92, .25), transparent 60%), var(--nuit); }
-.media-legende { position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(0, 0, 0, .7); color: #fff; font: 600 12px/1.4 var(--police-texte); }
+.media-legende { position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(0, 0, 0, .7); color: #fff; font: 600 13px/1.4 var(--police-texte); }
 @media (max-width: 960px) { .flotte-rang { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .flotte-rang-photo { grid-column: 1 / -1; max-width: 360px; } }
 @media (max-width: 620px) { .flotte-rang { grid-template-columns: minmax(0, 1fr); } }
 
 .choix-grille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
 .choix-form { display: flex; flex-wrap: wrap; gap: 16px 28px; }
 .choix-form .estim-compteur { border: 0; margin: 0; padding: 0; }
-.choix-form legend { margin-bottom: 10px; font: 500 max(12px, .76rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.choix-form legend { margin-bottom: 10px; font: 500 max(13px, .78rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
 .choix .compteur-ligne { background: var(--carte); border-color: rgba(242, 237, 227, .2); }
 .choix .compteur-bouton { background: var(--ivoire); color: var(--nuit); }
 .choix-vehicules { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
@@ -503,6 +531,7 @@ html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
 .pancarte--petite .pancarte-carton { padding: 20px 18px 24px; transform: rotate(-1.5deg); }
 .pancarte--petite .pancarte-carton::before { display: none; }
 .pancarte--petite .pancarte-nom { font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem); }
+.tampon { position: absolute; right: 10px; top: 68%; padding: 6px 12px; border: 3px double #B5322A; border-radius: 8px; color: #B5322A; font: 700 max(12px, .8rem)/1.2 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; transform: translateY(-50%) rotate(-12deg); opacity: 0; pointer-events: none; background: rgba(255, 253, 248, .86); }
 .pancarte--petite figcaption { margin-top: 12px; font-size: .9rem; color: rgba(242, 237, 227, .78); text-align: center; }
 @media (max-width: 999px) { .recap { order: 2; } .pancarte--petite { max-width: 360px; } }
 
@@ -541,7 +570,7 @@ html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
 .ouv-plein--404 .ouv-plein-voile { background: linear-gradient(90deg, rgba(12, 14, 19, .95) 0%, rgba(12, 14, 19, .8) 38%, rgba(12, 14, 19, 0) 65%); }
 
 /* Mention des illustrations générées : lisible sur fond sombre comme clair. */
-.mention-ia { background: rgba(0, 0, 0, .72); }
+.mention-ia { background: rgba(0, 0, 0, .72); font-size: 13px; }
 
 /* Prix et chiffres en Bodoni : taille optique plus basse, pour des déliés assez épais (le 4 reste lisible). */
 :is([data-prix], .estim-prix, .prix-geant-montant, .tarif-prix, .carte-bouton-prix, .carte-fiche-prix, .vehicule-chiffres dd, .numero-geant a, .etape-num, .recap-chiffres dd) { font-optical-sizing: none; font-variation-settings: "opsz" 20; }
@@ -555,3 +584,12 @@ html:not(.js) .ouv-plein { min-height: calc(100svh - 72px); }
 @media (max-width: 760px) { .ouv-plein-contenu::before { display: none; } }
 @media (max-height: 600px) and (min-width: 761px) { .hero-texte, .ouv-scindee-texte > p:not(.surtitre):not(.numero-geant):not(.hero-info), .ouv-vitre-contenu > p:not(.surtitre):not(.hero-actions):not(.hero-info) { display: none; } .ouv-vitre .garanties { display: none; } }
 @media (max-width: 1100px) { .fpe__repere:not(.est-actif) .fpe__nom { display: none; } .fpe__repere { flex: 0 0 auto; } .fpe__repere.est-actif { flex: 1 1 auto; } }
+/* Indication « Faites glisser » sur ce qui se glisse, au toucher seulement. */
+.glisser { display: none; margin: 10px 0 0; font: 500 max(12px, .74rem)/1 var(--police-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.glisser::before { content: "← "; } .glisser::after { content: " →"; }
+@media (max-width: 960px) and (hover: none) { .temoignages .glisser { display: block; } }
+@media (max-width: 760px) and (hover: none) { .services-galerie .glisser { display: block; } }
+
+/* Petits libellés des modules à 13 px au moins. */
+.fpe__etat { font-size: max(13px, .8rem); }
+.ple__cartouche { font-size: max(13px, .78rem); }

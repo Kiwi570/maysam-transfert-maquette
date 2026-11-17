@@ -1,4 +1,4 @@
-# Maysam Transfert · maquette v1
+# Maysam Transfert · maquette v2
 
 Maquette de présentation du futur site de Maysam Transfert, chauffeur privé à Paris et en Île‑de‑France.
 Direction « Les phares dans la nuit » : noir et or du logo, Paris de nuit, prix fixes mis en avant.

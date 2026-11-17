@@ -18,7 +18,7 @@ export default (c) => html`
   </div>
   <div class="ouv-bandeau-image" data-iris-centre>
     ${c.media({ nom: 'grok/flotte-ouverture', alt: c.s('flotte.alt'), cadrage: '60% 55%', priorite: true, classe: 'ouv-bandeau-media', sizes: '100vw', attrs: 'data-fx="parallaxe" data-fx-force="10"' })}
-    <div class="ouv-bandeau-trio" data-effet="silhouettes-ouverture" aria-hidden="true">${['suv', 'berline', 'van'].map((f) => silhouette(f, { trace: false }))}</div>
+    <div class="ouv-bandeau-trio" data-effet="silhouettes-ouverture" aria-hidden="true">${['suv', 'berline', 'van'].map((f) => silhouette(f))}</div>
   </div>
 </section>
 
@@ -28,7 +28,7 @@ export default (c) => html`
       <p class="surtitre" data-anime>${c.t('flotte.liste.surtitre')}</p>
       <h2 id="liste-titre" data-anime="lignes">${c.tb('flotte.liste.titre')}</h2>
     </div>
-    <div class="flotte-rangs" data-effet="silhouettes">${c.donnees.vehicules.map((v, i) => html`<article class="flotte-rang" id="${v.cle}" data-vehicule="${v.cle}">
+    <div class="flotte-rangs">${c.donnees.vehicules.map((v, i) => html`<article class="flotte-rang" id="${v.cle}" data-vehicule="${v.cle}">
       <div class="flotte-rang-dessin">${silhouette(v.forme, { label: v.nom })}</div>
       <div class="flotte-rang-texte">
         <p class="surtitre">${String(i + 1).padStart(2, '0')} · ${v.categorie}</p>
@@ -56,7 +56,7 @@ export default (c) => html`
       </form>
     </div>
     <ul class="choix-vehicules" role="list" data-effet="choix-vehicule" data-visuel>${c.donnees.vehicules.map((v) => html`<li class="choix-vehicule" data-vehicule="${v.cle}" data-pmax="${v.pmax}" data-vmax="${v.valises}">
-      ${silhouette(v.forme, { trace: false })}
+      ${silhouette(v.forme)}
       <div class="choix-texte"><p><strong>${v.nom}</strong> · ${v.passagers} passagers · ${v.valises} valises</p><span class="choix-conseil">${c.t('flotte.choix.conseil')}</span></div>
     </li>`)}</ul>
   </div>

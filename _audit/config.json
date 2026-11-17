@@ -19,7 +19,8 @@
   "choix-vehicule",
   "numero",
   "garanties",
-  "rideau-ouverture"
+  "rideau-ouverture",
+  "billets"
  ],
  "grille": {
   "dispenses": {

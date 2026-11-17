@@ -47,7 +47,7 @@ ${estimateur(c)}
     <p class="masque-ecran-bas">${c.t('accueil.services.texte')} ${c.lien('services', { classe: 'lien-fleche', texte: c.t('accueil.services.tous') })}</p>
   </div>
   <div class="piste services-piste" data-galerie tabindex="0" role="region" aria-label="${c.s('accueil.services.region')}" data-anime="cascade">
-    ${c.donnees.services.map((s, i) => html`<article class="service-carte" id="service-${s.cle}">
+    ${c.donnees.services.map((s, i) => html`<article class="service-carte" id="service-${s.cle}" data-survol="incline" data-survol-force="4">
       ${c.media({ nom: s.image, alt: s.alt, classe: 'service-media', sizes: '(max-width: 760px) 80vw, 30vw', attrs: 'data-fx="vitesse" data-fx-force="2"' })}
       <div class="service-texte">
         <p class="service-num">${String(i + 1).padStart(2, '0')} · ${s.court}</p>
@@ -58,6 +58,7 @@ ${estimateur(c)}
     </article>`)}
   </div>
   <div class="galerie-progres" aria-hidden="true"><span></span></div>
+  <p class="glisser conteneur" aria-hidden="true">Faites glisser</p>
 </section>
 
 <section class="flotte-accueil fond-ivoire" id="vehicules" aria-labelledby="flotte-titre">
@@ -67,7 +68,7 @@ ${estimateur(c)}
       <h2 id="flotte-titre" data-anime="lignes">${c.tb('accueil.flotte.titre')}</h2>
       <p data-anime>${c.t('accueil.flotte.texte')}</p>
     </div>
-    <div class="vehicules-grille" data-effet="silhouettes">${c.donnees.vehicules.map((v) => html`<article class="vehicule" data-vehicule="${v.cle}">
+    <div class="vehicules-grille">${c.donnees.vehicules.map((v) => html`<article class="vehicule" data-vehicule="${v.cle}" data-survol="incline" data-survol-force="5">
       <div class="vehicule-dessin">${silhouette(v.forme, { label: v.nom })}</div>
       <h3>${v.nom}</h3>
       <p class="vehicule-categorie">${v.categorie}</p>
@@ -107,10 +108,16 @@ ${estimateur(c)}
       <h2 id="temoignages-titre" data-anime="lignes">${c.tb('accueil.temoignages.titre')}</h2>
       <p data-anime>${c.t('accueil.temoignages.texte')}</p>
     </div>
-    <div class="temoignages-grille" data-anime="cascade">${c.donnees.temoignages.map((t) => html`<figure class="temoignage">
-      <blockquote><p>« ${t.citation} »</p></blockquote>
-      <figcaption><span class="temoignage-qui"><strong>${t.nom}</strong> · ${t.lieu}</span><span class="temoignage-trajet">${t.trajet}</span></figcaption>
+    <div class="billets" data-visuel tabindex="0" role="region" aria-label="Témoignages, faites défiler">${c.donnees.temoignages.map((t, i) => html`<figure class="billet" style="--i:${i}" data-effet="billets">
+      <div class="billet-talon">
+        <p class="billet-label">Trajet</p>
+        <p class="billet-route">${t.trajet}</p>
+        <p class="billet-label">Passager</p>
+        <p class="billet-nom"><strong>${t.nom}</strong><span>${t.lieu}</span></p>
+      </div>
+      <blockquote class="billet-avis"><p>« ${t.citation} »</p></blockquote>
     </figure>`)}</div>
+    <p class="glisser" aria-hidden="true">Faites glisser</p>
   </div>
 </section>
 

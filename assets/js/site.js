@@ -1,7 +1,7 @@
 /* Maysam Transfert · effets propres au client (les effets génériques viennent de la bibliothèque du socle).
    Effets du plan : phares (intro et traînées de lumière), tableau-departs, estimateur, pancarte, carte-trajets,
    prix-geant, silhouettes, silhouettes-ouverture, choix-vehicule, numero, garanties, rideau-ouverture. */
-import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=1';
+import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=2';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;
@@ -16,61 +16,66 @@ addEventListener('scroll', () => {
   vitesse.v = Math.min(4, Math.abs(scrollY - vitesse.y) / dt); vitesse.y = scrollY; vitesse.t = t;
 }, { passive: true });
 
-/* ---------- phares : traînées de lumière dans l'ouverture de l'accueil ---------- */
+/* ---------- phares : traînées de lumière qui suivent l'avenue jusqu'au point de fuite ----------
+   Les points de la route sont donnés dans le repère de la photo (0 à 1) et projetés comme l'image affichée
+   (object-fit: cover, object-position réel, source téléphone ou ordinateur) : les traînées restent sur la chaussée. */
 function trainees() {
   const cv = $('[data-trainees]');
   if (!cv) return;
+  const img = $('.hero-media img');
   const ctx = cv.getContext('2d');
   const dpr = Math.min(window.devicePixelRatio || 1, telephone() ? 1 : 1.25);
-  let L = 0, H = 0;
-  const lutins = ['rgba(255,226,170,', 'rgba(255,80,60,'].map((c) => {
-    const o = document.createElement('canvas'); o.width = 256; o.height = 8;
-    const g = o.getContext('2d'), d = g.createLinearGradient(0, 0, 256, 0);
-    d.addColorStop(0, c + '0)'); d.addColorStop(.7, c + '.55)'); d.addColorStop(1, c + '1)');
-    g.fillStyle = d; g.beginPath(); g.roundRect ? g.roundRect(0, 2, 256, 4, 2) : g.rect(0, 2, 256, 4); g.fill();
-    return o;
-  });
-  /* Halo de phares : deux grandes lueurs qui passent lentement sur la chaussée. */
-  const halo = document.createElement('canvas'); halo.width = halo.height = 256;
-  { const g = halo.getContext('2d'), r = g.createRadialGradient(128, 128, 0, 128, 128, 128);
-    r.addColorStop(0, 'rgba(255,238,200,.9)'); r.addColorStop(.25, 'rgba(246,214,150,.45)'); r.addColorStop(1, 'rgba(201,164,92,0)');
-    g.fillStyle = r; g.fillRect(0, 0, 256, 256); }
-  const n = telephone() ? 14 : 30;
-  const traits = Array.from({ length: n }, (_, i) => ({ y: Math.random(), x: Math.random(), l: .08 + Math.random() * .18, v: .05 + Math.random() * .09, rouge: i % 3 === 0, sens: i % 3 === 0 ? -1 : 1 }));
-  const taille = () => { L = cv.clientWidth; H = cv.clientHeight; cv.width = Math.round(L * dpr); cv.height = Math.round(H * dpr); };
-  taille();
-  new ResizeObserver(taille).observe(cv);
+  let L = 0, H = 0, geo = null;
+  const halo = document.createElement('canvas'); halo.width = halo.height = 128;
+  { const g = halo.getContext('2d'), r = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    r.addColorStop(0, 'rgba(255,244,214,1)'); r.addColorStop(.3, 'rgba(255,226,170,.5)'); r.addColorStop(1, 'rgba(255,210,140,0)');
+    g.fillStyle = r; g.fillRect(0, 0, 128, 128); }
+  const mesurer = () => {
+    L = cv.clientWidth; H = cv.clientHeight; cv.width = Math.round(L * dpr); cv.height = Math.round(H * dpr);
+    const mobile = /mobile/.test(img?.currentSrc || '');
+    const iw = img?.naturalWidth || (mobile ? 1080 : 1920), ih = img?.naturalHeight || (mobile ? 1920 : 1080);
+    const pos = (img ? getComputedStyle(img).objectPosition : '50% 50%').split(' ').map((v) => parseFloat(v) / 100);
+    const k = Math.max(L / iw, H / ih), ox = (L - iw * k) * (pos[0] || .5), oy = (H - ih * k) * (pos[1] ?? .5);
+    const p = (x, y) => [ox + x * iw * k, oy + y * ih * k];
+    geo = mobile ? { vp: p(.56, .6), bas: [p(.08, 1.02), p(.95, 1.02)] } : { vp: p(.925, .556), bas: [p(.5, 1.02), p(1.02, 1.02)] };
+  };
+  mesurer();
+  new ResizeObserver(mesurer).observe(cv);
+  img && img.addEventListener('load', mesurer);
+  const n = telephone() ? 16 : 34;
+  const traits = Array.from({ length: n }, (_, i) => ({ voie: Math.random(), z: Math.random() * 9, v: 1.6 + Math.random() * 1.8, rouge: i % 2 === 0, lg: .5 + Math.random() * .9 }));
+  const ecran = (t, z) => {                       /* z : distance (0 au premier plan) → position à l'écran */
+    const s = 1 / (1 + z * .55), [vx, vy] = geo.vp, [a, b] = geo.bas;
+    const bx = a[0] + (b[0] - a[0]) * t.voie, by = a[1] + (b[1] - a[1]) * t.voie;
+    return [vx + (bx - vx) * s, vy + (by - vy) * s, s];
+  };
   let acc = 1;
-  /* L'avenue respire : un zoom très lent sur la photo, piloté par le temps (même vitesse partout). */
   const photo = $('.hero-media img');
   boucle(cv, (dt, temps) => {
     if (photo && etat.pret) photo.style.transform = `scale(${(1.05 + Math.sin(temps * 0.22) * 0.025).toFixed(4)}) translate3d(${(Math.sin(temps * 0.13) * -1).toFixed(3)}%, 0, 0)`;
-    acc += ((1 + vitesse.v * 2.2) - acc) * Math.min(1, dt * 4);
+    acc += ((1 + vitesse.v * 2.4) - acc) * Math.min(1, dt * 4);
     vitesse.v *= Math.pow(.2, dt);
+    if (!geo) return;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, L, H);
     ctx.globalCompositeOperation = 'lighter';
+    ctx.lineCap = 'round';
     for (const t of traits) {
-      t.x += t.v * dt * acc * t.sens;
-      if (t.x > 1.3) t.x = -.3; if (t.x < -.3) t.x = 1.3;
-      const p = .25 + t.y * .75;                       /* plus bas = plus proche : plus épais, plus lumineux */
-      const y = H * (.35 + t.y * .62), w = L * t.l * (.7 + p * 1.2), h = 1.6 + p * 4.2;
-      const bord = telephone() ? 1 : Math.max(0, Math.min(1, (t.x - .4) / .22));   /* rien sous le titre */
-      ctx.globalAlpha = Math.min(1, (.35 + p * .75)) * bord;
-      ctx.save();
-      ctx.translate(L * t.x, y);
-      if (t.sens < 0) ctx.scale(-1, 1);
-      const lu = lutins[t.rouge ? 1 : 0];
-      ctx.drawImage(lu, -w, -h * 2, w, h * 4);           /* lueur large */
-      ctx.drawImage(lu, -w, -h / 2, w, h);               /* cœur lumineux */
-      ctx.restore();
+      t.z += (t.rouge ? 1 : -1) * t.v * dt * acc;   /* les feux rouges s'éloignent, les phares arrivent */
+      if (t.z > 9) { t.z = 0; t.voie = Math.random(); } if (t.z < 0) { t.z = 9; t.voie = Math.random(); }
+      const [x1, y1, s1] = ecran(t, t.z), [x2, y2] = ecran(t, t.z + t.lg);
+      const bord = telephone() ? 1 : Math.max(0, Math.min(1, (x1 / L - .42) / .16));
+      const loin = Math.min(1, t.z / .4) * Math.min(1, (9 - t.z) / 1.5);
+      const a = (.25 + s1 * .75) * bord * loin;
+      if (a <= .01) continue;
+      const w = .6 + s1 * 5.5, coul = t.rouge ? '255,70,48' : '255,228,176';
+      ctx.strokeStyle = `rgba(${coul},${(a * .18).toFixed(3)})`; ctx.lineWidth = w * 4;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      ctx.strokeStyle = `rgba(${coul},${(a * .9).toFixed(3)})`; ctx.lineWidth = w;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      if (!t.rouge && s1 > .35) { const r = w * 7; ctx.globalAlpha = a * .7; ctx.drawImage(halo, x1 - r, y1 - r, r * 2, r * 2); ctx.globalAlpha = 1; }
     }
-    const ph = (temps % 7.5) / 7.5, xh = 1.25 - ph * 1.05, ah = Math.sin(ph * Math.PI);
-    const bordH = telephone() ? 1 : Math.max(0, Math.min(1, (xh - .42) / .2));
-    ctx.globalAlpha = .55 * ah * bordH;
-    const rh = Math.max(L, H) * (telephone() ? .5 : .28);
-    for (const dx of [0, rh * .55]) ctx.drawImage(halo, L * xh + dx - rh / 2, H * .72 - rh * .32, rh, rh * .64);
-    ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    ctx.globalCompositeOperation = 'source-over';
   });
 }
 
@@ -98,7 +103,19 @@ function tableau() {
       setTimeout(tic, (i % 10) * 30 + Math.floor(i / 10) * 60);
     });
   };
-  if (etat.intro === 'retour') return;
+  /* Au survol d'une ligne (souris), ses palettes tournent de nouveau, jusqu'au bon texte. */
+  if (matchMedia('(hover: hover)').matches) $$('.tableau-ligne', t).forEach((ligne) => {
+    let enCours = false;
+    ligne.addEventListener('mouseenter', () => {
+      if (enCours || !fait) return; enCours = true;
+      const cs = $$('.flap', ligne);
+      cs.forEach((c, i) => { const cible = cibles[cases.indexOf(c)]; if (!cible.trim() || cible === '\u00a0') return; let k = 0; const tours = 3 + (i % 4);
+        const tic = () => { k++; c.classList.remove('tourne'); void c.offsetWidth; c.classList.add('tourne'); c.textContent = k >= tours ? cible : SIGNES[(Math.random() * SIGNES.length) | 0]; if (k < tours) setTimeout(tic, 50); };
+        setTimeout(tic, i * 18); });
+      setTimeout(() => { enCours = false; }, 700);
+    });
+  });
+  if (etat.intro === 'retour') { fait = true; return; }
   new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { jouer(); o.disconnect(); } }, { threshold: .35 }).observe(t);
 }
 
@@ -136,7 +153,11 @@ function estimateurs() {
       const r = $('input[name="trajet"]:checked', form) || $('input[name="trajet"]', form);
       const p = valeur(form, 'passagers'), v = valeur(form, 'valises');
       const van = p > 3 || v > 3;
-      $$('.estim-silhouette', res).forEach((s) => { s.hidden = s.dataset.forme !== (van ? 'van' : 'berline'); });
+      const forme = van ? 'van' : 'berline';
+      $$('.estim-silhouette', res).forEach((s) => { const etait = s.hidden; s.hidden = s.dataset.forme !== forme; if (etait && !s.hidden && gsap) gsap.fromTo(s, { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: .6, ease: 'power3.out' }); });
+      const arr = $('[data-estim-arrivee]', res); if (arr) arr.textContent = r.closest('label').querySelector('.estim-choix-nom').textContent.replace(' Paris', '').replace('Gares parisiennes', 'Gares');
+      if (gsap) { const v = $('.estim-route-voiture', res), tr = $('.estim-route-trace', res);
+        gsap.timeline().fromTo(tr, { scaleX: 0 }, { scaleX: 1, duration: .9, ease: 'power2.inOut' }, 0).fromTo(v, { left: '0%' }, { left: '100%', duration: .9, ease: 'power2.inOut' }, 0); }
       $('[data-estim-vehicule]', res).textContent = van ? note.dataset.grand : note.dataset.petit;
       $('[data-estim-duree]', res).textContent = `Paris ↔ ${r.closest('label').querySelector('.estim-choix-nom').textContent} · ${r.dataset.duree}`;
       if (van) {
@@ -164,7 +185,11 @@ function pancartes() {
   const noms = $$('[data-pancarte-nom]');
   if (!noms.length) return;
   const ecrire = (txt) => noms.forEach((n) => { n.textContent = txt || n.dataset.defaut; });
-  $$('[data-pancarte-saisie]').forEach((i) => i.addEventListener('input', () => ecrire(i.value.trim())));
+  let balance = null;
+  $$('[data-pancarte-saisie]').forEach((i) => i.addEventListener('input', () => {
+    ecrire(i.value.trim());
+    if (gsap) { balance && balance.kill(); balance = gsap.timeline().to('.pancarte-carton', { rotation: '-=2', duration: .12, ease: 'power2.out' }).to('.pancarte-carton', { rotation: (k, el) => el.closest('.pancarte--petite') ? -1.5 : -2.5, duration: .9, ease: 'elastic.out(1.2, .35)' }); }
+  }));
   /* Au défilement, la pancarte se balance doucement (suspendue). */
   if (gsap && ST) $$('.pancarte').forEach((p) => {
     const petite = p.classList.contains('pancarte--petite');
@@ -201,6 +226,14 @@ function cartes() {
       svg.pauseAnimations();
       new IntersectionObserver((e) => { e[0].isIntersecting && !document.hidden ? svg.unpauseAnimations() : svg.pauseAnimations(); }).observe(svg);
     }
+    /* Les routes se tracent une fois, à l'arrivée de la carte à l'écran (jamais à moitié selon le défilement). */
+    const traits = $$('[data-trait]', carte);
+    if (gsap && traits.length && etat.intro !== 'retour') {
+      traits.forEach((p) => { const l = Math.ceil(p.getTotalLength()) + 2; gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
+      new IntersectionObserver((e, o) => { if (!e[0].isIntersecting) return; o.disconnect();
+        gsap.to(traits, { strokeDashoffset: 0, duration: 1.6, stagger: .12, ease: 'power2.inOut', onComplete: () => gsap.set(traits, { clearProps: 'strokeDasharray,strokeDashoffset' }) });
+      }, { threshold: .3 }).observe(carte);
+    }
     /* La carte se pose au défilement. */
     if (gsap && ST) gsap.fromTo(carte, { y: 50, scale: .96 }, { y: 0, scale: 1, ease: 'none', scrollTrigger: { trigger: carte, start: 'top bottom', end: 'top 40%', scrub: .5 } });
   });
@@ -226,23 +259,44 @@ function prixGeant() {
   if (gsap && ST) gsap.to(pg, { y: -40, ease: 'none', scrollTrigger: { trigger: pg.closest('section'), start: 'top top', end: 'bottom top', scrub: .5 } });
 }
 
-/* ---------- silhouettes : les véhicules roulent jusqu'à leur place ---------- */
+/* ---------- silhouettes : les véhicules arrivent en roulant (roues qui tournent), se dessinent, allument leurs phares ---------- */
+function preparerTraits(svg) {
+  $$('[data-trait]', svg).forEach((p) => { const l = Math.ceil(p.getTotalLength ? p.getTotalLength() : 600) + 2; p.style.setProperty('--l', l); });
+}
+function rouler2(svg, { duree = 1.6, distance = 140, retard = 0 } = {}) {
+  if (!gsap || !svg) { svg && svg.classList.add('roulee', 'allumee'); return; }
+  svg.classList.remove('roulee', 'allumee');
+  const traits = $$('[data-trait]', svg), roues = $$('.silhouette-roue-g', svg);
+  const tl = gsap.timeline({ delay: retard, onComplete: () => { svg.classList.add('roulee', 'allumee'); gsap.set(traits, { clearProps: 'strokeDashoffset,strokeDasharray' }); } });
+  tl.set(traits, { strokeDasharray: (k, el) => el.style.getPropertyValue('--l'), strokeDashoffset: (k, el) => el.style.getPropertyValue('--l') })
+    .fromTo(svg, { x: -distance }, { x: 0, duration: duree, ease: 'power3.out' }, 0)
+    .fromTo(roues, { rotation: -540 }, { rotation: 0, duration: duree, ease: 'power3.out' }, 0)
+    .to(traits, { strokeDashoffset: 0, duration: duree * .9, stagger: .03, ease: 'power2.out' }, 0);
+  return tl;
+}
 function silhouettes() {
-  if (!gsap || !ST) return;
-  $$('.vehicule-dessin, .flotte-rang-dessin').forEach((d, i) => {
-    d.dataset.effet = 'silhouettes';
-    gsap.fromTo(d, { x: -70 - (i % 3) * 20 }, { x: 12, ease: 'none', scrollTrigger: { trigger: d, start: 'top bottom', end: 'bottom top', scrub: .6 } });
+  const liste = $$('.silhouette:not(.estim-silhouette)');
+  liste.forEach(preparerTraits);
+  $$('.estim-silhouette').forEach((s) => { preparerTraits(s); s.classList.add('roulee', 'allumee'); });
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const voisins = $$('.silhouette', e.target.closest('section') || document);
+    rouler2(e.target, { retard: Math.max(0, voisins.indexOf(e.target)) * .12 % .36 });
+  }), { threshold: .4 });
+  liste.filter((s) => !s.closest('.ouv-bandeau-trio')).forEach((s) => {
+    s.dataset.effet = 'silhouettes';
+    if (etat.intro === 'retour') { s.classList.add('roulee', 'allumee'); return; }
+    io.observe(s);
   });
-  /* Ouverture de la flotte : le trio doré glisse au défilement. */
+  /* Au défilement, chaque dessin avance encore un peu sur sa route. */
+  if (gsap && ST) $$('.vehicule-dessin, .flotte-rang-dessin').forEach((d) => gsap.fromTo(d, { x: -14 }, { x: 14, ease: 'none', scrollTrigger: { trigger: d, start: 'top bottom', end: 'bottom top', scrub: .6 } }));
   const trio = $('.ouv-bandeau-trio');
-  if (trio) gsap.to(trio, { x: 60, ease: 'none', scrollTrigger: { trigger: trio.closest('section'), start: 'top top', end: 'bottom top', scrub: .5 } });
+  if (trio && gsap && ST) gsap.to(trio, { x: 60, ease: 'none', scrollTrigger: { trigger: trio.closest('section'), start: 'top top', end: 'bottom top', scrub: .5 } });
 }
 function trioOuverture(tl, t0 = 0) {
-  const trio = $('.ouv-bandeau-trio');
-  if (!trio || !gsap) return;
-  const traits = $$('path, circle', trio);
-  traits.forEach((p) => { const l = p.getTotalLength ? p.getTotalLength() : 400; p.style.strokeDasharray = l; p.style.strokeDashoffset = l; });
-  const f = () => gsap.to(traits, { strokeDashoffset: 0, duration: 1.4, stagger: .015, ease: 'power2.out' });
+  const trio = $$('.ouv-bandeau-trio .silhouette');
+  if (!trio.length) return;
+  const f = () => trio.forEach((s, i) => rouler2(s, { duree: 1.5, distance: 220, retard: i * .14 }));
   if (tl) tl.call(f, null, t0); else f();
 }
 
@@ -257,6 +311,17 @@ function choix() {
   };
   compteurs(form, majour);
   if (gsap && ST && matchMedia('(min-width: 1000px)').matches) liste.forEach((li, i) => gsap.fromTo(li, { x: 24 + i * 12 }, { x: 0, ease: 'none', scrollTrigger: { trigger: li, start: 'top bottom', end: 'top 60%', scrub: .5 } }));
+}
+
+/* ---------- billets : les témoignages arrivent comme des billets qu'on distribue ---------- */
+function billets() {
+  if (!gsap || !ST) return;
+  const liste = $$('.billet');
+  const large = matchMedia('(min-width: 961px)').matches;
+  liste.forEach((b, i) => {
+    gsap.fromTo(b, { y: large ? 90 + (i % 3) * 40 : 30, rotation: large ? (i % 2 ? 2 : -2) : 0 },
+      { y: 0, rotation: 0, ease: 'none', scrollTrigger: { trigger: large ? b : b.closest('section'), start: 'top bottom', end: large ? 'top 55%' : 'center center', scrub: .6 } });
+  });
 }
 
 /* ---------- FAQ : ouverture et fermeture en douceur ---------- */
@@ -296,16 +361,20 @@ async function reservation() {
   };
   form.addEventListener('change', majour); form.addEventListener('input', majour); majour();
   try {
-    const { init } = await import('./modules/formulaire-par-etapes/module.js?v=1');
+    const { init } = await import('./modules/formulaire-par-etapes/module.js?v=2');
     await init(sec, { messages: { etape: 'Étape {n} sur {total}' } });
-    sec.addEventListener('formulaire:envoye', () => { const fin = $('.fpe__fin', sec); fin && fin.scrollIntoView({ block: 'center' }); });
+    sec.addEventListener('formulaire:envoye', () => {
+      const tp = $('[data-tampon]');
+      if (tp && gsap) gsap.fromTo(tp, { opacity: 0, scale: 2.6, rotation: -24 }, { opacity: 1, scale: 1, rotation: -12, duration: .55, ease: 'back.out(2.2)', delay: .25 });
+      const fin = $('.fpe__fin', sec); fin && fin.scrollIntoView({ block: 'center' });
+    });
   } catch (err) { console.error('[réservation]', err); }
 }
 
 async function planches() {
   const sec = $('[data-module="planches-empilees"]');
   if (!sec) return;
-  try { const { init } = await import('./modules/planches-empilees/module.js?v=1'); await init(sec, { voile: .5 }); } catch (err) { console.error('[planches]', err); }
+  try { const { init } = await import('./modules/planches-empilees/module.js?v=2'); await init(sec, { voile: .5 }); } catch (err) { console.error('[planches]', err); }
 }
 
 /* ---------- Intro : deux phares s'allument, glissent jusqu'au titre de la page, et l'ouvrent ---------- */
@@ -333,7 +402,7 @@ function arriveePages(tl, t0) {
 
 demarrer({
   preparer() {
-    trainees(); tableau(); estimateurs(); pancartes(); cartes(); prixGeant(); silhouettes(); choix(); faq();
+    trainees(); tableau(); estimateurs(); pancartes(); cartes(); prixGeant(); silhouettes(); choix(); billets(); faq();
     reservation(); planches();
     /* Les images de section qui défilent sous les textes (services) se déplacent un peu au défilement. */
     if (gsap && ST && $('[data-effet="rideau-ouverture"]')) gsap.to('[data-effet="rideau-ouverture"] img', { yPercent: 6, scale: 1.04, ease: 'none', scrollTrigger: { trigger: '.ouv-plein', start: 'top top', end: 'bottom top', scrub: .5 } });

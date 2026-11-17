@@ -1,0 +1,18 @@
+{
+ "id": "20261117-201204-complet-cible-partiel",
+ "date": "2026-11-17T20:15:53.515Z",
+ "niveau": "complet",
+ "pages": "/,/reserver",
+ "etapes": [
+  "fichiers",
+  "mouvement",
+  "fluidite",
+  "parcours"
+ ],
+ "version": "2",
+ "echecs": 0,
+ "aRegarder": 1,
+ "nonLances": 0,
+ "manquants": 0,
+ "statut": "complet"
+}
